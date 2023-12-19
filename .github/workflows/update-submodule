@@ -15,7 +15,7 @@ jobs:
 
     - name: Update submodules
       run: |
-        git submodule update --remote
+        git submodule update --recursive --remote
         git commit -am "Submodule updated!"
         git push
 
