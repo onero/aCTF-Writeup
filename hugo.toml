@@ -18,6 +18,8 @@ copyright = "Adamino 2023"
   dateformNum     = "02-01-2006"
   dateformNumTime = "15:04 02-01-2006 -0700"
 
+  bgImg = "aCTF.webp"
+
   scrollToTop = true
   footerCopyright = "The quieter you become the more you are able to hear"
 
