@@ -6,7 +6,7 @@ ignoreFiles = ["README.md", "README"]
 
 defaultContentLanguage = "en"
 copyright = "Adamino 2023"
-# googleAnalytics = "UA-123-45"
+# googleAnalytics = "UA-123-451"
 
 [taxonomies]
   tag = "tags"
