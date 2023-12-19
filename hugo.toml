@@ -4,3 +4,33 @@ title = 'Adamino CTF Writeups'
 theme = 'hermit-v2'
 ignoreFiles = ["README.md", "README"]
 
+defaultContentLanguage = "en"
+copyright = "Adamino 2023"
+# googleAnalytics = "UA-123-45"
+enableEmoji = true
+
+[taxonomies]
+  tag = "tags"
+  # Categories are disabled by default.
+
+[params]
+  dateform        = "2 Jan, 2006"
+  dateformShort   = "2 Jan"
+  dateformNum     = "02-01-2006"
+  dateformNumTime = "15:04 02-01-2006 -0700"
+
+[languages]
+  [languages.en]
+    title = 'Adamino CTF Writeups'
+    [languages.en.params]
+      homeSubtitle = "Awesome CTF Writeups"
+  [[params.socialLinks]]
+    name = "github"
+    url = "https://github.com/onero"
+
+[menu]
+
+  [[menu.main]]
+    name = "NC3"
+    url = "nc3/"
+    weight = 10
