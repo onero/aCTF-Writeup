@@ -1,9 +1,3 @@
-[submodule "themes/decyber"]
-	path = themes/decyber
-	url = https://github.com/mayth/decyber.git
-[submodule "themes/ananke"]
-	path = themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
 [submodule "themes/hermit-v2"]
 	path = themes/hermit-v2
 	url = https://github.com/1bl4z3r/hermit-V2

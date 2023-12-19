@@ -1,0 +1,6 @@
+baseURL = 'https://ctf.adamino.dk/'
+languageCode = 'en-us'
+title = 'Adamino CTF Writeups'
+theme = 'hermit-v2'
+ignoreFiles = ["README.md", "README"]
+

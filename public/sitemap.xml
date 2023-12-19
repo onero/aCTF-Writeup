@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ctf.adamino.dk/</loc>
+    <lastmod>2023-12-17T20:37:16+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/nc3/misc/in-my-prime/</loc>
+    <lastmod>2023-12-17T20:37:16+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/nc3/</loc>
+    <lastmod>2023-12-17T20:37:16+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/nc3/kom-godt-i-gang/haaukins-intro/</loc>
+    <lastmod>2023-12-01T10:02:14+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/nc3/kom-godt-i-gang/discord/</loc>
+    <lastmod>2023-12-01T10:01:58+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/nc3/kom-godt-i-gang/start-her/</loc>
+    <lastmod>2023-12-01T10:00:50+01:00</lastmod>
+  </url><url>
+    <loc>https://ctf.adamino.dk/categories/</loc>
+  </url><url>
+    <loc>https://ctf.adamino.dk/tags/</loc>
+  </url>
+</urlset>
