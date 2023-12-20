@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - master
+  repository_dispatch:
+    types: [submodule_updated]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
