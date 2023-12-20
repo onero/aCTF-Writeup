@@ -15,6 +15,8 @@ jobs:
 
     - name: Update submodules
       run: |
+        git config --local user.email "workflow-bot@adamino.dk"
+        git config --local user.name "Workflow Bot"
         git submodule update --recursive --remote
         git commit -am "Submodule updated!"
         git push
