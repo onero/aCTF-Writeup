@@ -10,7 +10,7 @@ copyright = "Adamino 2023"
 
 [taxonomies]
   tag = "tags"
-  # Categories are disabled by default.
+  category = "categories"
 
 [params]
   dateform        = "2 Jan, 2006"
