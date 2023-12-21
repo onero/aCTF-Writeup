@@ -2,7 +2,6 @@
 title = 'Netcat'
 categories = ['Enumeration']
 date = 2023-12-22T00:12:28+01:00
-draft = true
 +++
 
 # Unleashing Netcat's Potential in Capture The Flag (CTF) Challenges
