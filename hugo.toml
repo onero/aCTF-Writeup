@@ -41,6 +41,11 @@ copyright = "Adamino 2023"
 [menu]
 
   [[menu.main]]
+    name = "Tools"
+    url = "tools/"
+    weight = 2
+
+  [[menu.main]]
     name = "NC3"
     url = "nc3/"
     weight = 10
