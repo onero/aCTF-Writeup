@@ -3,4 +3,4 @@
 	url = https://github.com/1bl4z3r/hermit-V2
 [submodule "content/NC3"]
 	path = content/NC3
-	url = https://github.com/onero/CTF-NC3-2023.git
+	url = https://github.com/onero/CTF-NC3.git
