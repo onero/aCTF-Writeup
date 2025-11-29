@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Crypto on Adamino CTF Writeups</title>
-    <link>http://localhost:1313/categories/crypto/</link>
-    <description>Recent content in Crypto on Adamino CTF Writeups</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Adamino 2023</copyright>
-    <lastBuildDate>Tue, 12 Dec 2023 22:11:37 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/crypto/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>addiplikation</title>
-      <link>http://localhost:1313/nc3/crypto/addiplikation/</link>
-      <pubDate>Tue, 12 Dec 2023 22:11:37 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/crypto/addiplikation/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;addiplikation&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Crypto&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Kryptonissen har fundet på en ny non-deterministisk hashfunktion - et skiftende hash må jo være *endnu* sværere at cracke end et statisk!&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We&amp;rsquo;re &lt;a href=&#34;http://localhost:1313/nc3/crypto/addiplikation/scripts/addiplikation.py&#34;&gt;given a Python script&lt;/a&gt;, which loads flag.txt (which is obviously unavailable to us). The scripts shows us exactly which characters the flag consists of:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; all(c &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;NC3&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{_abcdefghijklmnopqrstuvwxyz}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; flag)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This severely limits the possible variations of the flag (which is lucky, because we&amp;rsquo;re going to brute force it).&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Crypto on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/crypto/</link><description>Recent content in Crypto on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Tue, 12 Dec 2023 22:11:37 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/crypto/index.xml" rel="self" type="application/rss+xml"/><item><title>addiplikation</title><link>https://ctf.adamino.dk/nc3/crypto/addiplikation/</link><pubDate>Tue, 12 Dec 2023 22:11:37 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/crypto/addiplikation/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>addiplikation&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Crypto&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Kryptonissen har fundet på en ny non-deterministisk hashfunktion - et skiftende hash må jo være *endnu* sværere at cracke end et statisk!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We&amp;rsquo;re &lt;a href="https://ctf.adamino.dk/nc3/crypto/addiplikation/scripts/addiplikation.py">given a Python script&lt;/a>, which loads flag.txt (which is obviously unavailable to us). The scripts shows us exactly which characters the flag consists of:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">assert&lt;/span> all(c &lt;span style="color:#f92672">in&lt;/span> &lt;span style="color:#e6db74">&amp;#34;NC3&lt;/span>&lt;span style="color:#e6db74">{_abcdefghijklmnopqrstuvwxyz}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> c &lt;span style="color:#f92672">in&lt;/span> flag)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This severely limits the possible variations of the flag (which is lucky, because we&amp;rsquo;re going to brute force it).&lt;/p></description></item></channel></rss>

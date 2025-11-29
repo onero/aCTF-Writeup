@@ -1,62 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Boot2Root on Adamino CTF Writeups</title>
-    <link>http://localhost:1313/categories/boot2root/</link>
-    <description>Recent content in Boot2Root on Adamino CTF Writeups</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Adamino 2023</copyright>
-    <lastBuildDate>Sun, 15 Dec 2024 13:37:38 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/boot2root/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nisseportalen 5</title>
-      <link>http://localhost:1313/nc3/boot2root/nisseportalen-5/</link>
-      <pubDate>Sun, 15 Dec 2024 13:37:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nisseportalen-5/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nisseportalen 5&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p&gt;&#xA;&lt;p&gt;Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nisseportalen 4</title>
-      <link>http://localhost:1313/nc3/boot2root/nisseportalen-4/</link>
-      <pubDate>Sun, 15 Dec 2024 13:36:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nisseportalen-4/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nisseportalen 4&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p&gt;&#xA;&lt;p&gt;Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nisseportalen 2</title>
-      <link>http://localhost:1313/nc3/boot2root/nisseportalen-2/</link>
-      <pubDate>Sun, 15 Dec 2024 13:34:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nisseportalen-2/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nisseportalen 2&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p&gt;&#xA;&lt;p&gt;Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nisseportalen 1</title>
-      <link>http://localhost:1313/nc3/boot2root/nisseportalen-1/</link>
-      <pubDate>Sun, 15 Dec 2024 13:33:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nisseportalen-1/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nisseportalen 1&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p&gt;&#xA;&lt;p&gt;Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nissenoter 3</title>
-      <link>http://localhost:1313/nc3/boot2root/nissenoter-3/</link>
-      <pubDate>Fri, 15 Dec 2023 15:33:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nissenoter-3/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 3&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Opgaven er tilgængelig via Haaukins:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ncctf.haaukins.dk/&#34;&gt;https://ncctf.haaukins.dk/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;h3 id=&#34;the-final-enumeration&#34;&gt;The final enumeration&lt;/h3&gt;&#xA;&lt;p&gt;Continuing from &lt;a href=&#34;http://localhost:1313/nc3/boot2root/nissenoter-2/&#34;&gt;Nissenoter 2&lt;/a&gt; we now have foothold on the server as a user!&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s immediately execute some initial enumeration and see what we can find&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nissenoter 2</title>
-      <link>http://localhost:1313/nc3/boot2root/nissenoter-2/</link>
-      <pubDate>Fri, 15 Dec 2023 14:33:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nissenoter-2/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 2&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Opgaven er tilgængelig via Haaukins:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ncctf.haaukins.dk/&#34;&gt;https://ncctf.haaukins.dk/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;h3 id=&#34;continued-enumeration&#34;&gt;Continued enumeration&lt;/h3&gt;&#xA;&lt;p&gt;We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can &amp;ldquo;pop a shell&amp;rdquo; on the system!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nissenoter 1</title>
-      <link>http://localhost:1313/nc3/boot2root/nissenoter-1/</link>
-      <pubDate>Fri, 15 Dec 2023 13:33:38 +0100</pubDate>
-      <guid>http://localhost:1313/nc3/boot2root/nissenoter-1/</guid>
-      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 1&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description:&lt;/h2&gt;&#xA;&lt;p&gt;Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er &lt;em&gt;umuligt&lt;/em&gt; at infiltrere netværket.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Opgaven er tilgængelig via Haaukins:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ncctf.haaukins.dk/&#34;&gt;https://ncctf.haaukins.dk/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;h3 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h3&gt;&#xA;&lt;p&gt;We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with &lt;a href=&#34;https://explainshell.com/explain?cmd=sudo&amp;#43;nmap&amp;#43;-sC&amp;#43;-sV&amp;#43;-O&amp;#43;-p-&#34;&gt;the following nmap scan&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;┌──&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;haaukins㉿kali&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;-&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└─$ sudo nmap -sC -sV -O -p- 77.76.246.224&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;sudo&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; password &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; haaukins:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting Nmap 7.93 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt; https://nmap.org &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; at 2023-12-21 05:05 EST&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap scan report &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; 77.76.246.224&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host is up &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0.00019s latency&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Not shown: &lt;span style=&#34;color:#ae81ff&#34;&gt;65533&lt;/span&gt; closed tcp ports &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;reset&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT   STATE SERVICE VERSION&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u1 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;protocol 2.0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ssh-hostkey:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   &lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt; 308e05b497e351bc0200005355850ca0 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ECDSA&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_  &lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt; 7de127b32e30c096e70dc32f62703266 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ED25519&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;80/tcp open  http    Apache httpd 2.4.57 &lt;span style=&#34;color:#f92672&#34;&gt;((&lt;/span&gt;Debian&lt;span style=&#34;color:#f92672&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| http-robots.txt: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; disallowed entry&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_/static/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: Log ind&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| http-git:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   77.76.246.224:80/.git/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     Git repository found!&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     .gitignore matched patterns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;bug&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     .git/config matched patterns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     Repository description: Unnamed repository; edit this file &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;description&amp;#39;&lt;/span&gt; to name the...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     Last commit message: nu med mere shoutbox&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_    Project type: node.js application &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;guessed from .gitignore&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: Apache/2.4.57 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Debian&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MAC Address: 02:42:4D:4C:F6:E0 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Unknown&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Device type: general purpose&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Running: Linux 4.X|5.X&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OS details: Linux 4.15 - 5.6&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Network Distance: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; hop&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; IP address &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; host up&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; scanned in 11.88 seconds&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We find the note sharing server with two open ports and take note of port 22 (ssh) &amp;amp; 80 (http, usually a web app) being open!&#xA;This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boot2Root on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/boot2root/</link><description>Recent content in Boot2Root on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Sun, 15 Dec 2024 13:37:38 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/boot2root/index.xml" rel="self" type="application/rss+xml"/><item><title>Nisseportalen 5</title><link>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-5/</link><pubDate>Sun, 15 Dec 2024 13:37:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-5/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nisseportalen 5&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p>
+&lt;p>Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p></description></item><item><title>Nisseportalen 4</title><link>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-4/</link><pubDate>Sun, 15 Dec 2024 13:36:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-4/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nisseportalen 4&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p>
+&lt;p>Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p></description></item><item><title>Nisseportalen 2</title><link>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-2/</link><pubDate>Sun, 15 Dec 2024 13:34:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nisseportalen 2&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p>
+&lt;p>Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p></description></item><item><title>Nisseportalen 1</title><link>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-1/</link><pubDate>Sun, 15 Dec 2024 13:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nisseportalen 1&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.&lt;/p>
+&lt;p>Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?&lt;/p></description></item><item><title>Nissenoter 3</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</link><pubDate>Fri, 15 Dec 2023 15:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nissenoter 3&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.&lt;/p>
+&lt;p>&lt;em>Opgaven er tilgængelig via Haaukins:&lt;/em>&lt;/p>
+&lt;p>&lt;a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/&lt;/a>&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;h3 id="the-final-enumeration">The final enumeration&lt;/h3>
+&lt;p>Continuing from &lt;a href="https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/">Nissenoter 2&lt;/a> we now have foothold on the server as a user!&lt;/p>
+&lt;p>Let&amp;rsquo;s immediately execute some initial enumeration and see what we can find&lt;/p></description></item><item><title>Nissenoter 2</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</link><pubDate>Fri, 15 Dec 2023 14:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nissenoter 2&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!&lt;/p>
+&lt;p>&lt;em>Opgaven er tilgængelig via Haaukins:&lt;/em>&lt;/p>
+&lt;p>&lt;a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/&lt;/a>&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;h3 id="continued-enumeration">Continued enumeration&lt;/h3>
+&lt;p>We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can &amp;ldquo;pop a shell&amp;rdquo; on the system!&lt;/p></description></item><item><title>Nissenoter 1</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</link><pubDate>Fri, 15 Dec 2023 13:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;p>Nissenoter 1&lt;/p>
+&lt;h2 id="category">Category:&lt;/h2>
+&lt;p>Boot2Root&lt;/p>
+&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
+&lt;p>Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er &lt;em>umuligt&lt;/em> at infiltrere netværket.&lt;/p>
+&lt;p>&lt;em>Opgaven er tilgængelig via Haaukins:&lt;/em>&lt;/p>
+&lt;p>&lt;a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/&lt;/a>&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;h3 id="enumeration">Enumeration&lt;/h3>
+&lt;p>We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with &lt;a href="https://explainshell.com/explain?cmd=sudo&amp;#43;nmap&amp;#43;-sC&amp;#43;-sV&amp;#43;-O&amp;#43;-p-">the following nmap scan&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>┌──&lt;span style="color:#f92672">(&lt;/span>haaukins㉿kali&lt;span style="color:#f92672">)&lt;/span>-&lt;span style="color:#f92672">[&lt;/span>~&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└─$ sudo nmap -sC -sV -O -p- 77.76.246.224
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>sudo&lt;span style="color:#f92672">]&lt;/span> password &lt;span style="color:#66d9ef">for&lt;/span> haaukins:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Starting Nmap 7.93 &lt;span style="color:#f92672">(&lt;/span> https://nmap.org &lt;span style="color:#f92672">)&lt;/span> at 2023-12-21 05:05 EST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap scan report &lt;span style="color:#66d9ef">for&lt;/span> 77.76.246.224
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host is up &lt;span style="color:#f92672">(&lt;/span>0.00019s latency&lt;span style="color:#f92672">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Not shown: &lt;span style="color:#ae81ff">65533&lt;/span> closed tcp ports &lt;span style="color:#f92672">(&lt;/span>reset&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PORT STATE SERVICE VERSION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>22/tcp open ssh OpenSSH 9.2p1 Debian 2+deb12u1 &lt;span style="color:#f92672">(&lt;/span>protocol 2.0&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| ssh-hostkey:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| &lt;span style="color:#ae81ff">256&lt;/span> 308e05b497e351bc0200005355850ca0 &lt;span style="color:#f92672">(&lt;/span>ECDSA&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|_ &lt;span style="color:#ae81ff">256&lt;/span> 7de127b32e30c096e70dc32f62703266 &lt;span style="color:#f92672">(&lt;/span>ED25519&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>80/tcp open http Apache httpd 2.4.57 &lt;span style="color:#f92672">((&lt;/span>Debian&lt;span style="color:#f92672">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| http-robots.txt: &lt;span style="color:#ae81ff">1&lt;/span> disallowed entry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|_/static/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|_http-title: Log ind
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| http-git:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| 77.76.246.224:80/.git/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| Git repository found!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .gitignore matched patterns &lt;span style="color:#e6db74">&amp;#39;bug&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .git/config matched patterns &lt;span style="color:#e6db74">&amp;#39;user&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| Repository description: Unnamed repository; edit this file &lt;span style="color:#e6db74">&amp;#39;description&amp;#39;&lt;/span> to name the...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| Last commit message: nu med mere shoutbox
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|_ Project type: node.js application &lt;span style="color:#f92672">(&lt;/span>guessed from .gitignore&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|_http-server-header: Apache/2.4.57 &lt;span style="color:#f92672">(&lt;/span>Debian&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MAC Address: 02:42:4D:4C:F6:E0 &lt;span style="color:#f92672">(&lt;/span>Unknown&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Device type: general purpose
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Running: Linux 4.X|5.X
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OS details: Linux 4.15 - 5.6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Network Distance: &lt;span style="color:#ae81ff">1&lt;/span> hop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap &lt;span style="color:#66d9ef">done&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span> IP address &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> host up&lt;span style="color:#f92672">)&lt;/span> scanned in 11.88 seconds
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We find the note sharing server with two open ports and take note of port 22 (ssh) &amp;amp; 80 (http, usually a web app) being open!
+This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!&lt;/p></description></item></channel></rss>

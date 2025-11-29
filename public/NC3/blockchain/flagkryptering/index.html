@@ -1,192 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-<link rel="author" href="/humans.txt">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
-
-
-  <meta itemprop="name" content="Flagkryptering">
-  <meta itemprop="description" content="Challenge Name: Flagkryptering
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta name=author content="Adamino"><meta itemprop=name content="Flagkryptering"><meta itemprop=description content="Challenge Name: Flagkryptering
 Category: Blockchain
 Challenge Description: Nisserne har fundet frem til den smart contract, nissebanditten bruger til at kryptere sine flag på blockchainen.
 De har yderligere opsnappet et krypteret flag:
 0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802
 Kan du dekryptere flaget, så nisserne snart kan gå på juleferie?
-Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag.">
-  <meta itemprop="datePublished" content="2023-12-09T10:12:15+01:00">
-  <meta itemprop="dateModified" content="2023-12-09T10:12:15+01:00">
-  <meta itemprop="wordCount" content="630">
-  <meta itemprop="keywords" content="Blockchain"><meta property="og:url" content="http://localhost:1313/nc3/blockchain/flagkryptering/">
-  <meta property="og:site_name" content="Adamino CTF Writeups">
-  <meta property="og:title" content="Flagkryptering">
-  <meta property="og:description" content="Challenge Name: Flagkryptering
+Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag."><meta itemprop=datePublished content="2023-12-09T10:12:15+01:00"><meta itemprop=dateModified content="2023-12-09T10:12:15+01:00"><meta itemprop=wordCount content="630"><meta itemprop=keywords content="Blockchain"><meta property="og:url" content="https://ctf.adamino.dk/nc3/blockchain/flagkryptering/"><meta property="og:site_name" content="Adamino CTF Writeups"><meta property="og:title" content="Flagkryptering"><meta property="og:description" content="Challenge Name: Flagkryptering
 Category: Blockchain
 Challenge Description: Nisserne har fundet frem til den smart contract, nissebanditten bruger til at kryptere sine flag på blockchainen.
 De har yderligere opsnappet et krypteret flag:
 0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802
 Kan du dekryptere flaget, så nisserne snart kan gå på juleferie?
-Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="nc3">
-    <meta property="article:published_time" content="2023-12-09T10:12:15+01:00">
-    <meta property="article:modified_time" content="2023-12-09T10:12:15+01:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Flagkryptering">
-  <meta name="twitter:description" content="Challenge Name: Flagkryptering
+Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="nc3"><meta property="article:published_time" content="2023-12-09T10:12:15+01:00"><meta property="article:modified_time" content="2023-12-09T10:12:15+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Flagkryptering"><meta name=twitter:description content="Challenge Name: Flagkryptering
 Category: Blockchain
 Challenge Description: Nisserne har fundet frem til den smart contract, nissebanditten bruger til at kryptere sine flag på blockchainen.
 De har yderligere opsnappet et krypteret flag:
 0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802
 Kan du dekryptere flaget, så nisserne snart kan gå på juleferie?
-Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag.">
-<title>Flagkryptering</title>
-<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
-	</head>
-<body id="page">
-	<header id="site-header" class="animated slideInUp">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-				<a href="http://localhost:1313/tools/">Tools</a>
-				<a href="http://localhost:1313/nc3/">NC3</a>
-</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
-  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path
-    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-  </path>
-</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="feather feather-menu">
-  <line x1="3" y1="12" x2="21" y2="12"></line>
-  <line x1="3" y1="6" x2="21" y2="6"></line>
-  <line x1="3" y1="18" x2="21" y2="18"></line>
-</svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="http://localhost:1313/tools/">Tools</a></li>
-			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Flagkryptering</h1>
-		<div class="content">
-			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Flagkryptering</p>
-<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Blockchain</p>
-<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Nisserne har fundet frem til den smart contract, nissebanditten bruger til at kryptere sine flag på blockchainen.</p>
-<p>De har yderligere opsnappet et krypteret flag:</p>
-<p><code>0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802</code></p>
-<p>Kan du dekryptere flaget, så nisserne snart kan gå på juleferie?</p>
-<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>We were <a href="/nc3/blockchain/flagkryptering/scripts/EncryptedFlag.sol">given a Solidity smart contract</a> named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract&rsquo;s functionality to retrieve the encrypted flag.</p>
-<p>The <code>encrypt</code> function performs an XOR operation on a key and a flag and returns the ciphertext.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sol" data-lang="sol"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">encrypt</span>(<span style="color:#66d9ef">bytes32</span> key, <span style="color:#66d9ef">bytes32</span> flag) <span style="color:#66d9ef">pure</span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">bytes32</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bytes32</span> ciphertext <span style="color:#f92672">=</span> key <span style="color:#f92672">^</span> flag;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ciphertext;
-</span></span><span style="display:flex;"><span>}
+Approach We were given a Solidity smart contract named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract’s functionality to retrieve the encrypted flag."><title>Flagkryptering</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style href=https://ctf.adamino.dk/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin=anonymous></head><body id=page><header id=site-header class="animated slideInUp"><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a>
+<a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-social hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>Flagkryptering</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Flagkryptering</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Blockchain</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Nisserne har fundet frem til den smart contract, nissebanditten bruger til at kryptere sine flag på blockchainen.</p><p>De har yderligere opsnappet et krypteret flag:</p><p><code>0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802</code></p><p>Kan du dekryptere flaget, så nisserne snart kan gå på juleferie?</p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>We were <a href=/nc3/blockchain/flagkryptering/scripts/EncryptedFlag.sol>given a Solidity smart contract</a> named EncryptFlag. This contract is for use on the Ethereum blockchain and includes two primary functions: encrypt and generateKey. The goal appears to be to understand and exploit the contract&rsquo;s functionality to retrieve the encrypted flag.</p><p>The <code>encrypt</code> function performs an XOR operation on a key and a flag and returns the ciphertext.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sol data-lang=sol><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>encrypt</span>(<span style=color:#66d9ef>bytes32</span> key, <span style=color:#66d9ef>bytes32</span> flag) <span style=color:#66d9ef>pure</span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>returns</span> (<span style=color:#66d9ef>bytes32</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>bytes32</span> ciphertext <span style=color:#f92672>=</span> key <span style=color:#f92672>^</span> flag;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ciphertext;
+</span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>Since we already know the ciphertext we only need the key in order to decrypt and find the flag.
-Looking at the <code>generateKey</code> method we notice that the <code>block number</code> global variable is used in generating the key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sol" data-lang="sol"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateKey</span>() <span style="color:#66d9ef">view</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">bytes32</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bytes32</span> key;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (block.number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>        key <span style="color:#f92672">=</span> <span style="color:#66d9ef">bytes32</span>(keccak256(abi.encodePacked(<span style="color:#66d9ef">uint256</span>(block.number<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))));
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        key <span style="color:#f92672">=</span> <span style="color:#66d9ef">bytes32</span>(keccak256(abi.encodePacked(<span style="color:#66d9ef">uint256</span>(block.number))));           
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> key;
-</span></span><span style="display:flex;"><span>}
+Looking at the <code>generateKey</code> method we notice that the <code>block number</code> global variable is used in generating the key.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sol data-lang=sol><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>generateKey</span>() <span style=color:#66d9ef>view</span> <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>returns</span> (<span style=color:#66d9ef>bytes32</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>bytes32</span> key;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (block.number <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> <span style=color:#66d9ef>bytes32</span>(keccak256(abi.encodePacked(<span style=color:#66d9ef>uint256</span>(block.number<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>))));
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> <span style=color:#66d9ef>bytes32</span>(keccak256(abi.encodePacked(<span style=color:#66d9ef>uint256</span>(block.number))));           
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> key;
+</span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>Ignoring the if statements and focusing on the key generation, we see that:
-<a href="units-and-global-variables.html">uint256(block.number)</a> is redundant as block.number already has the <code>uint</code> type.</p>
-<p>Next up the block.number is passed to <a href="https://docs.soliditylang.org/en/v0.8.11/abi-spec.html">abi.encodePacked</a>. The primary purpose of <code>abi.encodePacked</code> is to concatenate and pack multiple values together into a single byte array. When used with a single value, it essentially performs a byte convertion, converting the uint to a byte array.</p>
-<p>The result is then passed to a <code>keccak256</code> method also known as <a href="https://en.wikipedia.org/wiki/SHA-3">SHA-3</a> converting the byte array into a hash and then once again doing a redundant type convertion as <code>keccak256</code> already returns a <code>byte32</code>.</p>
-<p>It therefore seems that the key can be decrypted from the unknown block number and cipher text.</p>
-<p>In an Etherium setting, blocks can&rsquo;t be mined faster than <a href="https://github.com/rolandkofler/blocktime">once a second</a>. This means that brute-forcing the network may require an impractical amount of time, particularly if the block number is sufficiently high.</p>
-<p>I chose not to risk implementing the contract on the Ethereum network and instead opted to implement the corresponding logic in Python.</p>
-<p>Luckily python has a web3 library with a lot of features allowing us to implement the logic without too much hassle. Below is the corresponding python code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EncryptFlag</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(self, key, flag):
-</span></span><span style="display:flex;"><span>        ciphertext <span style="color:#f92672">=</span> bytes([a <span style="color:#f92672">^</span> b <span style="color:#66d9ef">for</span> a, b <span style="color:#f92672">in</span> zip(key, flag)])
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ciphertext
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_key</span>(self, block_number):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> block_number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
-</span></span><span style="display:flex;"><span>            minus_one_block_number_bytes <span style="color:#f92672">=</span> (block_number<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>to_bytes(<span style="color:#ae81ff">32</span>, byteorder<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>)
-</span></span><span style="display:flex;"><span>            key <span style="color:#f92672">=</span> Web3<span style="color:#f92672">.</span>keccak(minus_one_block_number_bytes)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            block_number_bytes <span style="color:#f92672">=</span> block_number<span style="color:#f92672">.</span>to_bytes(<span style="color:#ae81ff">32</span>, byteorder<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>)
-</span></span><span style="display:flex;"><span>            key <span style="color:#f92672">=</span> Web3<span style="color:#f92672">.</span>keccak(block_number_bytes)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> key
-</span></span></code></pre></div><p>after replicating the code in python we start the brute force using the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>hex_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802&#34;</span>
-</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> bytes<span style="color:#f92672">.</span>fromhex(hex_string[<span style="color:#ae81ff">2</span>:])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-</span></span><span style="display:flex;"><span>    key <span style="color:#f92672">=</span> encrypt_flag<span style="color:#f92672">.</span>generate_key(block_number)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    ciphertext <span style="color:#f92672">=</span> encrypt_flag<span style="color:#f92672">.</span>encrypt(key, flag)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Convert ciphertext to string to check for &#39;NC3{&#39;</span>
-</span></span><span style="display:flex;"><span>    ciphertext_str <span style="color:#f92672">=</span> ciphertext<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ignore&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ciphertext_str<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;NC3{&#39;</span>):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Found at block number: </span><span style="color:#e6db74">{</span>block_number<span style="color:#e6db74">}</span><span style="color:#e6db74">, Ciphertext: </span><span style="color:#e6db74">{</span>ciphertext_str<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div><p>Considering the computational complexity of other challenges, particularly &lsquo;in-my-prime&rsquo;, I decided to immediately implement block number save logic. However, this turned out to be unnecessary as the flag was located in the lower blocks.</p>
-<p>Log from <a href="/nc3/blockchain/flagkryptering/scripts/Decrypt.py">Decrypt.py</a> script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Searched blocknumbers: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span>Found at block number: <span style="color:#ae81ff">16</span>, Ciphertext: NC3{you_replicated_the_key}
-</span></span></code></pre></div><h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{you_replicated_the_key}
-</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>One can gain valuable insights into setting up a local development blockchain using <a href="https://trufflesuite.com/ganache/">Ganache</a>, learn how to use Python for interacting with Web3, and acquire a fundamental understanding of the Solidity language.</p>
-<p>I think it is crucial to thoroughly read and comprehend the underlying logic and documentation before beginning to implement solutions, especially when tackling new subjects. Taking the time to research the topic extensively, going beyond the immediate needs of problem-solving, can prove to be highly rewarding and enriching even when facing time constraints.</p>
-
-		</div>
-	</main>
-
-<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-  <p>
-    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
-    &#183; The quieter you become the more you are able to hear
-    
-    &#183;
-    
-  </p>
-
-</footer>
-<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
-</body>
-
-</html>
+<a href=units-and-global-variables.html>uint256(block.number)</a> is redundant as block.number already has the <code>uint</code> type.</p><p>Next up the block.number is passed to <a href=https://docs.soliditylang.org/en/v0.8.11/abi-spec.html>abi.encodePacked</a>. The primary purpose of <code>abi.encodePacked</code> is to concatenate and pack multiple values together into a single byte array. When used with a single value, it essentially performs a byte convertion, converting the uint to a byte array.</p><p>The result is then passed to a <code>keccak256</code> method also known as <a href=https://en.wikipedia.org/wiki/SHA-3>SHA-3</a> converting the byte array into a hash and then once again doing a redundant type convertion as <code>keccak256</code> already returns a <code>byte32</code>.</p><p>It therefore seems that the key can be decrypted from the unknown block number and cipher text.</p><p>In an Etherium setting, blocks can&rsquo;t be mined faster than <a href=https://github.com/rolandkofler/blocktime>once a second</a>. This means that brute-forcing the network may require an impractical amount of time, particularly if the block number is sufficiently high.</p><p>I chose not to risk implementing the contract on the Ethereum network and instead opted to implement the corresponding logic in Python.</p><p>Luckily python has a web3 library with a lot of features allowing us to implement the logic without too much hassle. Below is the corresponding python code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EncryptFlag</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>pass</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>encrypt</span>(self, key, flag):
+</span></span><span style=display:flex><span>        ciphertext <span style=color:#f92672>=</span> bytes([a <span style=color:#f92672>^</span> b <span style=color:#66d9ef>for</span> a, b <span style=color:#f92672>in</span> zip(key, flag)])
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ciphertext
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>generate_key</span>(self, block_number):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> block_number <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            minus_one_block_number_bytes <span style=color:#f92672>=</span> (block_number<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>.</span>to_bytes(<span style=color:#ae81ff>32</span>, byteorder<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span>            key <span style=color:#f92672>=</span> Web3<span style=color:#f92672>.</span>keccak(minus_one_block_number_bytes)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            block_number_bytes <span style=color:#f92672>=</span> block_number<span style=color:#f92672>.</span>to_bytes(<span style=color:#ae81ff>32</span>, byteorder<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span>            key <span style=color:#f92672>=</span> Web3<span style=color:#f92672>.</span>keccak(block_number_bytes)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> key
+</span></span></code></pre></div><p>after replicating the code in python we start the brute force using the following code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>hex_string <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0xc3523b9a72a40978afbab042b0b5f2d41167c2760491b52925cd727d581ac802&#34;</span>
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(hex_string[<span style=color:#ae81ff>2</span>:])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
+</span></span><span style=display:flex><span>    key <span style=color:#f92672>=</span> encrypt_flag<span style=color:#f92672>.</span>generate_key(block_number)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ciphertext <span style=color:#f92672>=</span> encrypt_flag<span style=color:#f92672>.</span>encrypt(key, flag)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Convert ciphertext to string to check for &#39;NC3{&#39;</span>
+</span></span><span style=display:flex><span>    ciphertext_str <span style=color:#f92672>=</span> ciphertext<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>, errors<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ignore&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> ciphertext_str<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#39;NC3{&#39;</span>):
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Found at block number: </span><span style=color:#e6db74>{</span>block_number<span style=color:#e6db74>}</span><span style=color:#e6db74>, Ciphertext: </span><span style=color:#e6db74>{</span>ciphertext_str<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span></code></pre></div><p>Considering the computational complexity of other challenges, particularly &lsquo;in-my-prime&rsquo;, I decided to immediately implement block number save logic. However, this turned out to be unnecessary as the flag was located in the lower blocks.</p><p>Log from <a href=/nc3/blockchain/flagkryptering/scripts/Decrypt.py>Decrypt.py</a> script:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>Searched blocknumbers: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Found at block number: <span style=color:#ae81ff>16</span>, Ciphertext: NC3{you_replicated_the_key}
+</span></span></code></pre></div><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{you_replicated_the_key}
+</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>One can gain valuable insights into setting up a local development blockchain using <a href=https://trufflesuite.com/ganache/>Ganache</a>, learn how to use Python for interacting with Web3, and acquire a fundamental understanding of the Solidity language.</p><p>I think it is crucial to thoroughly read and comprehend the underlying logic and documentation before beginning to implement solutions, especially when tackling new subjects. Taking the time to research the topic extensively, going beyond the immediate needs of problem-solving, can prove to be highly rewarding and enriching even when facing time constraints.</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
+&#183; The quieter you become the more you are able to hear
+&#183;</p></footer><script async src=https://ctf.adamino.dk/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin=anonymous></script></body></html>

