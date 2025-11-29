@@ -1,0 +1,14 @@
+# Force HTML over XML for section pages
+<Files "index.xml">
+    <RequireAll>
+        Require all denied
+    </RequireAll>
+</Files>
+
+# Explicitly serve index.html for directory requests
+DirectoryIndex index.html
+
+# Redirect XML requests to HTML
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /nc3/index\.xml[\s?] [NC]
+RewriteRule ^nc3/index\.xml$ /nc3/ [R=301,L]
