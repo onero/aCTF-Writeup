@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
+
+
+  <meta itemprop="name" content="In My Prime">
+  <meta itemprop="description" content="Challenge Name: In My Prime
+Category: Misc
+Challenge Description: Du bliver givet et primtal N og skal inden for 3 sekunder udføre følgende tre beregninger og svare med summen af resultaterne:
+For hvert 2. primtal fra N ned til 0: Udregn summen af det mest betydende og mindst betydende ciffer. Læg resultaterne sammen. For hvert 3. primtal fra N ned til 0: Udregn tværsummen af primtallet i base 7. Læg resultaterne sammen. For hvert 5. primtal fra N ned til 0: Lad p1 være dette primtal og p2 det nærmeste mindre primtal. Udregn (p1 * p2) mod 31337 og tæl antallet af ulige cifre. Læg resultaterne sammen. Eksempel:">
+  <meta itemprop="datePublished" content="2023-12-17T20:37:16+01:00">
+  <meta itemprop="dateModified" content="2023-12-17T20:37:16+01:00">
+  <meta itemprop="wordCount" content="3720">
+  <meta itemprop="keywords" content="Misc"><meta property="og:url" content="http://localhost:1313/nc3/misc/in-my-prime/">
+  <meta property="og:site_name" content="Adamino CTF Writeups">
+  <meta property="og:title" content="In My Prime">
+  <meta property="og:description" content="Challenge Name: In My Prime
+Category: Misc
+Challenge Description: Du bliver givet et primtal N og skal inden for 3 sekunder udføre følgende tre beregninger og svare med summen af resultaterne:
+For hvert 2. primtal fra N ned til 0: Udregn summen af det mest betydende og mindst betydende ciffer. Læg resultaterne sammen. For hvert 3. primtal fra N ned til 0: Udregn tværsummen af primtallet i base 7. Læg resultaterne sammen. For hvert 5. primtal fra N ned til 0: Lad p1 være dette primtal og p2 det nærmeste mindre primtal. Udregn (p1 * p2) mod 31337 og tæl antallet af ulige cifre. Læg resultaterne sammen. Eksempel:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="nc3">
+    <meta property="article:published_time" content="2023-12-17T20:37:16+01:00">
+    <meta property="article:modified_time" content="2023-12-17T20:37:16+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="In My Prime">
+  <meta name="twitter:description" content="Challenge Name: In My Prime
+Category: Misc
+Challenge Description: Du bliver givet et primtal N og skal inden for 3 sekunder udføre følgende tre beregninger og svare med summen af resultaterne:
+For hvert 2. primtal fra N ned til 0: Udregn summen af det mest betydende og mindst betydende ciffer. Læg resultaterne sammen. For hvert 3. primtal fra N ned til 0: Udregn tværsummen af primtallet i base 7. Læg resultaterne sammen. For hvert 5. primtal fra N ned til 0: Lad p1 være dette primtal og p2 det nærmeste mindre primtal. Udregn (p1 * p2) mod 31337 og tæl antallet af ulige cifre. Læg resultaterne sammen. Eksempel:">
+<title>In My Prime</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
+	</head>
+<body id="page">
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+				<a href="http://localhost:1313/tools/">Tools</a>
+				<a href="http://localhost:1313/nc3/">NC3</a>
+</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://localhost:1313/tools/">Tools</a></li>
+			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>In My Prime</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>In My Prime</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Misc</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Du bliver givet et primtal <code>N</code> og skal inden for 3 sekunder udføre følgende tre beregninger og svare med summen af resultaterne:</p>
+<ol>
+<li>For hvert 2. primtal fra <code>N</code> ned til 0: Udregn summen af det mest betydende og mindst betydende ciffer. Læg resultaterne sammen.</li>
+<li>For hvert 3. primtal fra <code>N</code> ned til 0: Udregn tværsummen af primtallet i base 7. Læg resultaterne sammen.</li>
+<li>For hvert 5. primtal fra <code>N</code> ned til 0: Lad <code>p1</code> være dette primtal og <code>p2</code> det nærmeste mindre primtal. Udregn <code>(p1 * p2) mod 31337</code> og tæl antallet af ulige cifre. Læg resultaterne sammen.</li>
+</ol>
+<p><strong>Eksempel:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Givet N <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>primtal <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>,  <span style="color:#ae81ff">3</span>,  <span style="color:#ae81ff">5</span>,  <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">23</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>) [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>]   <span style="color:#f92672">-</span> Hvert <span style="color:#ae81ff">2.</span> primtal
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>) [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">5</span>]          <span style="color:#f92672">-</span> Hvert <span style="color:#ae81ff">3.</span> primtal
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>) [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">7</span>]              <span style="color:#f92672">-</span> Hvert <span style="color:#ae81ff">5.</span> primtal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">7</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>) base_7(<span style="color:#ae81ff">23</span>) <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>  <span style="color:#f92672">=</span>  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>   base_7(<span style="color:#ae81ff">13</span>) <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">6</span>  <span style="color:#f92672">=</span>  <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>   base_7(<span style="color:#ae81ff">5</span>)  <span style="color:#f92672">=</span>  <span style="color:#ae81ff">5</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">5</span>      <span style="color:#f92672">=</span>  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>                             <span style="color:#f92672">-----</span>
+</span></span><span style="display:flex;"><span>                               <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>) <span style="color:#ae81ff">23</span><span style="color:#f92672">*</span><span style="color:#ae81ff">19</span> mod <span style="color:#ae81ff">31337</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">437</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span> mod <span style="color:#ae81ff">31337</span> <span style="color:#f92672">=</span>  <span style="color:#ae81ff">35</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">--------</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Svaret er derfor: <span style="color:#ae81ff">29</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">17</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      N <span style="color:#f92672">|</span>   Svar
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--------+-------</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">23</span> <span style="color:#f92672">|</span>     <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">97</span> <span style="color:#f92672">|</span>    <span style="color:#ae81ff">178</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">997</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">1434</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">549979</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">509053</span>
+</span></span></code></pre></div><h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="lets-break-down-the-problem-statement">Let&rsquo;s break down the problem statement:<a href="#lets-break-down-the-problem-statement" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Upon receiving a prime number N, we needed to execute and sum the results of three separate calculations:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Sum of Digits for Every Second Prime:
+</span></span><span style="display:flex;"><span>For every second prime number counting down from N to 0,
+</span></span><span style="display:flex;"><span>calculate the sum of the most and least significant digits.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cross Sum in Base 7 for Every Third Prime:
+</span></span><span style="display:flex;"><span>For every third prime number from N to 0,
+</span></span><span style="display:flex;"><span>determine the cross sum (sum of digits) of the prime number when converted to base 7.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Modular Multiplication for Every Fifth Prime:
+</span></span><span style="display:flex;"><span>For every fifth prime number from N, along with the nearest smaller prime,
+</span></span><span style="display:flex;"><span>compute (p1 \* p2) mod 31337 and count the number of odd digits in the result.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>With N = 23 as an example, the challenge seemed straightforward,
+</span></span><span style="display:flex;"><span>but the devil was in the details - the three-second time limit!
+</span></span></code></pre></div><h3 id="initial-approach-and-challenges">Initial Approach and Challenges<a href="#initial-approach-and-challenges" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>I developed a script to test if the range of the primes had a lower and upper bound and also to see if duplicates would occur, which revealed that the challenge numbers ranged between 70 million and 100 million, which meant dealing with approximately 1.3 million primes and duplicates definitely occured, when requesting more than a thousand primes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_question_and_number</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM) <span style="color:#66d9ef">as</span> s:
+</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">.</span>connect((<span style="color:#e6db74">&#39;inmyprime.nc3&#39;</span>, <span style="color:#ae81ff">3119</span>))
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1024</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Extract the last line from the response</span>
+</span></span><span style="display:flex;"><span>        lines <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        last_line <span style="color:#f92672">=</span> lines[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">if</span> lines <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Ensure it&#39;s a valid integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            question_number <span style="color:#f92672">=</span> int(last_line)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>            question_number <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> question_number
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Store numbers and their occurrences</span>
+</span></span><span style="display:flex;"><span>    number_counter <span style="color:#f92672">=</span> Counter()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Track lowest and largest numbers</span>
+</span></span><span style="display:flex;"><span>    lowest_number <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+</span></span><span style="display:flex;"><span>    largest_number <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Make 10_000 calls</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10_000</span>):
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> get_question_and_number()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> question_number <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Call </span><span style="color:#e6db74">{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: Received question: </span><span style="color:#e6db74">{</span>question_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Count the occurrences</span>
+</span></span><span style="display:flex;"><span>            number_counter[question_number] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Update lowest and largest numbers</span>
+</span></span><span style="display:flex;"><span>            lowest_number <span style="color:#f92672">=</span> min(lowest_number, question_number)
+</span></span><span style="display:flex;"><span>            largest_number <span style="color:#f92672">=</span> max(largest_number, question_number)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Find numbers asked more than once</span>
+</span></span><span style="display:flex;"><span>    duplicates <span style="color:#f92672">=</span> {num: count <span style="color:#66d9ef">for</span> num, count <span style="color:#f92672">in</span> number_counter<span style="color:#f92672">.</span>items() <span style="color:#66d9ef">if</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">From 1000 calls, the following numbers were asked more than once: </span><span style="color:#e6db74">{</span>duplicates<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The lowest number asked: </span><span style="color:#e6db74">{</span>lowest_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The largest number asked: </span><span style="color:#e6db74">{</span>largest_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/identify_duplicates_in_my_prime.py">Download script</a></p>
+<p>Based on this knowledge, my first approach was to research the best way to efficiently compute up to 100M primes!
+I came across &ldquo;The Sieve of Eratosthenes&rdquo;, upon which I based the following implementation</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://www.geeksforgeeks.org/sieve-of-eratosthenes/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">compute_primes_up_to_limit_with_sieve_of_eratosthenes</span>(n):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones((n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,), dtype<span style="color:#f92672">=</span>bool)
+</span></span><span style="display:flex;"><span>    x[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    x[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, int(n<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> x[i]:
+</span></span><span style="display:flex;"><span>            x[<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i::i] <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    primes <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>where(x)[<span style="color:#ae81ff">0</span>][::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># In reverse order, so largest is first index!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> primes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract every second prime, beginning with first number of collection!</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_every_second_prime</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> prime_numbers[<span style="color:#ae81ff">0</span>::<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract every second prime, beginning with third number of collection!</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_every_third_prime</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> prime_numbers[<span style="color:#ae81ff">0</span>::<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Summing up the most and least significant digits of each prime number</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># So with 23 as prime example we would get this array with every second prime</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#[23, 17, 11, 5, 2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Based on that the sum would be calculated like so</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2+3 + 1+7 + 1+1 + 5+5 + 2+2 = 29</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_most_and_least_significant</span>(prime_array):
+</span></span><span style="display:flex;"><span>    total_sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> prime_array:
+</span></span><span style="display:flex;"><span>        num_str <span style="color:#f92672">=</span> str(num)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(num_str) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            total_sum <span style="color:#f92672">+=</span> num <span style="color:#f92672">+</span> num
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            total_sum <span style="color:#f92672">+=</span> int(num_str[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">+</span> int(num_str[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> total_sum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decimals_to_base_7</span>(decimals):
+</span></span><span style="display:flex;"><span>    base_7_results <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> decimal_number <span style="color:#f92672">in</span> decimals:
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> decimal_number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            remainder <span style="color:#f92672">=</span> decimal_number <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> str(remainder) <span style="color:#f92672">+</span> result
+</span></span><span style="display:flex;"><span>            decimal_number <span style="color:#f92672">//=</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        base_7_results<span style="color:#f92672">.</span>append(int(result) <span style="color:#66d9ef">if</span> result <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> base_7_results
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://stackoverflow.com/questions/14939953/sum-the-digits-of-a-number-python</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_of_digits</span>(number):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum(int(digit) <span style="color:#66d9ef">for</span> digit <span style="color:#f92672">in</span> str(number))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate the sum of digits of every base_7 representation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  base_7(23) = 32 -&gt; 3 + 2  =  5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  base_7(13) = 16 -&gt; 1 + 6  =  7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  base_7(5)  =  5 -&gt; 5      =  5</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_base_7_sums</span>(decimals):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [sum_of_digits(base_7_result) <span style="color:#66d9ef">for</span> base_7_result <span style="color:#f92672">in</span> decimals]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_first_calculation</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract primes in orders (beginning with first!)</span>
+</span></span><span style="display:flex;"><span>    every_second_prime <span style="color:#f92672">=</span> extract_every_second_prime(prime_numbers)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate most and least significant sums of every second prime</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum_most_and_least_significant(every_second_prime)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_second_calculation</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract primes in orders (beginning with third!)</span>
+</span></span><span style="display:flex;"><span>    every_third_prime <span style="color:#f92672">=</span> extract_every_third_prime(prime_numbers)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate base_7 representations of every third prime</span>
+</span></span><span style="display:flex;"><span>    base_7_results <span style="color:#f92672">=</span> decimals_to_base_7(every_third_prime)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate the sum of digits of every base_7 representation</span>
+</span></span><span style="display:flex;"><span>    base_7_sums <span style="color:#f92672">=</span> calculate_base_7_sums(base_7_results)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate the sum of all base_7 sums</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum(base_7_sums)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For every fifth prime number from N down to 0: Let p1 be this prime number and p2 the nearest smaller prime number.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate (p1 * p2) mod 31337 and count the number of odd digits.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add up the results.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_third_calculation</span>(primes):
+</span></span><span style="display:flex;"><span>    sum_of_odd_digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># For every fifth prime number, along with its next lower prime number</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Implement loop that starts with first and takes every fifth prime number</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(primes) <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Calculate the product of the two primes modulo 31337</span>
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> primes[i] <span style="color:#f92672">*</span> primes[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">31337</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Count the number of odd digits in the product</span>
+</span></span><span style="display:flex;"><span>        odd_digit_count <span style="color:#f92672">=</span> sum(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> digit <span style="color:#f92672">in</span> str(result) <span style="color:#66d9ef">if</span> int(digit) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        sum_of_odd_digits <span style="color:#f92672">+=</span> odd_digit_count
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum_of_odd_digits
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_results</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    result_a <span style="color:#f92672">=</span> solve_first_calculation(prime_numbers)
+</span></span><span style="display:flex;"><span>    result_b <span style="color:#f92672">=</span> solve_second_calculation(prime_numbers)
+</span></span><span style="display:flex;"><span>    result_c <span style="color:#f92672">=</span> solve_third_calculation(prime_numbers)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result_a <span style="color:#f92672">+</span> result_b <span style="color:#f92672">+</span> result_c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Computing all primes up to 100 million. This may take a while...&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    prime_limit <span style="color:#f92672">=</span> <span style="color:#ae81ff">100000000</span>
+</span></span><span style="display:flex;"><span>    all_primes <span style="color:#f92672">=</span> compute_primes_up_to_limit_with_sieve_of_eratosthenes(prime_limit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Computed all primes up to 100 million in </span><span style="color:#e6db74">{</span>end_time <span style="color:#f92672">-</span> start_time<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> seconds.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            question <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Enter the question (or enter -1 to exit): &#34;</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> question <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> question <span style="color:#f92672">&gt;</span> prime_limit <span style="color:#f92672">or</span> question <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Please enter a number between 0 and 100,000,000.&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            relevant_primes <span style="color:#f92672">=</span> all_primes[all_primes <span style="color:#f92672">&lt;=</span> question]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            calculation_start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> calculate_results(relevant_primes)
+</span></span><span style="display:flex;"><span>            calculation_end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Result for N = </span><span style="color:#e6db74">{</span>question<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>result<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Calculation time: </span><span style="color:#e6db74">{</span>calculation_end_time <span style="color:#f92672">-</span> calculation_start_time<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> seconds.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Invalid input. Please enter a valid integer.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> Output:
+</span></span><span style="display:flex;"><span>Computing all primes up to <span style="color:#ae81ff">100</span> million<span style="color:#f92672">.</span> This may take a <span style="color:#66d9ef">while</span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>Computed all primes up to <span style="color:#ae81ff">100</span> million <span style="color:#f92672">in</span> <span style="color:#ae81ff">0.74</span> seconds<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>Enter the question (<span style="color:#f92672">or</span> enter <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> to exit): <span style="color:#ae81ff">99043661</span>
+</span></span><span style="display:flex;"><span>Result <span style="color:#66d9ef">for</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">99043661</span>: <span style="color:#ae81ff">83814368</span>
+</span></span><span style="display:flex;"><span>Calculation time: <span style="color:#ae81ff">10.67</span> seconds<span style="color:#f92672">.</span>
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/in_my_prime_runtime.py">Download script</a></p>
+<p>However, it quickly became evident that Python&rsquo;s execution time exceeded the allotted three seconds, indicating the necessity for a pre-calculated approach!</p>
+<h3 id="strategy-and-solution-development">Strategy and Solution Development<a href="#strategy-and-solution-development" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>To tackle this, I developed a two-pronged strategy, involving a self-learning Python script and a bruteforce version in Rust:</p>
+<ol>
+<li>The &ldquo;Self-Learning&rdquo; script in Python would:</li>
+</ol>
+<ul>
+<li>Request a question</li>
+<li>Lookup the result in the pre-calculated cache and respond with a known result</li>
+<li>If not pre-calculated, it would compute the solution.</li>
+<li>Submit the answer, despite being late.</li>
+<li>Add the result to a cache for future reference.</li>
+</ul>
+<p>This method ensured a gradually growing cache, improving our chances of encountering a known question.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">compute_primes_up_to_limit_with_sieve_of_eratosthenes</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_every_second_prime</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_every_third_prime</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_most_and_least_significant</span>(prime_array):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decimals_to_base_7</span>(decimals):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_of_digits</span>(number):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_base_7_sums</span>(decimals):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_first_calculation</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_second_calculation</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_third_calculation</span>(primes):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_results</span>(prime_numbers):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load pre-calculated results from file, written in pickle format</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_results</span>(filename):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Checking if we have pre-calculated results...&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(filename):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;We do! Loading pre-calculated results from file...&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            results <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(file)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Done loading!... &#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Let&#39;s be a bit cocky if we have a lot of results already computed...</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(results) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span>:
+</span></span><span style="display:flex;"><span>                attempts <span style="color:#f92672">=</span> len(results)
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Jesus, we have </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> results already computed... not your first time trying this huh!? :D&#34;</span><span style="color:#f92672">.</span>format(attempts))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> results
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;No pre-calculated results found!&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_question_from_server</span>(socket_connection):
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> socket_connection<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1024</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract the last line from the response</span>
+</span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    last_line <span style="color:#f92672">=</span> lines[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">if</span> lines <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ensure it&#39;s a valid integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> int(last_line)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Error while parsing question number!&#34;</span>)
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Received question: </span><span style="color:#e6db74">{</span>question_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> question_number
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">submit_answer</span>(socket_connection, answer):
+</span></span><span style="display:flex;"><span>    socket_connection<span style="color:#f92672">.</span>sendall(str(answer)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Receive and print the server&#39;s reply</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> socket_connection<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1024</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Server&#39;s reply: </span><span style="color:#e6db74">{</span>data<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">challenge_solved</span>(response):
+</span></span><span style="display:flex;"><span>    challenge_timeout_answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sorry, too slow. Please try again.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response <span style="color:#f92672">!=</span> challenge_timeout_answer <span style="color:#f92672">and</span> response <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    server_address <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;inmyprime.nc3&#39;</span>, <span style="color:#ae81ff">3119</span>)
+</span></span><span style="display:flex;"><span>    challenge_wrong_answer_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nope, wrong answer. Please try again.&#34;</span>
+</span></span><span style="display:flex;"><span>    result_not_pre_calculated_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Result not pre-calculated :(... Let&#39;s calculate it now!&#34;</span>
+</span></span><span style="display:flex;"><span>    results <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    attempts <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Welcome to Adamino&#39;s automagic prime solver! Let&#39;s go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load pre-calculated results from file</span>
+</span></span><span style="display:flex;"><span>    results_filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;results.pkl&#39;</span>
+</span></span><span style="display:flex;"><span>    results <span style="color:#f92672">=</span> load_results(results_filename)
+</span></span><span style="display:flex;"><span>    attempts <span style="color:#f92672">=</span> len(results)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Request prime number from server and provide response</span>
+</span></span><span style="display:flex;"><span>    response_from_server <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> challenge_solved(response_from_server):
+</span></span><span style="display:flex;"><span>        attempts <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Attempt </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">...&#34;</span><span style="color:#f92672">.</span>format(attempts))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM) <span style="color:#66d9ef">as</span> s:
+</span></span><span style="display:flex;"><span>            s<span style="color:#f92672">.</span>connect(server_address)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Get the question number from the server</span>
+</span></span><span style="display:flex;"><span>            limit <span style="color:#f92672">=</span> get_question_from_server(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Check if the answer is in the results</span>
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> results<span style="color:#f92672">.</span>get(limit, result_not_pre_calculated_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># If the result is not pre-calculated, calculate it now</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> result <span style="color:#f92672">==</span> result_not_pre_calculated_message:
+</span></span><span style="display:flex;"><span>                print(result_not_pre_calculated_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                precalculated_primes <span style="color:#f92672">=</span> compute_primes_up_to_limit_with_sieve_of_eratosthenes(limit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                result <span style="color:#f92672">=</span> calculate_results(precalculated_primes)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Add the result in the results dictionary</span>
+</span></span><span style="display:flex;"><span>                results[limit] <span style="color:#f92672">=</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                response_from_server <span style="color:#f92672">=</span> submit_answer(s, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Save the results to file (should happen after submitting to server for faster execution!)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(results_filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>                    pickle<span style="color:#f92672">.</span>dump(results, file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;The result is: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> and was added to known results!&#34;</span><span style="color:#f92672">.</span>format(result))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Send the answer to the server</span>
+</span></span><span style="display:flex;"><span>                response_from_server <span style="color:#f92672">=</span> submit_answer(s, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> response_from_server <span style="color:#f92672">==</span> challenge_wrong_answer_message:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Oh noes! Wrong answer! How could this happen!? :( Stopping process, because you need to fix this!&#34;</span>)
+</span></span><span style="display:flex;"><span>            sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">OMFG.. this print either means that something bad happened... or YOU&#39;RE DA FUCKING MAN!: </span><span style="color:#e6db74">{</span>response_from_server<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/in_my_prime.py">Download script</a>
+<a href="/nc3/misc/in-my-prime/scripts/results.pkl">Download cache file</a></p>
+<p><img src="/nc3/misc/in-my-prime/images/automagic-prime-solver.png" alt="Automagic Prime Solver"></p>
+<ol start="2">
+<li>My second apporach was to &ldquo;simply&rdquo; Compute-All-Solutions in Rust (being one of the faster languages):</li>
+</ol>
+<p>Running on a dedicated server, this script aimed to pre-calculate solutions for all possible primes within the range.
+Given the number of primes involved, this was a time-intensive process&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::fs;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::time::Instant;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// https://www.geeksforgeeks.org/sieve-of-eratosthenes/
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">sieve_of_eratosthenes</span>(n: <span style="color:#66d9ef">usize</span>) -&gt; Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> x <span style="color:#f92672">=</span> vec![<span style="color:#66d9ef">true</span>; n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>    x[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    x[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">..=</span>(n <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">f64</span>).sqrt() <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> x[i] {
+</span></span><span style="display:flex;"><span>            x[<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> i<span style="color:#f92672">..=</span>n].iter_mut().step_by(i).for_each(<span style="color:#f92672">|</span>v<span style="color:#f92672">|</span> <span style="color:#f92672">*</span>v <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> primes: Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> x.into_iter().enumerate().filter_map(<span style="color:#f92672">|</span>(i, is_prime)<span style="color:#f92672">|</span> <span style="color:#66d9ef">if</span> is_prime { Some(i) } <span style="color:#66d9ef">else</span> { None }).rev().collect();
+</span></span><span style="display:flex;"><span>    primes
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Extract every second prime, beginning with first number of collection!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">extract_every_second_prime</span>(prime_numbers: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    prime_numbers.iter().cloned().step_by(<span style="color:#ae81ff">2</span>).collect()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">extract_every_third_prime</span>(prime_numbers: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    prime_numbers.iter().cloned().step_by(<span style="color:#ae81ff">3</span>).collect()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Summing up the most and least significant digits of each prime number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// So with 23 as prime example we would get this array with every second prime
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [23, 17, 11, 5, 2]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Based on that the sum would be calculated like so
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 2+3 + 1+7 + 1+1 + 5+5 + 2+2 = 29
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">sum_most_and_least_significant</span>(prime_array: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> total_sum <span style="color:#f92672">=</span> prime_array.iter().map(<span style="color:#f92672">|&amp;</span>num<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> num_str <span style="color:#f92672">=</span> num.to_string();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> num_str.len() <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>            num <span style="color:#f92672">+</span> num
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            num_str.chars().next().unwrap().to_digit(<span style="color:#ae81ff">10</span>).unwrap() <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">+</span> num_str.chars().last().unwrap().to_digit(<span style="color:#ae81ff">10</span>).unwrap() <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }).sum();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    total_sum
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">decimals_to_base_7</span>(decimals: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    decimals.iter().cloned().map(<span style="color:#f92672">|</span>decimal_number<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> result <span style="color:#f92672">=</span> Vec::new();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> num <span style="color:#f92672">=</span> decimal_number;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> remainder <span style="color:#f92672">=</span> num <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>            result.push(remainder);
+</span></span><span style="display:flex;"><span>            num <span style="color:#f92672">/=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        result.reverse();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> result.is_empty() { <span style="color:#ae81ff">0</span> } <span style="color:#66d9ef">else</span> { result.iter().fold(<span style="color:#ae81ff">0</span>, <span style="color:#f92672">|</span>acc, <span style="color:#f92672">&amp;</span>x<span style="color:#f92672">|</span> acc <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> x) }
+</span></span><span style="display:flex;"><span>    }).collect()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// https://stackoverflow.com/questions/14939953/sum-the-digits-of-a-number-python
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">sum_of_digits</span>(number: <span style="color:#66d9ef">usize</span>) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    number.to_string().chars().map(<span style="color:#f92672">|</span>c<span style="color:#f92672">|</span> c.to_digit(<span style="color:#ae81ff">10</span>).unwrap() <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span>).sum()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Calculate the sum of digits of every base_7 representation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Example
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// base_7(23) = 32 -&gt; 3 + 2 = 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// base_7(13) = 16 -&gt; 1 + 6 = 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// base_7(5)  = 5 -&gt; 5 = 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">calculate_base_7_sums</span>(decimals: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">usize</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    decimals.iter().cloned().map(<span style="color:#f92672">|</span>base_7_result<span style="color:#f92672">|</span> sum_of_digits(base_7_result)).collect()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">solve_first_calculation</span>(prime_numbers: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Extract primes in orders (beginning with first!)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> every_second_prime <span style="color:#f92672">=</span> extract_every_second_prime(prime_numbers);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Calculate most and least significant sums of every second prime
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    sum_most_and_least_significant(<span style="color:#f92672">&amp;</span>every_second_prime)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">solve_second_calculation</span>(prime_numbers: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Extract primes in orders (beginning with third!)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> every_third_prime <span style="color:#f92672">=</span> extract_every_third_prime(prime_numbers);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Calculate base_7 representations of every third prime
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> base_7_results <span style="color:#f92672">=</span> decimals_to_base_7(<span style="color:#f92672">&amp;</span>every_third_prime);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Calculate the sum of digits of every base_7 representation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> base_7_sums <span style="color:#f92672">=</span> calculate_base_7_sums(<span style="color:#f92672">&amp;</span>base_7_results);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Calculate the sum of all base_7 sums
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    base_7_sums.iter().sum()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// For every fifth prime number from N down to 0: Let p1 be this prime number and p2 the nearest smaller prime number.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Calculate (p1 * p2) mod 31337 and count the number of odd digits.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Add up the results.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">solve_third_calculation</span>(primes: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> sum_of_odd_digits <span style="color:#f92672">=</span> primes
+</span></span><span style="display:flex;"><span>        .iter()
+</span></span><span style="display:flex;"><span>        .step_by(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>        .filter_map(<span style="color:#f92672">|&amp;</span>p1<span style="color:#f92672">|</span> primes.iter().cloned().find(<span style="color:#f92672">|&amp;</span>p2<span style="color:#f92672">|</span> p2 <span style="color:#f92672">&lt;</span> p1).map(<span style="color:#f92672">|</span>p2<span style="color:#f92672">|</span> (p1, p2)))
+</span></span><span style="display:flex;"><span>        .map(<span style="color:#f92672">|</span>(p1, p2)<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> (p1 <span style="color:#f92672">*</span> p2) <span style="color:#f92672">%</span> <span style="color:#ae81ff">31337</span>;
+</span></span><span style="display:flex;"><span>            result.to_string().chars().filter(<span style="color:#f92672">|&amp;</span>c<span style="color:#f92672">|</span> c.to_digit(<span style="color:#ae81ff">10</span>).unwrap() <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>).count()
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>        .sum();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sum_of_odd_digits
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">calculate_results</span>(prime_numbers: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">usize</span>]) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result_a <span style="color:#f92672">=</span> solve_first_calculation(prime_numbers);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result_b <span style="color:#f92672">=</span> solve_second_calculation(prime_numbers);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result_c <span style="color:#f92672">=</span> solve_third_calculation(prime_numbers);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    result_a <span style="color:#f92672">+</span> result_b <span style="color:#f92672">+</span> result_c
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Pre-calculate all primes up to theoretical limit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> precalculated_primes <span style="color:#f92672">=</span> sieve_of_eratosthenes(<span style="color:#ae81ff">100_000_000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Check if results are precalculated, if not, calculate them
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> start_time <span style="color:#f92672">=</span> Instant::now();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> calculate_results(<span style="color:#f92672">&amp;</span>precalculated_primes);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> end_time <span style="color:#f92672">=</span> Instant::now();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Time to calculate result: </span><span style="color:#e6db74">{:.5}</span><span style="color:#e6db74"> seconds&#34;</span>,
+</span></span><span style="display:flex;"><span>        (end_time <span style="color:#f92672">-</span> start_time).as_secs_f64()
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The result is: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, result);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/in_my_prime.rs">Download script</a></p>
+<h3 id="getting-lucky">Getting &ldquo;lucky&rdquo;<a href="#getting-lucky" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>As the Python script&rsquo;s cache grew to 6,000 pre-calculated results, I developed a &ldquo;Lucky Prime&rdquo; script that would:</p>
+<ul>
+<li>Request a question</li>
+<li>Check the cache for a pre-calculated answer.</li>
+<li>Disconnect if the answer wasn&rsquo;t in the cache, saving the question for later.</li>
+<li>Retry until it hit a known question.</li>
+<li>For every 1000 questions it saves the encountered questions to a file (for later sanity checking&hellip;)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_question_from_server</span>(socket_connection):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">submit_answer</span>(socket_connection, answer):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... [same as in previous example] ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_results</span>(filename):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pickle<span style="color:#f92672">.</span>load(file)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">FileNotFoundError</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_questions</span>(questions, filename):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>        pickle<span style="color:#f92672">.</span>dump(questions, file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">challenge_solved</span>(response):
+</span></span><span style="display:flex;"><span>    challenge_timeout_answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sorry, too slow. Please try again.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response <span style="color:#f92672">!=</span> challenge_timeout_answer <span style="color:#f92672">and</span> response <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    server_address <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;inmyprime.nc3&#39;</span>, <span style="color:#ae81ff">3119</span>)
+</span></span><span style="display:flex;"><span>    challenge_wrong_answer_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nope, wrong answer. Please try again.&#34;</span>
+</span></span><span style="display:flex;"><span>    result_not_pre_calculated_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Result not pre-calculated :(... Disconnecting and trying again!&#34;</span>
+</span></span><span style="display:flex;"><span>    results_filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;results.pkl&#39;</span>
+</span></span><span style="display:flex;"><span>    questions_filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;questions.pkl&#39;</span>
+</span></span><span style="display:flex;"><span>    results <span style="color:#f92672">=</span> load_results(results_filename)
+</span></span><span style="display:flex;"><span>    questions <span style="color:#f92672">=</span> load_results(questions_filename)
+</span></span><span style="display:flex;"><span>    question_count <span style="color:#f92672">=</span> Counter(questions)
+</span></span><span style="display:flex;"><span>    attempts <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Welcome to Lucky Prime Solver! Let&#39;s go!&#34;</span>)
+</span></span><span style="display:flex;"><span>    response_from_server <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> challenge_solved(response_from_server):
+</span></span><span style="display:flex;"><span>        attempts <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Attempt </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">...&#34;</span><span style="color:#f92672">.</span>format(attempts))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM) <span style="color:#66d9ef">as</span> s:
+</span></span><span style="display:flex;"><span>            s<span style="color:#f92672">.</span>connect(server_address)
+</span></span><span style="display:flex;"><span>            question_number <span style="color:#f92672">=</span> get_question_from_server(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> question_number <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                question_count[question_number] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> len(question_count) <span style="color:#f92672">%</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                    save_questions(list(question_count<span style="color:#f92672">.</span>elements()), questions_filename)
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Saved </span><span style="color:#e6db74">{</span>len(question_count)<span style="color:#e6db74">}</span><span style="color:#e6db74"> questions to </span><span style="color:#e6db74">{</span>questions_filename<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    repeat_count <span style="color:#f92672">=</span> sum(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> question_count<span style="color:#f92672">.</span>values() <span style="color:#66d9ef">if</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Numbers seen more than once: </span><span style="color:#e6db74">{</span>repeat_count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> results<span style="color:#f92672">.</span>get(question_number, result_not_pre_calculated_message)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> result <span style="color:#f92672">==</span> result_not_pre_calculated_message:
+</span></span><span style="display:flex;"><span>                print(result_not_pre_calculated_message)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                response_from_server <span style="color:#f92672">=</span> submit_answer(s, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> response_from_server <span style="color:#f92672">==</span> challenge_wrong_answer_message:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Oh noes! Wrong answer! How could this happen!? :( Stopping process, because you need to fix this!&#34;</span>)
+</span></span><span style="display:flex;"><span>                sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">OMFG.. this print either means that something bad happened... or YOU&#39;RE DA FUCKING MAN!: </span><span style="color:#e6db74">{</span>response_from_server<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/lucky_prime.py">Download script</a></p>
+<p><img src="/nc3/misc/in-my-prime/images/lucky-prime.png" alt="Lucky Prime"></p>
+<p>Due to the nature of the &ldquo;lucky prime&rdquo; script, I was capable of spawning several instances of it, in order to increase the chance of a lucky hit!</p>
+<p>Finally, on the 8,876th attempt, success was achieved! The self-learning Python script cracked the challenge!</p>
+<p><img src="/nc3/misc/in-my-prime/images/solved.png" alt="Solved"></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{th3_numb3rs_wh4t_d0_th3y_m3an?}
+</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>This challenge was a testament to the importance of optimization and strategy in problem-solving. It stressed the need for efficient computation, especially when dealing with large datasets and tight time constraints. The experience was a valuable lesson in balancing brute-force approaches with intelligent caching and pre-calculation strategies.</p>
+<p>Overall, &ldquo;In My Prime&rdquo; was not just a test of mathematical prowess but also a challenge of computational efficiency and algorithmic thinking.</p>
+<p>I did attempt to optimize the computation in both Python and Rust by utilising threadpools, which I unfortunately couldn&rsquo;t get under 3 seconds.</p>
+<p>Something that helped me out a lot during the Python development was to add tests for the individual computations, especially for the provided example, and for sanity checking that the response was handled correctly from the server!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> unittest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> unittest.mock <span style="color:#f92672">import</span> patch, MagicMock, mock_open
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> in_my_prime <span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    compute_primes_up_to_limit_with_sieve_of_eratosthenes,
+</span></span><span style="display:flex;"><span>    solve_first_calculation,
+</span></span><span style="display:flex;"><span>    solve_second_calculation,
+</span></span><span style="display:flex;"><span>    solve_third_calculation,
+</span></span><span style="display:flex;"><span>    get_question_from_server,
+</span></span><span style="display:flex;"><span>    load_results,
+</span></span><span style="display:flex;"><span>    main
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrimeSolverTests</span>(unittest<span style="color:#f92672">.</span>TestCase):
+</span></span><span style="display:flex;"><span>    expected_primes <span style="color:#f92672">=</span> [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_compute_primes_up_to_23</span>(self):
+</span></span><span style="display:flex;"><span>        primes <span style="color:#f92672">=</span> compute_primes_up_to_limit_with_sieve_of_eratosthenes(<span style="color:#ae81ff">23</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(primes<span style="color:#f92672">.</span>tolist(), self<span style="color:#f92672">.</span>expected_primes)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_solve_first_calculation_with_known_primes</span>(self):
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> solve_first_calculation(self<span style="color:#f92672">.</span>expected_primes)
+</span></span><span style="display:flex;"><span>        expected_sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(result, expected_sum)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_solve_second_calculation_with_known_primes</span>(self):
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> solve_second_calculation(self<span style="color:#f92672">.</span>expected_primes)
+</span></span><span style="display:flex;"><span>        expected_result <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(result, expected_result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_solve_third_calculation_with_known_primes</span>(self):
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> solve_third_calculation(self<span style="color:#f92672">.</span>expected_primes)
+</span></span><span style="display:flex;"><span>        expected_result <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(result, expected_result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_get_question_from_server_with_valid_input</span>(self):
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>        mock_socket_connection <span style="color:#f92672">=</span> MagicMock()
+</span></span><span style="display:flex;"><span>        mock_socket_connection<span style="color:#f92672">.</span>recv<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello there, are you ready?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Here&#39;s the question: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>question_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>        extracted_number <span style="color:#f92672">=</span> get_question_from_server(mock_socket_connection)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(extracted_number, question_number)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_main_wrong_answer_response</span>(self):
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>        wrong_answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">1337</span>
+</span></span><span style="display:flex;"><span>        pre_calculated_results <span style="color:#f92672">=</span> {question_number: wrong_answer}
+</span></span><span style="display:flex;"><span>        mock_file_read <span style="color:#f92672">=</span> mock_open(read_data<span style="color:#f92672">=</span>pickle<span style="color:#f92672">.</span>dumps(pre_calculated_results))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> patch(<span style="color:#e6db74">&#39;socket.socket&#39;</span>) <span style="color:#66d9ef">as</span> mock_socket, patch(<span style="color:#e6db74">&#39;builtins.open&#39;</span>, mock_file_read):
+</span></span><span style="display:flex;"><span>            mock_socket_instance <span style="color:#f92672">=</span> MagicMock()
+</span></span><span style="display:flex;"><span>            mock_socket_instance<span style="color:#f92672">.</span>recv<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello there, are you ready?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Here&#39;s the question: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>question_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Nope, wrong answer. Please try again.&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            mock_socket<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>__enter__<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> mock_socket_instance
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> self<span style="color:#f92672">.</span>assertRaises(<span style="color:#a6e22e">SystemExit</span>):
+</span></span><span style="display:flex;"><span>                main()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_main_challenge_solved_with_flag</span>(self):
+</span></span><span style="display:flex;"><span>        question_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>        pre_calculated_results <span style="color:#f92672">=</span> {question_number: <span style="color:#ae81ff">50</span>}
+</span></span><span style="display:flex;"><span>        mock_file_read <span style="color:#f92672">=</span> mock_open(read_data<span style="color:#f92672">=</span>pickle<span style="color:#f92672">.</span>dumps(pre_calculated_results))
+</span></span><span style="display:flex;"><span>        flag_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Correct. Here&#39;s your prize: NC3{th3_numb3rs_wh4t_d0_th3y_m3an?}&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> patch(<span style="color:#e6db74">&#39;socket.socket&#39;</span>) <span style="color:#66d9ef">as</span> mock_socket, patch(<span style="color:#e6db74">&#39;builtins.open&#39;</span>, mock_file_read):
+</span></span><span style="display:flex;"><span>            mock_socket_instance <span style="color:#f92672">=</span> MagicMock()
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Simulate server responses for initial question and receiving the flag</span>
+</span></span><span style="display:flex;"><span>            mock_socket_instance<span style="color:#f92672">.</span>recv<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello there, are you ready?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Here&#39;s the question: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>question_number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+</span></span><span style="display:flex;"><span>                flag_message<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            mock_socket<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>__enter__<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> mock_socket_instance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Run the main function and check for the correct handling of the flag</span>
+</span></span><span style="display:flex;"><span>            main()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    unittest<span style="color:#f92672">.</span>main()
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/test_in_my_prime.py">Download script</a></p>
+<p>Following the conclusion of the event, I saw a solution written in C, which is actually fast enough to solve the challenge on runtime, which is really impressive!
+So for future similar challenges it might be a route worthwhile considering!</p>
+<p>See script below, developed by an anonymous competitor in the event!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdbool.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sieveOfEratosthenes</span>(<span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">bool</span> prime[]) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		prime[i] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	prime[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>	prime[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">*</span> i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (prime[i]) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">*</span> i; j <span style="color:#f92672">&lt;=</span> n; j <span style="color:#f92672">+=</span> i) {
+</span></span><span style="display:flex;"><span>				prime[j] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getprimenumbers</span>(<span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> primenumbers[]) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">bool</span> <span style="color:#f92672">*</span>prime <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>((n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">bool</span>));
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sieveOfEratosthenes</span>(n, prime);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> primenumberscount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (prime[i]) {
+</span></span><span style="display:flex;"><span>			primenumbers[primenumberscount<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> primenumberscount;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumeveryother</span>(<span style="color:#66d9ef">int</span> primenumbers[], <span style="color:#66d9ef">int</span> primenumberscount) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//sum most significant digit and least significant digit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		int len = snprintf(NULL, 0, &#34;%d&#34;, primenumbers[i]);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		char str[len + 1];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		sprintf(str, &#34;%d&#34;, primenumbers[i]);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		sum += str[0] - &#39;0&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		sum += str[len - 1] - &#39;0&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		*/</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> primenumbers[i];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> last <span style="color:#f92672">=</span> num <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span>) {
+</span></span><span style="display:flex;"><span>			num <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> first <span style="color:#f92672">=</span> num;
+</span></span><span style="display:flex;"><span>		sum <span style="color:#f92672">+=</span> first <span style="color:#f92672">+</span> last;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumbase7</span>(<span style="color:#66d9ef">int</span> primenumbers[], <span style="color:#66d9ef">int</span> primenumberscount) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> primenumbers[i];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>			sum <span style="color:#f92672">+=</span> num <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>			num <span style="color:#f92672">/=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fifth</span>(<span style="color:#66d9ef">int</span> primenumbers[], <span style="color:#66d9ef">int</span> primenumberscount) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">5</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> num <span style="color:#f92672">=</span> (primenumbers[i] <span style="color:#f92672">*</span> (<span style="color:#66d9ef">long</span>)(primenumbers[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])) <span style="color:#f92672">%</span> <span style="color:#ae81ff">31337</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//count uneven digits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (num <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>				count<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			num <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		sum <span style="color:#f92672">+=</span> count;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solve</span>(<span style="color:#66d9ef">int</span> n) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>primenumbers <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(n <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> primenumberscount <span style="color:#f92672">=</span> <span style="color:#a6e22e">getprimenumbers</span>(n, primenumbers);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">sumeveryother</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sumbase7</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">+=</span> <span style="color:#a6e22e">fifth</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> primenumbers[N];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> primenumberscount <span style="color:#f92672">=</span> <span style="color:#a6e22e">getprimenumbers</span>(N, primenumbers);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, primenumbers[i]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, primenumbers[i]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, primenumbers[i]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> primenumberscount <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-=</span><span style="color:#ae81ff">5</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, primenumbers[i]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">sumeveryother</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">sumbase7</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">fifth</span>(primenumbers, primenumberscount);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">solve</span>(N);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">solve</span>(<span style="color:#ae81ff">97</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">solve</span>(<span style="color:#ae81ff">997</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">solve</span>(<span style="color:#ae81ff">549979</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//test();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> num;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>num);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#a6e22e">solve</span>(num);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> Output
+</span></span><span style="display:flex;"><span>Result <span style="color:#66d9ef">for</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">99043661</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">83814368</span>
+</span></span><span style="display:flex;"><span>Calculation time: <span style="color:#ae81ff">1.93</span> seconds.
+</span></span></code></pre></div><p><a href="/nc3/misc/in-my-prime/scripts/InMyPrime.c">Download script</a></p>
+
+		</div>
+	</main>
+
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+  <p>
+    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
+    &#183; The quieter you become the more you are able to hear
+    
+    &#183;
+    
+  </p>
+
+</footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="http://localhost:1313/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js" integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin="anonymous"></script>
+<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
+</body>
+
+</html>

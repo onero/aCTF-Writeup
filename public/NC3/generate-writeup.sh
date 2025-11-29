@@ -37,7 +37,9 @@ mkdir -p "$challenge_dir"
 cat << EOF > "$challenge_dir/index.md"
 +++
 title = '$title'
+categories = ['$category']
 date = $date
+scrollToTop = true
 +++
 
 ## Challenge Name:

