@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc on Adamino CTF Writeups</title>
-    <link>https://ctf.adamino.dk/categories/misc/</link>
+    <link>http://localhost:1313/categories/misc/</link>
     <description>Recent content in Misc on Adamino CTF Writeups</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Adamino 2023</copyright>
     <lastBuildDate>Sun, 17 Dec 2023 20:37:16 +0100</lastBuildDate>
-    <atom:link href="https://ctf.adamino.dk/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aflytning: keyboard warrior</title>
-      <link>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</link>
+      <link>http://localhost:1313/nc3/misc/aflytning-keyboard-warrior/</link>
       <pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate>
-      <guid>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</guid>
+      <guid>http://localhost:1313/nc3/misc/aflytning-keyboard-warrior/</guid>
       <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Aflytning: keyboard warrior&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Misc&lt;/p&gt;</description>
     </item>
     <item>
       <title>In My Prime</title>
-      <link>https://ctf.adamino.dk/nc3/misc/in-my-prime/</link>
+      <link>http://localhost:1313/nc3/misc/in-my-prime/</link>
       <pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate>
-      <guid>https://ctf.adamino.dk/nc3/misc/in-my-prime/</guid>
+      <guid>http://localhost:1313/nc3/misc/in-my-prime/</guid>
       <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In My Prime&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Misc&lt;/p&gt;</description>
     </item>
   </channel>
