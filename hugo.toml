@@ -6,11 +6,7 @@ ignoreFiles = ["README.md", "README"]
 ignoreLogs = ['warning-goldmark-raw-html']
 
 defaultContentLanguage = "en"
-
-[outputs]
-home = ["HTML"]
-section = ["HTML"]
-page = ["HTML"]
+disableKinds = ["RSS"]
 copyright = "Adamino 2023"
 # googleAnalytics = "UA-123-451"
 
