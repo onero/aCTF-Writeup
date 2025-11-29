@@ -65,6 +65,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
+      - name: Remove XML files to prevent conflicts with HTML
+        run: |
+          find ./public -name "index.xml" -delete
+          find ./public -name "*.xml" -delete
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
