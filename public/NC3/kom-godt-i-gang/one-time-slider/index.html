@@ -1,52 +1,248 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta itemprop=name content="One Time Slider"><meta itemprop=description content="Challenge Name: One Time Slider
-Category: kom godt i gang"><meta itemprop=datePublished content="2023-12-01T10:05:14+01:00"><meta itemprop=dateModified content="2023-12-01T10:05:14+01:00"><meta itemprop=wordCount content="749"><meta itemprop=keywords content="Kom Godt I Gang"><title>One Time Slider</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style media=screen href=https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin=anonymous></head><body id=page><header id=site-header><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a><a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-links hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>One Time Slider</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>One Time Slider</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>kom godt i gang</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Kryptonissen har læst op på One Time Pads og er kommet frem til en endnu mere sikker kryptering:</p><p>Hvis man nu slider en OTP henover hele ciphertexten, bliver hver plaintext byte krypteret mange gange - det må være bedre end én!</p><p>Han har krypteret en besked til dig:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>e9e494dcd1c2c9d3f8d1c6d5f8c3c2d3f8c3d2cad3f8c6d3f8ffe8f5f8c6cbcbc2f8c5ded3c2d4f8cac2c3f8cfd1c2d5f8ccc2def8c5ded3c2989898da
-</span></span></code></pre></div><p><a href=/nc3/kom-godt-i-gang/one-time-slider/scripts/onetimeslider.py>onetimeslider.py</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>The Kryptonite has heard about One Time Pads (OTPs) and devised his own little smart encryption method, building upon it in an attempt to improve security. However, he hasn&rsquo;t studied enough! An OTP is a key of completely random bytes, the same length as the message to be encrypted. It should only be used once, hence the name.</p><p>An OTP provides real perfect encryption but is not practical because a key as long as the message needs to be generated, secretly distributed to the recipient, and never reused.</p><p>But what has the Kryptonite done? Well, the Kryptonite has generated an OTP and then &ldquo;slid&rdquo; it over the message&rsquo;s bytes, as illustrated here with 4 bytes (bX are message bytes and kX are key bytes):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>   k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>         k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>            k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>               k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>                  k0 k1 k2 k3 -&gt;
-</span></span><span style=display:flex><span>         b0 b1 b2 b3
-</span></span></code></pre></div><p>For each position, all message bytes are encrypted with a simple XOR with the key byte currently slid over it.</p><p>What does this mean in practice? Well, it means that all bytes in the message have been XORed with all bytes in the key. This implies that every single byte in the message is encrypted with the same key byte, namely k1 ^ k2 ^ &mldr; ^ kN.</p><p>Therefore, we can just try all 256 possible byte values as the key and see if we get something that resembles a flag! Or we can be even smarter: We know the first bytes, NC3{, and since ct = pt ^ key, it also holds that key = pt ^ ct, so we can just XOR the first 4 bytes of the encrypted text with NC3{:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> secrets
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>xor</span>(a, b):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> bytes(x <span style=color:#f92672>^</span> y <span style=color:#66d9ef>for</span> x, y <span style=color:#f92672>in</span> zip(a, b))
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>hex_message <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;e9e494dcd1c2c9d3f8d1c6d5f8c3c2d3f8c3d2cad3f8c6d3f8ffe8f5f8c6cbcbc2f8c5ded3c2d4f8cac2c3f8cfd1c2d5f8ccc2def8c5ded3c2989898da&#34;</span>
-</span></span><span style=display:flex><span>encrypted_message <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(hex_message)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> len(encrypted_message)
-</span></span><span style=display:flex><span>otp <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>token_bytes(n)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Convert bytes to a list of integers</span>
-</span></span><span style=display:flex><span>encrypted_list <span style=color:#f92672>=</span> list(encrypted_message)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Slide OTP over ciphertext and XOR decrypt everything within its range</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>    encrypted_list[max(<span style=color:#ae81ff>0</span>, i <span style=color:#f92672>-</span> n):i] <span style=color:#f92672>=</span> xor(encrypted_list[max(<span style=color:#ae81ff>0</span>, i <span style=color:#f92672>-</span> n):i], otp[<span style=color:#f92672>-</span>i:])
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Convert the list of integers back to bytes</span>
-</span></span><span style=display:flex><span>decrypted_message <span style=color:#f92672>=</span> bytes(encrypted_list)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(decrypted_message<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>))
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;decrypted_message.txt&#34;</span>, <span style=color:#e6db74>&#34;wb&#34;</span>) <span style=color:#66d9ef>as</span> f:
-</span></span><span style=display:flex><span>    f<span style=color:#f92672>.</span>write(decrypted_message)
-</span></span></code></pre></div><p><a href=/nc3/kom-godt-i-gang/one-time-slider/scripts/solve-slider.py>Download script</a></p><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{wait_was_it_dumb_to_XOR_all_bytes_with_each_key_byte???}
-</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Here are some key reflections and learnings from this challenge:</p><h3 id=the-essence-of-otp>The Essence of OTP:<a href=#the-essence-of-otp class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>One Time Pads (OTPs) are celebrated for their theoretical unbreakability when used correctly.
-This challenge serves as a reminder that the strength of OTP lies in the randomness of the key and its single use. Any deviation from this principle, such as the Kryptonite&rsquo;s method of sliding the OTP across the ciphertext, undermines its security.</p><h3 id=practicality-vs-security>Practicality vs. Security:<a href=#practicality-vs-security class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The Kryptonite&rsquo;s intention to enhance security by repeatedly encrypting each byte with multiple key bytes highlights a common dilemma in cryptography - balancing security with practicality. While this method appears to increase security, it actually introduces patterns that can be exploited, as demonstrated in the decryption process.</p><h3 id=importance-of-key-management>Importance of Key Management:<a href=#importance-of-key-management class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This challenge reiterates the importance of key management in cryptography. The original principles of OTP - randomness, equal length to the plaintext, and never reusing the key - are fundamental. The Kryptonite’s attempt to reuse key bytes for multiple plaintext bytes violates the principle of not reusing the key, leading to vulnerabilities.</p><h3 id=xor-vulnerabilities>XOR Vulnerabilities:<a href=#xor-vulnerabilities class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>XOR is a simple yet powerful operation used in many cryptographic algorithms. However, this challenge illustrates that improper use of XOR, especially in a predictable manner like sliding across the ciphertext, can lead to easy reversibility of the encryption, thus compromising security.</p><h3 id=algorithm-transparency-vs-security>Algorithm Transparency vs. Security:<a href=#algorithm-transparency-vs-security class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The Kryptonite&rsquo;s attempt at modifying the OTP method underscores that transparency in cryptographic algorithms does not inherently compromise security. It&rsquo;s the improper implementation of these algorithms that leads to vulnerabilities. Well-established cryptographic methods are often open and have undergone rigorous testing and scrutiny, which contributes to their reliability.</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
-&#183; The quieter you become the more you are able to hear
-&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin=anonymous></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="One Time Slider">
+  <meta itemprop="description" content="Challenge Name: One Time Slider
+Category: kom godt i gang">
+  <meta itemprop="datePublished" content="2023-12-01T10:05:14+01:00">
+  <meta itemprop="dateModified" content="2023-12-01T10:05:14+01:00">
+  <meta itemprop="wordCount" content="749">
+  <meta itemprop="keywords" content="Kom Godt I Gang"><title>One Time Slider</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="https://ctf.adamino.dk/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="https://ctf.adamino.dk/tools/">Tools</a><a href="https://ctf.adamino.dk/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="https://ctf.adamino.dk/tools/">Tools</a></li>
+		<li><a href="https://ctf.adamino.dk/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>One Time Slider</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>One Time Slider</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>kom godt i gang</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Kryptonissen har læst op på One Time Pads og er kommet frem til en endnu mere sikker kryptering:</p>
+<p>Hvis man nu slider en OTP henover hele ciphertexten, bliver hver plaintext byte krypteret mange gange - det må være bedre end én!</p>
+<p>Han har krypteret en besked til dig:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>e9e494dcd1c2c9d3f8d1c6d5f8c3c2d3f8c3d2cad3f8c6d3f8ffe8f5f8c6cbcbc2f8c5ded3c2d4f8cac2c3f8cfd1c2d5f8ccc2def8c5ded3c2989898da
+</span></span></code></pre></div><p><a href="/nc3/kom-godt-i-gang/one-time-slider/scripts/onetimeslider.py">onetimeslider.py</a></p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>The Kryptonite has heard about One Time Pads (OTPs) and devised his own little smart encryption method, building upon it in an attempt to improve security. However, he hasn&rsquo;t studied enough! An OTP is a key of completely random bytes, the same length as the message to be encrypted. It should only be used once, hence the name.</p>
+<p>An OTP provides real perfect encryption but is not practical because a key as long as the message needs to be generated, secretly distributed to the recipient, and never reused.</p>
+<p>But what has the Kryptonite done? Well, the Kryptonite has generated an OTP and then &ldquo;slid&rdquo; it over the message&rsquo;s bytes, as illustrated here with 4 bytes (bX are message bytes and kX are key bytes):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>               k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                  k0 k1 k2 k3 -&gt;
+</span></span><span style="display:flex;"><span>         b0 b1 b2 b3
+</span></span></code></pre></div><p>For each position, all message bytes are encrypted with a simple XOR with the key byte currently slid over it.</p>
+<p>What does this mean in practice? Well, it means that all bytes in the message have been XORed with all bytes in the key. This implies that every single byte in the message is encrypted with the same key byte, namely k1 ^ k2 ^ &hellip; ^ kN.</p>
+<p>Therefore, we can just try all 256 possible byte values as the key and see if we get something that resembles a flag! Or we can be even smarter: We know the first bytes, NC3{, and since ct = pt ^ key, it also holds that key = pt ^ ct, so we can just XOR the first 4 bytes of the encrypted text with NC3{:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> secrets
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xor</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(x <span style="color:#f92672">^</span> y <span style="color:#66d9ef">for</span> x, y <span style="color:#f92672">in</span> zip(a, b))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hex_message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;e9e494dcd1c2c9d3f8d1c6d5f8c3c2d3f8c3d2cad3f8c6d3f8ffe8f5f8c6cbcbc2f8c5ded3c2d4f8cac2c3f8cfd1c2d5f8ccc2def8c5ded3c2989898da&#34;</span>
+</span></span><span style="display:flex;"><span>encrypted_message <span style="color:#f92672">=</span> bytes<span style="color:#f92672">.</span>fromhex(hex_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> len(encrypted_message)
+</span></span><span style="display:flex;"><span>otp <span style="color:#f92672">=</span> secrets<span style="color:#f92672">.</span>token_bytes(n)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert bytes to a list of integers</span>
+</span></span><span style="display:flex;"><span>encrypted_list <span style="color:#f92672">=</span> list(encrypted_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Slide OTP over ciphertext and XOR decrypt everything within its range</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    encrypted_list[max(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">-</span> n):i] <span style="color:#f92672">=</span> xor(encrypted_list[max(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">-</span> n):i], otp[<span style="color:#f92672">-</span>i:])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert the list of integers back to bytes</span>
+</span></span><span style="display:flex;"><span>decrypted_message <span style="color:#f92672">=</span> bytes(encrypted_list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(decrypted_message<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;decrypted_message.txt&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(decrypted_message)
+</span></span></code></pre></div><p><a href="/nc3/kom-godt-i-gang/one-time-slider/scripts/solve-slider.py">Download script</a></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{wait_was_it_dumb_to_XOR_all_bytes_with_each_key_byte???}
+</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Here are some key reflections and learnings from this challenge:</p>
+<h3 id="the-essence-of-otp">The Essence of OTP:<a href="#the-essence-of-otp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>One Time Pads (OTPs) are celebrated for their theoretical unbreakability when used correctly.
+This challenge serves as a reminder that the strength of OTP lies in the randomness of the key and its single use. Any deviation from this principle, such as the Kryptonite&rsquo;s method of sliding the OTP across the ciphertext, undermines its security.</p>
+<h3 id="practicality-vs-security">Practicality vs. Security:<a href="#practicality-vs-security" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>The Kryptonite&rsquo;s intention to enhance security by repeatedly encrypting each byte with multiple key bytes highlights a common dilemma in cryptography - balancing security with practicality. While this method appears to increase security, it actually introduces patterns that can be exploited, as demonstrated in the decryption process.</p>
+<h3 id="importance-of-key-management">Importance of Key Management:<a href="#importance-of-key-management" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>This challenge reiterates the importance of key management in cryptography. The original principles of OTP - randomness, equal length to the plaintext, and never reusing the key - are fundamental. The Kryptonite’s attempt to reuse key bytes for multiple plaintext bytes violates the principle of not reusing the key, leading to vulnerabilities.</p>
+<h3 id="xor-vulnerabilities">XOR Vulnerabilities:<a href="#xor-vulnerabilities" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>XOR is a simple yet powerful operation used in many cryptographic algorithms. However, this challenge illustrates that improper use of XOR, especially in a predictable manner like sliding across the ciphertext, can lead to easy reversibility of the encryption, thus compromising security.</p>
+<h3 id="algorithm-transparency-vs-security">Algorithm Transparency vs. Security:<a href="#algorithm-transparency-vs-security" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>The Kryptonite&rsquo;s attempt at modifying the OTP method underscores that transparency in cryptographic algorithms does not inherently compromise security. It&rsquo;s the improper implementation of these algorithms that leads to vulnerabilities. Well-established cryptographic methods are often open and have undergone rigorous testing and scrutiny, which contributes to their reliability.</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="https://ctf.adamino.dk/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,253 +1,181 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adamino CTF Writeups</title><link>https://ctf.adamino.dk/</link><description>Recent content on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Fri, 22 Dec 2023 00:12:28 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/index.xml" rel="self" type="application/rss+xml"/><item><title>Netcat</title><link>https://ctf.adamino.dk/tools/enumeration/nc/</link><pubDate>Fri, 22 Dec 2023 00:12:28 +0100</pubDate><guid>https://ctf.adamino.dk/tools/enumeration/nc/</guid><description>&lt;h1 id="unleashing-netcats-potential-in-capture-the-flag-ctf-challenges">Unleashing Netcat&amp;rsquo;s Potential in Capture The Flag (CTF) Challenges&lt;a href="#unleashing-netcats-potential-in-capture-the-flag-ctf-challenges" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h1>
-&lt;p>Netcat, often referred to as the &amp;ldquo;Swiss army knife&amp;rdquo; of networking, is a versatile utility that reads and writes data across network connections using the TCP/IP protocol. Its flexibility and ease of use make it an invaluable tool in Capture The Flag (CTF) challenges, where participants seek to exploit vulnerabilities and capture hidden flags. Let&amp;rsquo;s delve into the myriad ways Netcat can be utilized in CTF scenarios.&lt;/p></description></item><item><title>Nmap</title><link>https://ctf.adamino.dk/tools/enumeration/nmap/</link><pubDate>Thu, 21 Dec 2023 23:56:53 +0100</pubDate><guid>https://ctf.adamino.dk/tools/enumeration/nmap/</guid><description>&lt;h1 id="mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing&lt;a href="#mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h1>
-&lt;p>Nmap, short for Network Mapper, is an indispensable tool in the arsenal of every network administrator, cybersecurity professional, and ethical hacker. This open-source utility is designed for network exploration and security auditing. It uses raw IP packets to determine available hosts on a network, the services those hosts are offering, the operating systems they are running, and a plethora of other characteristics. This guide will walk you through the essentials of Nmap, covering its installation, basic and advanced usage, and tips for effective network management and security auditing.&lt;/p></description></item><item><title>Aflytning: keyboard warrior</title><link>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Aflytning: keyboard warrior&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Misc&lt;/p></description></item><item><title>In My Prime</title><link>https://ctf.adamino.dk/nc3/misc/in-my-prime/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/in-my-prime/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>In My Prime&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Misc&lt;/p></description></item><item><title>Nissenoter 3</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</link><pubDate>Fri, 15 Dec 2023 15:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nissenoter 3&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Boot2Root&lt;/p></description></item><item><title>Nissenoter 2</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</link><pubDate>Fri, 15 Dec 2023 14:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nissenoter 2&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Boot2Root&lt;/p></description></item><item><title>Nissenoter 1</title><link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</link><pubDate>Fri, 15 Dec 2023 13:33:38 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nissenoter 1&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Boot2Root&lt;/p></description></item><item><title>addiplikation</title><link>https://ctf.adamino.dk/nc3/crypto/addiplikation/</link><pubDate>Tue, 12 Dec 2023 22:11:37 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/crypto/addiplikation/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>addiplikation&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Crypto&lt;/p></description></item><item><title>RedisMe 2</title><link>https://ctf.adamino.dk/nc3/web/redisme-2/</link><pubDate>Sun, 10 Dec 2023 23:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>RedisMe 2&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Web&lt;/p></description></item><item><title>RedisMe 1</title><link>https://ctf.adamino.dk/nc3/web/redisme-1/</link><pubDate>Sun, 10 Dec 2023 22:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>RedisMe 1&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Web&lt;/p></description></item><item><title>Flagkryptering</title><link>https://ctf.adamino.dk/nc3/blockchain/flagkryptering/</link><pubDate>Sat, 09 Dec 2023 10:12:15 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/blockchain/flagkryptering/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Flagkryptering&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Blockchain&lt;/p></description></item><item><title>Nisseware - Infrastructure</title><link>https://ctf.adamino.dk/nc3/malware/nisseware-infrastructure/</link><pubDate>Tue, 05 Dec 2023 21:00:53 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/malware/nisseware-infrastructure/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nisseware - Infrastructure&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Malware&lt;/p></description></item><item><title>Nisseware - OSINT</title><link>https://ctf.adamino.dk/nc3/malware/nisseware-osint/</link><pubDate>Tue, 05 Dec 2023 20:00:53 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/malware/nisseware-osint/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nisseware - OSINT&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Malware&lt;/p></description></item><item><title>Nisseware - Loading</title><link>https://ctf.adamino.dk/nc3/malware/nisseware-loading/</link><pubDate>Tue, 05 Dec 2023 15:00:53 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/malware/nisseware-loading/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nisseware - Loading&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Malware&lt;/p></description></item><item><title>Nisseware - Phishing</title><link>https://ctf.adamino.dk/nc3/malware/nisseware-phishing/</link><pubDate>Tue, 05 Dec 2023 14:00:53 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/malware/nisseware-phishing/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nisseware - Phishing&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Malware&lt;/p></description></item><item><title>Nissens Juleshop</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/nissens-juleshop/</link><pubDate>Fri, 01 Dec 2023 10:11:50 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/nissens-juleshop/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Nissens Juleshop&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Rudolfs Simple Algoritme</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/rudolfs-simple-algoritme/</link><pubDate>Fri, 01 Dec 2023 10:10:50 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/rudolfs-simple-algoritme/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Rudolfs Simple Algoritme&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>One Time Slider</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/one-time-slider/</link><pubDate>Fri, 01 Dec 2023 10:05:14 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/one-time-slider/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>One Time Slider&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>kom godt i gang&lt;/p></description></item><item><title>Cyberkok Eksklusiv opskrift</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-eksklusiv-opskrift/</link><pubDate>Fri, 01 Dec 2023 10:05:00 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-eksklusiv-opskrift/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Cyberkok Eksklusiv opskrift&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Cyberkok Hekseri</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-hekseri/</link><pubDate>Fri, 01 Dec 2023 10:04:59 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-hekseri/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Cyberkok Hekseri&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Cyberkok Substitutten</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-substitutten/</link><pubDate>Fri, 01 Dec 2023 10:04:58 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-substitutten/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Cyberkok Substitutten&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>kom-godt-i-gang&lt;/p></description></item><item><title>Haaukins Intro</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/haaukins-intro/</link><pubDate>Fri, 01 Dec 2023 10:02:14 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/haaukins-intro/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Haaukins Intro&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Discord</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/discord/</link><pubDate>Fri, 01 Dec 2023 10:01:58 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/discord/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Discord&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Start her</title><link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/start-her/</link><pubDate>Fri, 01 Dec 2023 10:00:50 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/start-her/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Start her&lt;/p>
-&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adamino CTF Writeups</title>
+    <link>https://ctf.adamino.dk/</link>
+    <description>Recent content on Adamino CTF Writeups</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Adamino 2023</copyright>
+    <lastBuildDate>Fri, 22 Dec 2023 00:12:28 +0100</lastBuildDate>
+    <atom:link href="https://ctf.adamino.dk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netcat</title>
+      <link>https://ctf.adamino.dk/tools/enumeration/nc/</link>
+      <pubDate>Fri, 22 Dec 2023 00:12:28 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/tools/enumeration/nc/</guid>
+      <description>&lt;h1 id=&#34;unleashing-netcats-potential-in-capture-the-flag-ctf-challenges&#34;&gt;Unleashing Netcat&amp;rsquo;s Potential in Capture The Flag (CTF) Challenges&lt;a href=&#34;#unleashing-netcats-potential-in-capture-the-flag-ctf-challenges&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Netcat, often referred to as the &amp;ldquo;Swiss army knife&amp;rdquo; of networking, is a versatile utility that reads and writes data across network connections using the TCP/IP protocol. Its flexibility and ease of use make it an invaluable tool in Capture The Flag (CTF) challenges, where participants seek to exploit vulnerabilities and capture hidden flags. Let&amp;rsquo;s delve into the myriad ways Netcat can be utilized in CTF scenarios.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nmap</title>
+      <link>https://ctf.adamino.dk/tools/enumeration/nmap/</link>
+      <pubDate>Thu, 21 Dec 2023 23:56:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/tools/enumeration/nmap/</guid>
+      <description>&lt;h1 id=&#34;mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing&#34;&gt;Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing&lt;a href=&#34;#mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Nmap, short for Network Mapper, is an indispensable tool in the arsenal of every network administrator, cybersecurity professional, and ethical hacker. This open-source utility is designed for network exploration and security auditing. It uses raw IP packets to determine available hosts on a network, the services those hosts are offering, the operating systems they are running, and a plethora of other characteristics. This guide will walk you through the essentials of Nmap, covering its installation, basic and advanced usage, and tips for effective network management and security auditing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aflytning: keyboard warrior</title>
+      <link>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</link>
+      <pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Aflytning: keyboard warrior&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Misc&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>In My Prime</title>
+      <link>https://ctf.adamino.dk/nc3/misc/in-my-prime/</link>
+      <pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/misc/in-my-prime/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In My Prime&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Misc&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nissenoter 3</title>
+      <link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</link>
+      <pubDate>Fri, 15 Dec 2023 15:33:38 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-3/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 3&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nissenoter 2</title>
+      <link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</link>
+      <pubDate>Fri, 15 Dec 2023 14:33:38 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-2/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 2&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nissenoter 1</title>
+      <link>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</link>
+      <pubDate>Fri, 15 Dec 2023 13:33:38 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/boot2root/nissenoter-1/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nissenoter 1&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Boot2Root&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>addiplikation</title>
+      <link>https://ctf.adamino.dk/nc3/crypto/addiplikation/</link>
+      <pubDate>Tue, 12 Dec 2023 22:11:37 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/crypto/addiplikation/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;addiplikation&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Crypto&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RedisMe 2</title>
+      <link>https://ctf.adamino.dk/nc3/web/redisme-2/</link>
+      <pubDate>Sun, 10 Dec 2023 23:00:18 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/web/redisme-2/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;RedisMe 2&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Web&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RedisMe 1</title>
+      <link>https://ctf.adamino.dk/nc3/web/redisme-1/</link>
+      <pubDate>Sun, 10 Dec 2023 22:00:18 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/web/redisme-1/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;RedisMe 1&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Web&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Flagkryptering</title>
+      <link>https://ctf.adamino.dk/nc3/blockchain/flagkryptering/</link>
+      <pubDate>Sat, 09 Dec 2023 10:12:15 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/blockchain/flagkryptering/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Flagkryptering&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Blockchain&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nisseware - Infrastructure</title>
+      <link>https://ctf.adamino.dk/nc3/malware/nisseware-infrastructure/</link>
+      <pubDate>Tue, 05 Dec 2023 21:00:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/malware/nisseware-infrastructure/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nisseware - Infrastructure&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Malware&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nisseware - OSINT</title>
+      <link>https://ctf.adamino.dk/nc3/malware/nisseware-osint/</link>
+      <pubDate>Tue, 05 Dec 2023 20:00:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/malware/nisseware-osint/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nisseware - OSINT&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Malware&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nisseware - Loading</title>
+      <link>https://ctf.adamino.dk/nc3/malware/nisseware-loading/</link>
+      <pubDate>Tue, 05 Dec 2023 15:00:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/malware/nisseware-loading/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nisseware - Loading&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Malware&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nisseware - Phishing</title>
+      <link>https://ctf.adamino.dk/nc3/malware/nisseware-phishing/</link>
+      <pubDate>Tue, 05 Dec 2023 14:00:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/malware/nisseware-phishing/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nisseware - Phishing&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Malware&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nissens Juleshop</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/nissens-juleshop/</link>
+      <pubDate>Fri, 01 Dec 2023 10:11:50 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/nissens-juleshop/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Nissens Juleshop&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rudolfs Simple Algoritme</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/rudolfs-simple-algoritme/</link>
+      <pubDate>Fri, 01 Dec 2023 10:10:50 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/rudolfs-simple-algoritme/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Rudolfs Simple Algoritme&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>One Time Slider</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/one-time-slider/</link>
+      <pubDate>Fri, 01 Dec 2023 10:05:14 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/one-time-slider/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;One Time Slider&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cyberkok Eksklusiv opskrift</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-eksklusiv-opskrift/</link>
+      <pubDate>Fri, 01 Dec 2023 10:05:00 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-eksklusiv-opskrift/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Cyberkok Eksklusiv opskrift&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cyberkok Hekseri</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-hekseri/</link>
+      <pubDate>Fri, 01 Dec 2023 10:04:59 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-hekseri/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Cyberkok Hekseri&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cyberkok Substitutten</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-substitutten/</link>
+      <pubDate>Fri, 01 Dec 2023 10:04:58 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/cyberkok-substitutten/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Cyberkok Substitutten&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;kom-godt-i-gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Haaukins Intro</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/haaukins-intro/</link>
+      <pubDate>Fri, 01 Dec 2023 10:02:14 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/haaukins-intro/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Haaukins Intro&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Discord</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/discord/</link>
+      <pubDate>Fri, 01 Dec 2023 10:01:58 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/discord/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Discord&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Start her</title>
+      <link>https://ctf.adamino.dk/nc3/kom-godt-i-gang/start-her/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:50 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/nc3/kom-godt-i-gang/start-her/</guid>
+      <description>&lt;h2 id=&#34;challenge-name&#34;&gt;Challenge Name:&lt;a href=&#34;#challenge-name&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Start her&lt;/p&gt;&#xA;&lt;h2 id=&#34;category&#34;&gt;Category:&lt;a href=&#34;#category&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Kom godt i gang&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

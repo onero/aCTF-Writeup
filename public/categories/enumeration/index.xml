@@ -1,11 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Enumeration on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/enumeration/</link><description>Recent content in Enumeration on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 22 Dec 2023 00:12:28 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/enumeration/index.xml" rel="self" type="application/rss+xml"/><item><title>Netcat</title><link>https://ctf.adamino.dk/tools/enumeration/nc/</link><pubDate>Fri, 22 Dec 2023 00:12:28 +0100</pubDate><guid>https://ctf.adamino.dk/tools/enumeration/nc/</guid><description>&lt;h1 id="unleashing-netcats-potential-in-capture-the-flag-ctf-challenges">Unleashing Netcat&amp;rsquo;s Potential in Capture The Flag (CTF) Challenges&lt;a href="#unleashing-netcats-potential-in-capture-the-flag-ctf-challenges" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h1>
-&lt;p>Netcat, often referred to as the &amp;ldquo;Swiss army knife&amp;rdquo; of networking, is a versatile utility that reads and writes data across network connections using the TCP/IP protocol. Its flexibility and ease of use make it an invaluable tool in Capture The Flag (CTF) challenges, where participants seek to exploit vulnerabilities and capture hidden flags. Let&amp;rsquo;s delve into the myriad ways Netcat can be utilized in CTF scenarios.&lt;/p></description></item><item><title>Nmap</title><link>https://ctf.adamino.dk/tools/enumeration/nmap/</link><pubDate>Thu, 21 Dec 2023 23:56:53 +0100</pubDate><guid>https://ctf.adamino.dk/tools/enumeration/nmap/</guid><description>&lt;h1 id="mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing&lt;a href="#mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
-&lt;/svg>&lt;/a>&lt;/h1>
-&lt;p>Nmap, short for Network Mapper, is an indispensable tool in the arsenal of every network administrator, cybersecurity professional, and ethical hacker. This open-source utility is designed for network exploration and security auditing. It uses raw IP packets to determine available hosts on a network, the services those hosts are offering, the operating systems they are running, and a plethora of other characteristics. This guide will walk you through the essentials of Nmap, covering its installation, basic and advanced usage, and tips for effective network management and security auditing.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enumeration on Adamino CTF Writeups</title>
+    <link>https://ctf.adamino.dk/categories/enumeration/</link>
+    <description>Recent content in Enumeration on Adamino CTF Writeups</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Adamino 2023</copyright>
+    <lastBuildDate>Fri, 22 Dec 2023 00:12:28 +0100</lastBuildDate>
+    <atom:link href="https://ctf.adamino.dk/categories/enumeration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netcat</title>
+      <link>https://ctf.adamino.dk/tools/enumeration/nc/</link>
+      <pubDate>Fri, 22 Dec 2023 00:12:28 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/tools/enumeration/nc/</guid>
+      <description>&lt;h1 id=&#34;unleashing-netcats-potential-in-capture-the-flag-ctf-challenges&#34;&gt;Unleashing Netcat&amp;rsquo;s Potential in Capture The Flag (CTF) Challenges&lt;a href=&#34;#unleashing-netcats-potential-in-capture-the-flag-ctf-challenges&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Netcat, often referred to as the &amp;ldquo;Swiss army knife&amp;rdquo; of networking, is a versatile utility that reads and writes data across network connections using the TCP/IP protocol. Its flexibility and ease of use make it an invaluable tool in Capture The Flag (CTF) challenges, where participants seek to exploit vulnerabilities and capture hidden flags. Let&amp;rsquo;s delve into the myriad ways Netcat can be utilized in CTF scenarios.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nmap</title>
+      <link>https://ctf.adamino.dk/tools/enumeration/nmap/</link>
+      <pubDate>Thu, 21 Dec 2023 23:56:53 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/tools/enumeration/nmap/</guid>
+      <description>&lt;h1 id=&#34;mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing&#34;&gt;Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing&lt;a href=&#34;#mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Nmap, short for Network Mapper, is an indispensable tool in the arsenal of every network administrator, cybersecurity professional, and ethical hacker. This open-source utility is designed for network exploration and security auditing. It uses raw IP packets to determine available hosts on a network, the services those hosts are offering, the operating systems they are running, and a plethora of other characteristics. This guide will walk you through the essentials of Nmap, covering its installation, basic and advanced usage, and tips for effective network management and security auditing.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
