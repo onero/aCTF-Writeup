@@ -1,46 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/web/</link><description>Recent content in Web on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Sun, 10 Dec 2023 23:00:18 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>RedisMe 2</title><link>https://ctf.adamino.dk/nc3/web/redisme-2/</link><pubDate>Sun, 10 Dec 2023 23:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/web/</link><description>Recent content in Web on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Sun, 10 Dec 2023 23:00:18 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>RedisMe 2</title><link>https://ctf.adamino.dk/nc3/web/redisme-2/</link><pubDate>Sun, 10 Dec 2023 23:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-2/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>RedisMe 2&lt;/p>
-&lt;h2 id="category">Category:&lt;/h2>
-&lt;p>Web&lt;/p>
-&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
-&lt;p>Nissedev ved, at alle elsker Redis og bare vil have mere, så her er endnu en version af den geniale service.&lt;/p>
-&lt;p>Flaget ligger i &lt;code>/flag.txt&lt;/code>&lt;/p>
-&lt;p>&lt;em>Opgaven er tilgængelig via Haaukins:&lt;/em>&lt;/p>
-&lt;p>&lt;a href="https://ncctf.haaukins.dk">https://ncctf.haaukins.dk&lt;/a>&lt;/p>
-&lt;h2 id="approach">Approach&lt;/h2>
-&lt;p>Armed to the teeth with all the experience from enumerating &lt;a href="https://ctf.adamino.dk/nc3/web/redisme-1/">RedisMe 1&lt;/a>, I quickly scan for the location of the database&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>┌──&lt;span style="color:#f92672">(&lt;/span>haaukins㉿kali&lt;span style="color:#f92672">)&lt;/span>-&lt;span style="color:#f92672">[&lt;/span>~&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└─$ nmap --open 77.57.210.0/24
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap scan report &lt;span style="color:#66d9ef">for&lt;/span> 77.57.210.5
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host is up &lt;span style="color:#f92672">(&lt;/span>0.0013s latency&lt;span style="color:#f92672">)&lt;/span>.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Not shown: &lt;span style="color:#ae81ff">999&lt;/span> filtered tcp ports &lt;span style="color:#f92672">(&lt;/span>no-response&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PORT STATE SERVICE
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>80/tcp open http
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap &lt;span style="color:#66d9ef">done&lt;/span>: &lt;span style="color:#ae81ff">256&lt;/span> IP addresses &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">4&lt;/span> hosts up&lt;span style="color:#f92672">)&lt;/span> scanned in 6.97 seconds
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We take note of port 80 being the only open port this time!
-At least that might ensure that it is &amp;ldquo;only&amp;rdquo; about the webapp and not lead us down the SSH exploitation path, like in the first challenge!&lt;/p></description></item><item><title>RedisMe 1</title><link>https://ctf.adamino.dk/nc3/web/redisme-1/</link><pubDate>Sun, 10 Dec 2023 22:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>Web&lt;/p></description></item><item><title>RedisMe 1</title><link>https://ctf.adamino.dk/nc3/web/redisme-1/</link><pubDate>Sun, 10 Dec 2023 22:00:18 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/web/redisme-1/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>RedisMe 1&lt;/p>
-&lt;h2 id="category">Category:&lt;/h2>
-&lt;p>Web&lt;/p>
-&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
-&lt;p>Ingen af nisserne ved, hvor flaget er, og nissedev har selvfølgelig g(l)emt det&amp;hellip;&lt;/p>
-&lt;p>&lt;em>Opgaven er tilgængelig via Haaukins:&lt;/em>&lt;/p>
-&lt;p>&lt;a href="https://ncctf.haaukins.dk">https://ncctf.haaukins.dk&lt;/a>&lt;/p>
-&lt;h2 id="approach">Approach&lt;/h2>
-&lt;p>This challenge is a bit more like the &amp;ldquo;classical&amp;rdquo; HackTheBox challenges, in which you first need to scan the target in order to discover open ports!
-So on our Kali box we do a&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>┌──&lt;span style="color:#f92672">(&lt;/span>haaukins㉿kali&lt;span style="color:#f92672">)&lt;/span>-&lt;span style="color:#f92672">[&lt;/span>~&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└─$ nmap --open 77.52.35.0/24
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap scan report &lt;span style="color:#66d9ef">for&lt;/span> 77.52.35.5
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host is up &lt;span style="color:#f92672">(&lt;/span>0.0010s latency&lt;span style="color:#f92672">)&lt;/span>.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Not shown: &lt;span style="color:#ae81ff">998&lt;/span> filtered tcp ports &lt;span style="color:#f92672">(&lt;/span>no-response&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PORT STATE SERVICE
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>22/tcp open ssh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>80/tcp open http
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Nmap &lt;span style="color:#66d9ef">done&lt;/span>: &lt;span style="color:#ae81ff">256&lt;/span> IP addresses &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#ae81ff">4&lt;/span> hosts up&lt;span style="color:#f92672">)&lt;/span> scanned in 9.00 seconds
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We take note of port 22 (ssh) &amp;amp; 80 (http, usually a web app) being open!
-This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!&lt;/p></description></item></channel></rss>
+&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>Web&lt;/p></description></item></channel></rss>

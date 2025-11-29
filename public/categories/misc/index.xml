@@ -1,25 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Misc on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/misc/</link><description>Recent content in Misc on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Sun, 17 Dec 2023 20:37:16 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/misc/index.xml" rel="self" type="application/rss+xml"/><item><title>Aflytning: keyboard warrior</title><link>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Misc on Adamino CTF Writeups</title><link>https://ctf.adamino.dk/categories/misc/</link><description>Recent content in Misc on Adamino CTF Writeups</description><generator>Hugo</generator><language>en</language><copyright>Adamino 2023</copyright><lastBuildDate>Sun, 17 Dec 2023 20:37:16 +0100</lastBuildDate><atom:link href="https://ctf.adamino.dk/categories/misc/index.xml" rel="self" type="application/rss+xml"/><item><title>Aflytning: keyboard warrior</title><link>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>Aflytning: keyboard warrior&lt;/p>
-&lt;h2 id="category">Category:&lt;/h2>
-&lt;p>Misc&lt;/p>
-&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Vi har troværdige efterretninger der peger på, at nissedev er indblandet i udviklingen af Nisseware!
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Ved en hemmelig ransagning har vi installeret aflytning af hans trådløse devices. Kan du decode den aflyttede data og identificere hans rolle?
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*Nissedev bruger altid amerikansk tastaturlayout*
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="approach">Approach&lt;/h2>
-&lt;p>We&amp;rsquo;re given a &lt;a href="https://ctf.adamino.dk/nc3/misc/aflytning-keyboard-warrior/scripts/keyboard.pcapng">file named &amp;ldquo;keyboard.pcapng&amp;rdquo;&lt;/a>&lt;/p>
-&lt;p>Pcapng is the &amp;ldquo;Packet Capture next generation&amp;rdquo; format, which is the standard format for any programs saving network packages.
-Most often, the captures are based on NICs (Network interfaces), and the traffic flowing through them, but in this file, it&amp;rsquo;s a bunch of USB packets instead.&lt;/p></description></item><item><title>In My Prime</title><link>https://ctf.adamino.dk/nc3/misc/in-my-prime/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/in-my-prime/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;/h2>
+&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>Misc&lt;/p></description></item><item><title>In My Prime</title><link>https://ctf.adamino.dk/nc3/misc/in-my-prime/</link><pubDate>Sun, 17 Dec 2023 20:37:16 +0100</pubDate><guid>https://ctf.adamino.dk/nc3/misc/in-my-prime/</guid><description>&lt;h2 id="challenge-name">Challenge Name:&lt;a href="#challenge-name" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>In My Prime&lt;/p>
-&lt;h2 id="category">Category:&lt;/h2>
-&lt;p>Misc&lt;/p>
-&lt;h2 id="challenge-description">Challenge Description:&lt;/h2>
-&lt;p>Du bliver givet et primtal &lt;code>N&lt;/code> og skal inden for 3 sekunder udføre følgende tre beregninger og svare med summen af resultaterne:&lt;/p>
-&lt;ol>
-&lt;li>For hvert 2. primtal fra &lt;code>N&lt;/code> ned til 0: Udregn summen af det mest betydende og mindst betydende ciffer. Læg resultaterne sammen.&lt;/li>
-&lt;li>For hvert 3. primtal fra &lt;code>N&lt;/code> ned til 0: Udregn tværsummen af primtallet i base 7. Læg resultaterne sammen.&lt;/li>
-&lt;li>For hvert 5. primtal fra &lt;code>N&lt;/code> ned til 0: Lad &lt;code>p1&lt;/code> være dette primtal og &lt;code>p2&lt;/code> det nærmeste mindre primtal. Udregn &lt;code>(p1 * p2) mod 31337&lt;/code> og tæl antallet af ulige cifre. Læg resultaterne sammen.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>Eksempel:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;h2 id="category">Category:&lt;a href="#category" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>Misc&lt;/p></description></item></channel></rss>
