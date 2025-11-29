@@ -284,4 +284,9 @@
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
 &lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Kom godt i gang&lt;/p></description></item></channel></rss>
+&lt;p>Kom godt i gang&lt;/p></description></item><item><title>Nisseportalen 3</title><link>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-3/</link><pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate><guid>https://ctf.adamino.dk/nc3/boot2root/nisseportalen-3/</guid><description>&lt;h1 id="nisseportalen-3">Nisseportalen 3&lt;a href="#nisseportalen-3" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+&lt;/svg>&lt;/a>&lt;/h1>
+&lt;p>This writeup is for the Nisseportalen 3 challenge.&lt;/p></description></item></channel></rss>
