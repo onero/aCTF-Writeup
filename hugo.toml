@@ -6,7 +6,20 @@ ignoreFiles = ["README.md", "README"]
 ignoreLogs = ['warning-goldmark-raw-html']
 
 defaultContentLanguage = "en"
-disableKinds = ["RSS"]
+
+[mediaTypes]
+  [mediaTypes."text/html"]
+    suffixes = ["html"]
+
+[outputFormats]
+  [outputFormats.HTML]
+    mediaType = "text/html"
+    path = ""
+    
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"] 
+  page = ["HTML"]
 copyright = "Adamino 2023"
 # googleAnalytics = "UA-123-451"
 
