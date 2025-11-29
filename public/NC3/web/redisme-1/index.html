@@ -1,229 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-<link rel="author" href="/humans.txt">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-  <meta itemprop="name" content="RedisMe 1">
-  <meta itemprop="description" content="Challenge Name: RedisMe 1
-Category: Web">
-  <meta itemprop="datePublished" content="2023-12-10T22:00:18+01:00">
-  <meta itemprop="dateModified" content="2023-12-10T22:00:18+01:00">
-  <meta itemprop="wordCount" content="701">
-  <meta itemprop="keywords" content="Web"><title>RedisMe 1</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
-	</head>
-
-<body id="page">
-
-
-<header id="site-header">
-	<div class="hdr-wrapper section-inner">
-		<div class="hdr-left">
-			<div class="site-branding">
-				<a href="https://ctf.adamino.dk/">Adamino CTF Writeups</a>
-			</div>
-			<nav class="site-nav hide-in-mobile"><a href="https://ctf.adamino.dk/tools/">Tools</a><a href="https://ctf.adamino.dk/nc3/">NC3</a></nav>
-		</div>
-		<div class="hdr-right hdr-icons">
-			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
-  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path
-    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-  </path>
-</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="feather feather-menu">
-  <line x1="3" y1="12" x2="21" y2="12"></line>
-  <line x1="3" y1="6" x2="21" y2="6"></line>
-  <line x1="3" y1="18" x2="21" y2="18"></line>
-</svg></button>
-		</div>
-	</div>
-</header>
-<div id="mobile-menu" class="animated fast">
-	<ul>
-		<li><a href="https://ctf.adamino.dk/tools/">Tools</a></li>
-		<li><a href="https://ctf.adamino.dk/nc3/">NC3</a></li>
-	</ul>
-</div>
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>RedisMe 1</h1>
-		<div class="content">
-			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<p>RedisMe 1</p>
-<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<p>Web</p>
-<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<p>Ingen af nisserne ved, hvor flaget er, og nissedev har selvfølgelig g(l)emt det&hellip;</p>
-<p><em>Opgaven er tilgængelig via Haaukins:</em></p>
-<p><a href="https://ncctf.haaukins.dk">https://ncctf.haaukins.dk</a></p>
-<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<p>This challenge is a bit more like the &ldquo;classical&rdquo; HackTheBox challenges, in which you first need to scan the target in order to discover open ports!
-So on our Kali box we do a</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>┌──<span style="color:#f92672">(</span>haaukins㉿kali<span style="color:#f92672">)</span>-<span style="color:#f92672">[</span>~<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>└─$ nmap --open 77.52.35.0/24
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 77.52.35.5
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.0010s latency<span style="color:#f92672">)</span>.
-</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">998</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
-</span></span><span style="display:flex;"><span>PORT   STATE SERVICE
-</span></span><span style="display:flex;"><span>22/tcp open  ssh
-</span></span><span style="display:flex;"><span>80/tcp open  http
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">256</span> IP addresses <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span> hosts up<span style="color:#f92672">)</span> scanned in 9.00 seconds
-</span></span></code></pre></div><p>We take note of port 22 (ssh) &amp; 80 (http, usually a web app) being open!
-This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!</p>
-<p>We visit the webapp in our browser and find the following page
-<img src="/nc3/web/redisme-1/images/Webapp.png" alt="RedisMe Webapp"></p>
-<p>I quickly download the image on the webapp and check it with the Stego tool <a href="https://www.aperisolve.com/">Aperisolve</a> for any clues, but didn&rsquo;t find anything&hellip;</p>
-<p>I then test out some commands in the input field and discover that it is contacting a Redis database on the server, via the redis-cli!
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta itemprop=name content="RedisMe 1"><meta itemprop=description content="Challenge Name: RedisMe 1
+Category: Web"><meta itemprop=datePublished content="2023-12-10T22:00:18+01:00"><meta itemprop=dateModified content="2023-12-10T22:00:18+01:00"><meta itemprop=wordCount content="701"><meta itemprop=keywords content="Web"><title>RedisMe 1</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style media=screen href=https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin=anonymous></head><body id=page><header id=site-header><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a><a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-links hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>RedisMe 1</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>RedisMe 1</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Web</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Ingen af nisserne ved, hvor flaget er, og nissedev har selvfølgelig g(l)emt det&mldr;</p><p><em>Opgaven er tilgængelig via Haaukins:</em></p><p><a href=https://ncctf.haaukins.dk>https://ncctf.haaukins.dk</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>This challenge is a bit more like the &ldquo;classical&rdquo; HackTheBox challenges, in which you first need to scan the target in order to discover open ports!
+So on our Kali box we do a</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>┌──<span style=color:#f92672>(</span>haaukins㉿kali<span style=color:#f92672>)</span>-<span style=color:#f92672>[</span>~<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>└─$ nmap --open 77.52.35.0/24
+</span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> 77.52.35.5
+</span></span><span style=display:flex><span>Host is up <span style=color:#f92672>(</span>0.0010s latency<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>Not shown: <span style=color:#ae81ff>998</span> filtered tcp ports <span style=color:#f92672>(</span>no-response<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+</span></span><span style=display:flex><span>PORT   STATE SERVICE
+</span></span><span style=display:flex><span>22/tcp open  ssh
+</span></span><span style=display:flex><span>80/tcp open  http
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>256</span> IP addresses <span style=color:#f92672>(</span><span style=color:#ae81ff>4</span> hosts up<span style=color:#f92672>)</span> scanned in 9.00 seconds
+</span></span></code></pre></div><p>We take note of port 22 (ssh) & 80 (http, usually a web app) being open!
+This would ordinarily indicate that we need to exploit a webapp (often PHP-based) being hosted on an Apache server!</p><p>We visit the webapp in our browser and find the following page
+<img src=/nc3/web/redisme-1/images/Webapp.png alt="RedisMe Webapp"></p><p>I quickly download the image on the webapp and check it with the Stego tool <a href=https://www.aperisolve.com/>Aperisolve</a> for any clues, but didn&rsquo;t find anything&mldr;</p><p>I then test out some commands in the input field and discover that it is contacting a Redis database on the server, via the redis-cli!
 I quickly run the standard INFO command for some enumeration of the database
-<img src="/nc3/web/redisme-1/images/Redis%20INFO%20command.png" alt="Redis INFO command"></p>
-<p>I immediately search for Redis exploits on version 6.0.7, especially exploits related to SSH, seeing as port 22 is open!
-Despite trying out the following <a href="https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis#interactive-shell">RCE attack</a> in different variations, I accept that it is not the right path, based on the nice feedback provided by the team behind the challenge (You cannot do this, translated from Danish)!</p>
-<p><img src="/nc3/web/redisme-1/images/You-Cannot-Message.png" alt="You cannot message"></p>
-<p>I then start enumerating the database for information with the following command, which reveals 100 keys in the DB!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>KEYS *
-</span></span></code></pre></div><p><img src="/nc3/web/redisme-1/images/Redis-Keys-Command.png" alt="Redis Keys Command"></p>
-<p>Whenever I try to use the GET command to get the value of any of the keys it seems to always be the same name as the key itself, but sometimes it even seemed as though the key itself disappeared!&hellip; This could indicate that there is a cronjob running on the server, which randomizes the keys inserted into the DB!&hellip;</p>
-<p>All the names looks to be in some base-encoded value, but despite running several through Cyberchef, none of them provided anything meaningful&hellip;</p>
-<p>I then turned to reading A LOT of Redis documentation, in order to understand the possible commands for enumeration/exploitation purposes and came across the command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--bigkeys
+<img src=/nc3/web/redisme-1/images/Redis%20INFO%20command.png alt="Redis INFO command"></p><p>I immediately search for Redis exploits on version 6.0.7, especially exploits related to SSH, seeing as port 22 is open!
+Despite trying out the following <a href=https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis#interactive-shell>RCE attack</a> in different variations, I accept that it is not the right path, based on the nice feedback provided by the team behind the challenge (You cannot do this, translated from Danish)!</p><p><img src=/nc3/web/redisme-1/images/You-Cannot-Message.png alt="You cannot message"></p><p>I then start enumerating the database for information with the following command, which reveals 100 keys in the DB!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>KEYS *
+</span></span></code></pre></div><p><img src=/nc3/web/redisme-1/images/Redis-Keys-Command.png alt="Redis Keys Command"></p><p>Whenever I try to use the GET command to get the value of any of the keys it seems to always be the same name as the key itself, but sometimes it even seemed as though the key itself disappeared!&mldr; This could indicate that there is a cronjob running on the server, which randomizes the keys inserted into the DB!&mldr;</p><p>All the names looks to be in some base-encoded value, but despite running several through Cyberchef, none of them provided anything meaningful&mldr;</p><p>I then turned to reading A LOT of Redis documentation, in order to understand the possible commands for enumeration/exploitation purposes and came across the command</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>--bigkeys
 </span></span></code></pre></div><p>Which reveals largest keys in the DB!
-<img src="/nc3/web/redisme-1/images/Redis-Big-Keys-Command.png" alt="Redis Big Keys Command"></p>
-<p>When executing a GET command for the largest key found so far it finally retrieved a different value than the key name!</p>
-<p><img src="/nc3/web/redisme-1/images/Redis-Get-Biggest-Key.png" alt="Redis Get Biggest Key"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;TkMze3lheV9kdV9lcl9lbl9yZWRpcy1wcm99&#34;</span> | base64 -d
-</span></span></code></pre></div><p>This is a base64 encoded string, which decodes to the&hellip;</p>
-<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{yay_du_er_en_redis-pro}
-</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h2>
-<h3 id="importance-of-enumeration">Importance of Enumeration:<a href="#importance-of-enumeration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h3>
-<p>This challenge reinforces the importance of thorough enumeration in cybersecurity. The initial nmap scan was crucial in identifying open ports and potential attack vectors. Understanding the services behind these ports can significantly narrow down the focus of the attack.</p>
-<h3 id="understanding-the-target-system">Understanding the Target System:<a href="#understanding-the-target-system" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h3>
-<p>Discovering that the input field communicated with a Redis database was a pivotal moment. It underlines the importance of understanding the target system&rsquo;s architecture and functionality. Identifying that the system used Redis opened up new avenues for exploration and exploitation.</p>
-<h3 id="persistence-and-adaptability">Persistence and Adaptability:<a href="#persistence-and-adaptability" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h3>
-<p>The challenge required a high degree of persistence and adaptability. When initial attempts to exploit known Redis vulnerabilities didn’t work, it was essential to adapt the strategy. This kind of flexibility is critical in cybersecurity, where not every attack vector will yield results, and thinking outside the box is often required.</p>
-<h3 id="effective-use-of-feedback">Effective Use of Feedback:<a href="#effective-use-of-feedback" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h3>
-<p>The feedback from the challenge team (“You cannot do this”) was a valuable clue. It emphasized the importance of paying attention to all available information, including error messages or any form of feedback from the system. These can provide hints about what paths to pursue or avoid.</p>
-<h3 id="deep-dive-into-documentation">Deep Dive into Documentation!<a href="#deep-dive-into-documentation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-  <line x1="8" y1="12" x2="16" y2="12"></line>
-</svg></a></h3>
-<p>One of the key strategies that paid off was delving into Redis documentation. This not only expanded understanding of the Redis system but also led to discovering the &ndash;bigkeys command. Comprehensive knowledge of the tools and technologies in play is crucial for effective problem-solving in cybersecurity.</p>
-
-		</div>
-		
-	</main>
-<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
-  &copy; 2025 <a href="https://ctf.adamino.dk/">Adamino</a>
-  &#183; The quieter you become the more you are able to hear
-  
-  &#183;
-  
-</p></footer>
-
-<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-<noscript>
-    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
-  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
-  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
-  stroke-width="0.00024000000000000003">
-  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-    stroke-width="0.9600000000000002">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-  <g id="SVGRepo_iconCarrier">
-    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
-    <path id="secondary"
-      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
-      style="fill: #0077b6;"></path>
-  </g>
-</svg></a>
-</noscript>
-<script async src="https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
-<script async src="https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<img src=/nc3/web/redisme-1/images/Redis-Big-Keys-Command.png alt="Redis Big Keys Command"></p><p>When executing a GET command for the largest key found so far it finally retrieved a different value than the key name!</p><p><img src=/nc3/web/redisme-1/images/Redis-Get-Biggest-Key.png alt="Redis Get Biggest Key"></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>echo <span style=color:#e6db74>&#34;TkMze3lheV9kdV9lcl9lbl9yZWRpcy1wcm99&#34;</span> | base64 -d
+</span></span></code></pre></div><p>This is a base64 encoded string, which decodes to the&mldr;</p><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{yay_du_er_en_redis-pro}
+</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><h3 id=importance-of-enumeration>Importance of Enumeration:<a href=#importance-of-enumeration class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This challenge reinforces the importance of thorough enumeration in cybersecurity. The initial nmap scan was crucial in identifying open ports and potential attack vectors. Understanding the services behind these ports can significantly narrow down the focus of the attack.</p><h3 id=understanding-the-target-system>Understanding the Target System:<a href=#understanding-the-target-system class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>Discovering that the input field communicated with a Redis database was a pivotal moment. It underlines the importance of understanding the target system&rsquo;s architecture and functionality. Identifying that the system used Redis opened up new avenues for exploration and exploitation.</p><h3 id=persistence-and-adaptability>Persistence and Adaptability:<a href=#persistence-and-adaptability class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The challenge required a high degree of persistence and adaptability. When initial attempts to exploit known Redis vulnerabilities didn’t work, it was essential to adapt the strategy. This kind of flexibility is critical in cybersecurity, where not every attack vector will yield results, and thinking outside the box is often required.</p><h3 id=effective-use-of-feedback>Effective Use of Feedback:<a href=#effective-use-of-feedback class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>The feedback from the challenge team (“You cannot do this”) was a valuable clue. It emphasized the importance of paying attention to all available information, including error messages or any form of feedback from the system. These can provide hints about what paths to pursue or avoid.</p><h3 id=deep-dive-into-documentation>Deep Dive into Documentation!<a href=#deep-dive-into-documentation class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>One of the key strategies that paid off was delving into Redis documentation. This not only expanded understanding of the Redis system but also led to discovering the &ndash;bigkeys command. Comprehensive knowledge of the tools and technologies in play is crucial for effective problem-solving in cybersecurity.</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
+&#183; The quieter you become the more you are able to hear
+&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin=anonymous></script></body></html>
