@@ -1,77 +1,250 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="index, follow"><meta name=revisit-after content="15 days"><link rel=author href=/humans.txt><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileImage content="/mstile-144x144.png"><link rel="shortcut icon" href=/favicon.ico><meta itemprop=name content="Haaukins Intro"><meta itemprop=description content="Challenge Name: Haaukins Intro
-Category: Kom godt i gang"><meta itemprop=datePublished content="2023-12-01T10:02:14+01:00"><meta itemprop=dateModified content="2023-12-01T10:02:14+01:00"><meta itemprop=wordCount content="926"><meta itemprop=keywords content="Kom Godt I Gang"><title>Haaukins Intro</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as=style media=screen href=https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin=anonymous></head><body id=page><header id=site-header><div class="hdr-wrapper section-inner"><div class=hdr-left><div class=site-branding><a href=https://ctf.adamino.dk/>Adamino CTF Writeups</a></div><nav class="site-nav hide-in-mobile"><a href=https://ctf.adamino.dk/tools/>Tools</a><a href=https://ctf.adamino.dk/nc3/>NC3</a></nav></div><div class="hdr-right hdr-icons"><span class="hdr-links hide-in-mobile"><a href=https://github.com/onero target=_blank rel="noopener me" title=Github><svg class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></span><button id=menu-btn class=hdr-btn title=Menu><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></header><div id=mobile-menu class="animated fast"><ul><li><a href=https://ctf.adamino.dk/tools/>Tools</a></li><li><a href=https://ctf.adamino.dk/nc3/>NC3</a></li></ul></div><main class="site-main section-inner thin animated fadeIn faster"><h1>Haaukins Intro</h1><div class=content><h2 id=challenge-name>Challenge Name:<a href=#challenge-name class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Haaukins Intro</p><h2 id=category>Category:<a href=#category class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Kom godt i gang</p><h2 id=challenge-description>Challenge Description:<a href=#challenge-description class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Dynamiske opgaver i NC3 CTF 2023 kører via CTF-platformen Haaukins.</p><p>Lab Setup:</p><p>Ved oprettelse af profil, får du adgang til egen instans på dit eget subnet. Du kan i øverste højre hjørne klikke Get a lab og vælge imellem VPN eller Browser. Dit lab er dit eget, og det er dermed kun dig, der har adgang til din egen instans.</p><p>Browser labbet giver dig adgang til en Kali Linux instans i din browser, hvorfra alle opgaver kan tilgås. VMen har en række værktøjer præinstalleret og har ikke internetadgang. Se FAQ i Haaukins for instruktion til copy+paste ind i boksen.</p><p>Vælges VPN skal du klikke Download VPN Config og hente Wireguard config fil ned. Se guide til installation i FAQ på Haaukins. På Linux kan med fordel bruges install_wireguard.sh til Wireguard installation og connectwireguard.py til opsætning med config filen:</p><p>sudo python connectwireguard.py ./wg-conf-1.conf
-Challenge Access:</p><p>Challenges starter alle som Not running og skal startes individuelt, når man vil løse dem. Hvis en opgave stopper med at virke, kan den resettes fra forsiden. Labbet resetter helt hver 5. time automatisk, men du kan forlænge denne tid fra forsiden, når der er under en time igen.</p><p>Nogle challenges har et hostname, fx juletid.nc3 og kan tilgås gennem browser eller med netcat via dette. I Browser lab er det direkte tilgængeligt, i VPN skal du selv opdatere din hosts fil lokalt - se Hosts tab i Haaukins (husk at starte opgaven først).</p><p>I challenges uden hostname skal servicen findes med et nmap scan af dit lab subnet. I browser lab kan dit subnet findes med kommandoen ip a under eth0. I VPN står det i toppen af din downloadede config fil. Fremgangsmåden er beskrevet i opgaveteksten til Haaukins Intro på Haaukins.</p><p>Sanity Check:</p><p>Gav det mening? Så er det tid til et lille sanity check! Opret et lab på Haaukins, start opgaven Haaukins Intro og find den IP, der har en service kørende på port 6346. Forbind til servicen for at få flaget!</p><p>OBS: Alle flag skal submittes herinde på CTFd, ikke på Haaukins!</p><p><a href=https://ncctf.haaukins.dk>https://ncctf.haaukins.dk</a></p><h2 id=approach>Approach<a href=#approach class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>First of all a profile on Haaukins is needed to do any of the &ldquo;dynamic&rdquo; challenges.
-Our team discovered that you could create AS MANY accounts as you wanted, which came in VERY handy for some of the challenges later on!&mldr;</p><p>As instructed we use the Netcat command to connect to the remote server. Upon establishing the connection we get a banner print, with a seemingly randomly placed character, which appears to be part of the final flag!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ nc intro.nc3 <span style=color:#ae81ff>6346</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>################################################</span>
-</span></span><span style=display:flex><span>N
-</span></span><span style=display:flex><span><span style=color:#75715e>################################################</span>
-</span></span></code></pre></div><p>I originally crafted a script to establish connection and replace an array of &lsquo;#&rsquo; characters, but later learned that most of my communication handling could be shorthanded with the <a href=https://github.com/Gallopsled/pwntools>pwntools Python library</a>!
-This is the final version, utilising pwntools</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>context<span style=color:#f92672>.</span>log_level <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;warn&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>IP <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;intro.nc3&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> [<span style=color:#ae81ff>32</span>] <span style=color:#f92672>*</span> len(<span style=color:#e6db74>&#34;################################################&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#ae81ff>32</span> <span style=color:#f92672>in</span> flag:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> remote(IP, <span style=color:#ae81ff>6346</span>) <span style=color:#66d9ef>as</span> io:
-</span></span><span style=display:flex><span>        io<span style=color:#f92672>.</span>recvline()
-</span></span><span style=display:flex><span>        line <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvline()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i, c <span style=color:#f92672>in</span> enumerate(line):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> c <span style=color:#f92672>!=</span> <span style=color:#ae81ff>32</span>:
-</span></span><span style=display:flex><span>            flag[i] <span style=color:#f92672>=</span> c
-</span></span><span style=display:flex><span>            print(bytes(flag)<span style=color:#f92672>.</span>decode())
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>
-</span></span></code></pre></div><p><a href=/nc3/kom-godt-i-gang/haaukins-intro/Haaukins_intro.py>Download script</a></p><p>What is incredibly cool about the handling is that it will result in the following output #MatrixStyle</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>               _
-</span></span><span style=display:flex><span>               _                          <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>               _              t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>               _  _           t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>               _  _3          t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>             <span style=color:#ae81ff>3</span> _  _3          t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>         <span style=color:#ae81ff>3</span> _  _3          t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>         <span style=color:#ae81ff>3</span> _  _3     k    t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>         <span style=color:#ae81ff>3</span> _  _3r    k    t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _  _3r    k    t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _  _3r    k   _t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _  _3r    kl  _t           <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _  _3r    kl  _t         y <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _  _3r d  kl  _t         y <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _n _3r d  kl  _t         y <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _n _3r_d  kl  _t         y <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>     f   <span style=color:#ae81ff>3</span> _n _3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span> <span style=color:#ae81ff>0</span>   f   <span style=color:#ae81ff>3</span> _n _3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0   f   <span style=color:#ae81ff>3</span> _n _3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   <span style=color:#ae81ff>3</span> _n _3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   3t_n _3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   3t_nu_3r_d  kl  _t         y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   3t_nu_3r_d  kl  _t     r   y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   3t_nu_3r_d  kl  _t1    r   y 4m
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t f   3t_nu_3r_d  kl  _t1    r   y 4m  !
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r   y 4m  !
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r   y 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r3  y 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r3_ y 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl4 _t1    r3_ y 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f   3t_nu_3r_d  kl4 _t1    r3_dy 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1    r3_dy 4m  !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1    r3_dy 4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>   <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span> C <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0 t_fun 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fun 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fun 3t_nu_3r_d  kl4r_t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fun 3t_nu_3r_d _kl4r_t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fun 3t_nu_3r_du_kl4r_t1 _m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fun 3t_nu_3r_du_kl4r_t1l_m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC <span style=color:#f92672>{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC3<span style=color:#f92672>{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1 !<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>NC3<span style=color:#f92672>{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1k!<span style=color:#f92672>}</span>
-</span></span></code></pre></div><h2 id=flag>Flag<a href=#flag class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>NC3{g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1k!}
-</span></span></code></pre></div><h2 id=reflections-and-learnings>Reflections and Learnings<a href=#reflections-and-learnings class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h2><p>Getting to know pwntools was a VERY big learning from this challenge and is for sure a useful tool for the Python tool belt!</p></div></main><footer id=site-footer class="section-inner thin animated fadeIn faster"><p>&copy; 2025 <a href=https://ctf.adamino.dk/>Adamino</a>
-&#183; The quieter you become the more you are able to hear
-&#183;</p></footer><a href=# class=scroll-up><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a><noscript><a href=# class="scroll-up show"><svg fill="#3b3e48" width="64" height="64" viewBox="-2.4 -2.4 28.8 28.8" id="up-circle" data-name="Flat Color" class="icon flat-color" stroke="#3b3e48" stroke-width=".00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ccc" stroke-width=".9600000000000002"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g><g id="SVGRepo_iconCarrier"><circle id="primary" cx="12" cy="12" r="10" style="fill:#3b3e48"/><path id="secondary" d="M15 14a1 1 0 01-.71-.29L12 11.41l-2.29 2.3a1 1 0 01-1.42-1.42l3-3a1 1 0 011.42.0l3 3a1 1 0 010 1.42A1 1 0 0115 14z" style="fill:#0077b6"/></g></svg></a></noscript><script async src=https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin=anonymous></script><script async src=https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin=anonymous></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="Haaukins Intro">
+  <meta itemprop="description" content="Challenge Name: Haaukins Intro
+Category: Kom godt i gang">
+  <meta itemprop="datePublished" content="2023-12-01T10:02:14+01:00">
+  <meta itemprop="dateModified" content="2023-12-01T10:02:14+01:00">
+  <meta itemprop="wordCount" content="926">
+  <meta itemprop="keywords" content="Kom Godt I Gang"><title>Haaukins Intro</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="https://ctf.adamino.dk/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="https://ctf.adamino.dk/tools/">Tools</a><a href="https://ctf.adamino.dk/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="https://ctf.adamino.dk/tools/">Tools</a></li>
+		<li><a href="https://ctf.adamino.dk/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Haaukins Intro</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Haaukins Intro</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Kom godt i gang</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Dynamiske opgaver i NC3 CTF 2023 kører via CTF-platformen Haaukins.</p>
+<p>Lab Setup:</p>
+<p>Ved oprettelse af profil, får du adgang til egen instans på dit eget subnet. Du kan i øverste højre hjørne klikke Get a lab og vælge imellem VPN eller Browser. Dit lab er dit eget, og det er dermed kun dig, der har adgang til din egen instans.</p>
+<p>Browser labbet giver dig adgang til en Kali Linux instans i din browser, hvorfra alle opgaver kan tilgås. VMen har en række værktøjer præinstalleret og har ikke internetadgang. Se FAQ i Haaukins for instruktion til copy+paste ind i boksen.</p>
+<p>Vælges VPN skal du klikke Download VPN Config og hente Wireguard config fil ned. Se guide til installation i FAQ på Haaukins. På Linux kan med fordel bruges install_wireguard.sh til Wireguard installation og connectwireguard.py til opsætning med config filen:</p>
+<p>sudo python connectwireguard.py ./wg-conf-1.conf
+Challenge Access:</p>
+<p>Challenges starter alle som Not running og skal startes individuelt, når man vil løse dem. Hvis en opgave stopper med at virke, kan den resettes fra forsiden. Labbet resetter helt hver 5. time automatisk, men du kan forlænge denne tid fra forsiden, når der er under en time igen.</p>
+<p>Nogle challenges har et hostname, fx juletid.nc3 og kan tilgås gennem browser eller med netcat via dette. I Browser lab er det direkte tilgængeligt, i VPN skal du selv opdatere din hosts fil lokalt - se Hosts tab i Haaukins (husk at starte opgaven først).</p>
+<p>I challenges uden hostname skal servicen findes med et nmap scan af dit lab subnet. I browser lab kan dit subnet findes med kommandoen ip a under eth0. I VPN står det i toppen af din downloadede config fil. Fremgangsmåden er beskrevet i opgaveteksten til Haaukins Intro på Haaukins.</p>
+<p>Sanity Check:</p>
+<p>Gav det mening? Så er det tid til et lille sanity check! Opret et lab på Haaukins, start opgaven Haaukins Intro og find den IP, der har en service kørende på port 6346. Forbind til servicen for at få flaget!</p>
+<p>OBS: Alle flag skal submittes herinde på CTFd, ikke på Haaukins!</p>
+<p><a href="https://ncctf.haaukins.dk">https://ncctf.haaukins.dk</a></p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>First of all a profile on Haaukins is needed to do any of the &ldquo;dynamic&rdquo; challenges.
+Our team discovered that you could create AS MANY accounts as you wanted, which came in VERY handy for some of the challenges later on!&hellip;</p>
+<p>As instructed we use the Netcat command to connect to the remote server. Upon establishing the connection we get a banner print, with a seemingly randomly placed character, which appears to be part of the final flag!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nc intro.nc3 <span style="color:#ae81ff">6346</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################################</span>
+</span></span><span style="display:flex;"><span>N
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################################</span>
+</span></span></code></pre></div><p>I originally crafted a script to establish connection and replace an array of &lsquo;#&rsquo; characters, but later learned that most of my communication handling could be shorthanded with the <a href="https://github.com/Gallopsled/pwntools">pwntools Python library</a>!
+This is the final version, utilising pwntools</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>context<span style="color:#f92672">.</span>log_level <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;warn&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IP <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;intro.nc3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> [<span style="color:#ae81ff">32</span>] <span style="color:#f92672">*</span> len(<span style="color:#e6db74">&#34;################################################&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">in</span> flag:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> remote(IP, <span style="color:#ae81ff">6346</span>) <span style="color:#66d9ef">as</span> io:
+</span></span><span style="display:flex;"><span>        io<span style="color:#f92672">.</span>recvline()
+</span></span><span style="display:flex;"><span>        line <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>recvline()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, c <span style="color:#f92672">in</span> enumerate(line):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> c <span style="color:#f92672">!=</span> <span style="color:#ae81ff">32</span>:
+</span></span><span style="display:flex;"><span>            flag[i] <span style="color:#f92672">=</span> c
+</span></span><span style="display:flex;"><span>            print(bytes(flag)<span style="color:#f92672">.</span>decode())
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span></code></pre></div><p><a href="/nc3/kom-godt-i-gang/haaukins-intro/Haaukins_intro.py">Download script</a></p>
+<p>What is incredibly cool about the handling is that it will result in the following output #MatrixStyle</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>               _
+</span></span><span style="display:flex;"><span>               _                          <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>               _              t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>               _  _           t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>               _  _3          t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#ae81ff">3</span> _  _3          t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>         <span style="color:#ae81ff">3</span> _  _3          t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>         <span style="color:#ae81ff">3</span> _  _3     k    t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>         <span style="color:#ae81ff">3</span> _  _3r    k    t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _  _3r    k    t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _  _3r    k   _t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _  _3r    kl  _t           <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _  _3r    kl  _t         y <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _  _3r d  kl  _t         y <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _n _3r d  kl  _t         y <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _n _3r_d  kl  _t         y <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>     f   <span style="color:#ae81ff">3</span> _n _3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span> <span style="color:#ae81ff">0</span>   f   <span style="color:#ae81ff">3</span> _n _3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0   f   <span style="color:#ae81ff">3</span> _n _3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   <span style="color:#ae81ff">3</span> _n _3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   3t_n _3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   3t_nu_3r_d  kl  _t         y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   3t_nu_3r_d  kl  _t     r   y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   3t_nu_3r_d  kl  _t1    r   y 4m
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t f   3t_nu_3r_d  kl  _t1    r   y 4m  !
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r   y 4m  !
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r   y 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r3  y 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl  _t1    r3_ y 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl4 _t1    r3_ y 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f   3t_nu_3r_d  kl4 _t1    r3_dy 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1    r3_dy 4m  !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1    r3_dy 4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> C <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dy 4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _  r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0 t_f n 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0 t_fun 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fun 3t_nu_3r_d  kl4 _t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fun 3t_nu_3r_d  kl4r_t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fun 3t_nu_3r_d _kl4r_t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fun 3t_nu_3r_du_kl4r_t1 _m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fun 3t_nu_3r_du_kl4r_t1l_m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC <span style="color:#f92672">{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC3<span style="color:#f92672">{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1 !<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>NC3<span style="color:#f92672">{</span>g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1k!<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>NC3{g0dt_fund3t_nu_3r_du_kl4r_t1l_m3r3_dyn4m1k!}
+</span></span></code></pre></div><h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Getting to know pwntools was a VERY big learning from this challenge and is for sure a useful tool for the Python tool belt!</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="https://ctf.adamino.dk/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>
