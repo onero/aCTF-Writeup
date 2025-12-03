@@ -3,19 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-12-17T18:39:25+01:00</lastmod>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-12-17T18:39:25+01:00</lastmod>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/det-store-nissehack/det-store-nissehack-alternativ-kodedeling/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/det-store-nissehack/det-store-nissehack-gerningsgnomens-afsloering/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/det-store-nissehack/det-store-nissehack-serverskjulet/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/forensics/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/osint/</loc>
+    <lastmod>2024-12-17T18:40:25+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/</loc>
     <lastmod>2024-12-17T18:39:25+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/forensics/</loc>
-    <lastmod>2024-12-17T18:39:25+01:00</lastmod>
+    <loc>http://localhost:1313/categories/boot2root/</loc>
+    <lastmod>2024-12-15T13:37:38+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/nc3/</loc>
-    <lastmod>2024-12-17T18:39:25+01:00</lastmod>
+    <loc>http://localhost:1313/nc3/boot2root/nisseportalen-5/</loc>
+    <lastmod>2024-12-15T13:37:38+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/boot2root/nisseportalen-4/</loc>
+    <lastmod>2024-12-15T13:36:38+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/boot2root/nisseportalen-2/</loc>
+    <lastmod>2024-12-15T13:34:38+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nc3/boot2root/nisseportalen-1/</loc>
+    <lastmod>2024-12-15T13:33:38+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/enumeration/</loc>
     <lastmod>2023-12-22T00:12:28+01:00</lastmod>
@@ -37,9 +67,6 @@
   </url><url>
     <loc>http://localhost:1313/categories/misc/</loc>
     <lastmod>2023-12-17T20:37:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/boot2root/</loc>
-    <lastmod>2023-12-15T15:33:38+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/nc3/boot2root/nissenoter-3/</loc>
     <lastmod>2023-12-15T15:33:38+01:00</lastmod>

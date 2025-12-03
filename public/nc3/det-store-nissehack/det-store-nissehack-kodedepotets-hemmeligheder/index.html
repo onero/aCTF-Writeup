@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="Det store nissehack: Kodedepotets Hemmeligheder">
+  <meta itemprop="description" content="Challenge Name: Det store nissehack: Kodedepotets Hemmeligheder
+Category: Det store nissehack">
+  <meta itemprop="datePublished" content="2024-12-17T18:40:25+01:00">
+  <meta itemprop="dateModified" content="2024-12-17T18:40:25+01:00">
+  <meta itemprop="wordCount" content="531">
+  <meta itemprop="keywords" content="OSINT"><title>Det store nissehack: Kodedepotets Hemmeligheder</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="http://localhost:1313/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/tools/">Tools</a><a href="http://localhost:1313/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="http://localhost:1313/tools/">Tools</a></li>
+		<li><a href="http://localhost:1313/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Det store nissehack: Kodedepotets Hemmeligheder</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack: Kodedepotets Hemmeligheder</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Du har nu fundet gerningsgnomens hjemmeside, men dens indhold er kun overfladen. Julens politi mistænker, at yderligere information om eksfiltreret data kan gemme sig bag skjulte sider.</p>
+<p>Brug OSINT-teknikker for at se, om du kan få adgang til disse skjulte sider og afsløre flere detaljer om, hvad der er blevet stjålet.</p>
+<p>Kan du grave dybt nok til at finde den skjulte information?</p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>In our previous task, we found a bogus certificate:
+<img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/certifikat.png" alt="certificate"></p>
+<p>Let&rsquo;s extract any relevant information:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ openssl x509 -noout -text -in bitbibliotek.dk.crt
+</span></span></code></pre></div><p>Output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Certificate:
+</span></span><span style="display:flex;"><span>    Data:
+</span></span><span style="display:flex;"><span>        Version: 3 (0x2)
+</span></span><span style="display:flex;"><span>        Serial Number:
+</span></span><span style="display:flex;"><span>            6c:ca:66:1e:35:25:49:d5:a9:f6:99:3e:5e:dc:0b:fe:22:ee:6d:8c
+</span></span><span style="display:flex;"><span>        Signature Algorithm: sha256WithRSAEncryption
+</span></span><span style="display:flex;"><span>        Issuer: C = DK, ST = REGION SJAELLAND, L = Ringsted, O = Gnomerne Aps, OU = NC3{1nfiL7rAti0n_0g_3xf1ltr4t1on}, CN = bitbibliotek.dk, emailAddress = datagnasker@proton.me
+</span></span></code></pre></div><p>The email address stands out as an interesting lead for an OSINT challenge.</p>
+<h4 id="exploring-the-website">Exploring the website<a href="#exploring-the-website" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p>Before we dig into our <code>Datagnasker</code>, lets check out the <a href="https://bitbibliotek.dk/">site</a> we found.</p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/bitbilioteket.png" alt="bitbiblioteket"></p>
+<p>Not much there, except some christmassy ASCII art.</p>
+<p>Rather than attempting brute-force methods, I decided to focus on systematic OSINT investigation.</p>
+<h4 id="following-the-threads">Following the threads<a href="#following-the-threads" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p><strong>1: Github</strong>
+A common first step in OSINT challenges is checking GitHub for user profiles, this was mostly done based on intuition from previous CTF&rsquo;s. Searching for the email alias <code>datagnasker</code>
+<a href="https://github.com/search?q=datagnasker&amp;type=users">https://github.com/search?q=datagnasker&type=users</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/Github.png" alt="Github"></p>
+<p>The user image matched our expectation – we’ve found the correct profile!</p>
+<p><strong>2: Stack Overflow</strong>
+The GitHub profile lists a Stack ID. This led me to Stack Overflow:
+<a href="https://stackoverflow.com/users/28085338/">https://stackoverflow.com/users/28085338/</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/stackoverflow.png" alt="Stack overflow"></p>
+<p>There he is again.</p>
+<p><strong>3: Twitter</strong>
+The Stack Overflow profile links back to GitHub and includes a Twitter reference:
+<a href="https://x.com/BMadsen97204">https://x.com/BMadsen97204</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/Twitter.png" alt="Twitter"></p>
+<p>This provided the user&rsquo;s real name, but the trail seemed to end there. I returned to GitHub to investigate further.</p>
+<h4 id="the-github-repository">The github repository<a href="#the-github-repository" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p>The user only has a single repository: <a href="https://github.com/datagnasker/web_test">web_test</a></p>
+<p>This repository seemed to contain a version of the site hosted at bitbibliotek.dk.</p>
+<p><strong>Finding the Login Page</strong>
+Inspecting the <a href="https://github.com/datagnasker/web_test/blob/main/bitbibliotek/views.py#L20">views.py file</a> revealed a potential login page - lets try that: <a href="https://bitbibliotek.dk/login">https://bitbibliotek.dk/login</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/login.png" alt="Login"></p>
+<h4 id="analyzing-commit-history">Analyzing Commit History<a href="#analyzing-commit-history" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p>A common technique for CTF challenges involving git repositories is to analyze commit history. The repository had 6 commits:
+<a href="https://github.com/datagnasker/web_test/commits/main/">https://github.com/datagnasker/web_test/commits/main/</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/git-commits.png" alt="Git commits"></p>
+<p>One commit titled &ldquo;removed credentials&rdquo; caught my attention:
+<a href="https://github.com/datagnasker/web_test/commit/a21032da512c1a5852dd54297654dca64347d945">https://github.com/datagnasker/web_test/commit/a21032da512c1a5852dd54297654dca64347d945</a></p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/removed-credentials.png" alt="Removed credentials"></p>
+<p>The commit revealed login credentials. I tested these on the live login page:</p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/login2.png" alt="Login with credentials"></p>
+<p>Success! Logging in revealed the flag:
+<img src="/nc3/det-store-nissehack/det-store-nissehack-kodedepotets-hemmeligheder/images/flag.png" alt="Flag"></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>NC3{g3m_4lDr1g_cR3d3nT1al5_i_g1T_r3P0}</p>
+<h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>This challenge reinforced several key lessons about OSINT techniques and disciplined problem-solving:</p>
+<ol>
+<li>
+<p>Systematic Investigation: Brute-force attempts can be tempting, but following leads methodically often yields quicker and more reliable results.</p>
+</li>
+<li>
+<p>Using GitHub search and commit history analysis provided clear, actionable paths.</p>
+</li>
+<li>
+<p>Importance of Git Hygiene: Exposed credentials in a Git commit can lead to critical security breaches. Developers must ensure sensitive information is never committed to public repositories.</p>
+</li>
+<li>
+<p>Leveraging Multiple Platforms: Combining information from GitHub, Stack Overflow, and Twitter emphasized the power of correlating data across platforms to uncover hidden insights.</p>
+</li>
+<li>
+<p>Certificate Analysis: Extracting metadata, such as emails or organizational units, from certificates can provide valuable clues in OSINT-based challenges.</p>
+</li>
+</ol>
+<p>By approaching the task with patience and strategy, I successfully navigated through the clues to uncover the final flag. This challenge was an excellent reminder that effective OSINT relies on creativity, persistence, and attention to detail.</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="http://localhost:1313/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="http://localhost:1313/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>
