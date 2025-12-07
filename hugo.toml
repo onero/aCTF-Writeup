@@ -34,7 +34,7 @@ copyright = "Adamino 2023"
   [languages.en]
     title = 'Adamino CTF Writeups'
     [languages.en.params]
-      homeSubtitle = "Awesome CTF Writeups"
+    
   [[params.socialLinks]]
     name = "github"
     url = "https://github.com/onero"

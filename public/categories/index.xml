@@ -7,22 +7,8 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Adamino 2023</copyright>
-    <lastBuildDate>Tue, 17 Dec 2024 18:40:25 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2024 13:37:38 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Forensics</title>
-      <link>http://localhost:1313/categories/forensics/</link>
-      <pubDate>Tue, 17 Dec 2024 18:40:25 +0100</pubDate>
-      <guid>http://localhost:1313/categories/forensics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OSINT</title>
-      <link>http://localhost:1313/categories/osint/</link>
-      <pubDate>Tue, 17 Dec 2024 18:40:25 +0100</pubDate>
-      <guid>http://localhost:1313/categories/osint/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Boot2Root</title>
       <link>http://localhost:1313/categories/boot2root/</link>
