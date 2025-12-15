@@ -1,7 +1,8 @@
 +++
 title = 'SSH Key Foothold'
 categories = ['Foothold']
-date = 2025-12-07T20:51:00+01:00
+date = "2025-12-07T20:51:00+01:00"
+scrollToTop = true
 +++
 
 # Seamless Foothold with SSH Keys (id_rsa + id_rsa.pub)

@@ -1,7 +1,8 @@
 +++
 title = 'Copy files to and from victim'
 categories = ['Foothold']
-date = 2025-12-15T20:51:00+01:00
+date = "2025-12-15T20:51:00+01:00"
+scrollToTop = true
 +++
 
 ## Introduction
