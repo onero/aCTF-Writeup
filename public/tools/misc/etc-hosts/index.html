@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="Pretty Hostnames with /etc/hosts">
+  <meta itemprop="description" content="When attacking or enumerating a target, typing raw IPs everywhere is clunky and error-prone. A simple, built-in trick is to use /etc/hosts to map an IP address to a friendly hostname so your tools, browser, and shell can use a memorable name.
+Example mapping:
+10.82.186.54 cybershield.nc3 This lets you visit http://cybershield.nc3 in your browser, curl cybershield.nc3, and point tools at the hostname instead of the IP.
+What /etc/hosts Does
+Local override: Maps hostnames to IPs before DNS is queried. Zero dependencies: No DNS server required; works offline. System-wide: Applies to all applications on the machine. How to Add an Entry (macOS/Linux)">
+  <meta itemprop="datePublished" content="2025-12-07T20:22:53+01:00">
+  <meta itemprop="dateModified" content="2025-12-07T20:22:53+01:00">
+  <meta itemprop="wordCount" content="350">
+  <meta itemprop="keywords" content="Misc"><title>Pretty Hostnames with /etc/hosts</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="https://ctf.adamino.dk/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="https://ctf.adamino.dk/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="https://ctf.adamino.dk/tools/">Tools</a><a href="https://ctf.adamino.dk/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="https://ctf.adamino.dk/tools/">Tools</a></li>
+		<li><a href="https://ctf.adamino.dk/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Pretty Hostnames with /etc/hosts</h1>
+		<div class="content">
+			<p>When attacking or enumerating a target, typing raw IPs everywhere is clunky and error-prone. A simple, built-in trick is to use <code>/etc/hosts</code> to map an IP address to a friendly hostname so your tools, browser, and shell can use a memorable name.</p>
+<p>Example mapping:</p>
+<pre class="mermaid">10.82.186.54 cybershield.nc3
+</pre><p>This lets you visit <code>http://cybershield.nc3</code> in your browser, curl <code>cybershield.nc3</code>, and point tools at the hostname instead of the IP.</p>
+<p><strong>What /etc/hosts Does</strong></p>
+<ul>
+<li>Local override: Maps hostnames to IPs before DNS is queried.</li>
+<li>Zero dependencies: No DNS server required; works offline.</li>
+<li>System-wide: Applies to all applications on the machine.</li>
+</ul>
+<p><strong>How to Add an Entry (macOS/Linux)</strong></p>
+<ul>
+<li>Edit the hosts file with elevated privileges:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>sudo sh -c <span style="color:#e6db74">&#39;printf &#34;\n10.82.186.54 cybershield.nc3\n&#34; &gt;&gt; /etc/hosts&#39;</span>
+</span></span></code></pre></div><ul>
+<li>Or open it in an editor:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>sudo vim /etc/hosts
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add the line:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 10.82.186.54 cybershield.nc3</span>
+</span></span></code></pre></div><p><strong>Verify the Mapping</strong></p>
+<ul>
+<li>Resolve the hostname:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">1</span> cybershield.nc3
+</span></span></code></pre></div><ul>
+<li>Check with <code>getent</code> (Linux) or <code>dscacheutil</code> (macOS):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># Linux</span>
+</span></span><span style="display:flex;"><span>getent hosts cybershield.nc3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># macOS</span>
+</span></span><span style="display:flex;"><span>dscacheutil -q host -a name cybershield.nc3
+</span></span></code></pre></div><p><strong>Use It Everywhere</strong></p>
+<ul>
+<li>Browser: Visit <code>http://cybershield.nc3</code>.</li>
+<li>CLI: <code>curl -I cybershield.nc3</code>, <code>nc cybershield.nc3 80</code>, <code>ssh user@cybershield.nc3</code>.</li>
+<li>Tools: Nmap, Gobuster, ffuf, sqlmap, etc. accept hostnames:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>nmap -sV cybershield.nc3
+</span></span><span style="display:flex;"><span>gobuster dir -u http://cybershield.nc3 -w wordlist.txt
+</span></span><span style="display:flex;"><span>ffuf -u http://cybershield.nc3/FUZZ -w wordlist.txt
+</span></span></code></pre></div><p><strong>Tips &amp; Best Practices</strong></p>
+<ul>
+<li>Keep entries tidy: Group targets and add comments with context.</li>
+<li>Include multiple names: Add aliases on the same line if helpful:</li>
+</ul>
+<pre class="mermaid">10.82.186.54 cybershield.nc3 shield nc3-shield
+</pre><ul>
+<li>Subdomains: Add each needed subdomain explicitly:</li>
+</ul>
+<pre class="mermaid">10.82.186.54 www.cybershield.nc3 admin.cybershield.nc3 api.cybershield.nc3
+</pre><ul>
+<li>IPv6 targets: Use the IPv6 address format on separate lines.</li>
+<li>Avoid collisions: Pick unique names unlikely to be real public domains.</li>
+<li>Reset when done: Remove entries to avoid future confusion.</li>
+</ul>
+<p><strong>Troubleshooting</strong></p>
+<ul>
+<li>Entry not working? Check for typos, extra spaces, or hidden characters.</li>
+<li>Conflicts: If DNS still wins, ensure no trailing domain search suffix alters the name.</li>
+<li>macOS caching: Flush caches if changes don’t apply immediately:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+</span></span></code></pre></div><p><strong>Why This Helps in CTFs</strong></p>
+<ul>
+<li>Faster commands, cleaner screenshots, and easier collaboration.</li>
+<li>Reduces mistakes when switching between many targets.</li>
+<li>Makes service-specific testing more readable: <code>admin.cybershield.nc3:8080</code> beats <code>10.82.186.54:8080</code> in clarity.</li>
+</ul>
+<p>Add the line, use the name, and enjoy cleaner, faster workflows.</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="https://ctf.adamino.dk/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="https://ctf.adamino.dk/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="https://ctf.adamino.dk/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>

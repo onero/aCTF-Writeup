@@ -1,7 +1,7 @@
 +++
-title: "Pretty Hostnames with /etc/hosts"
-categories: ['Misc']
-date: "2025-12-07T20:22:53+01:00"
+title = 'Pretty Hostnames with /etc/hosts'
+categories = ['Misc']
+date = "2025-12-07T20:22:53+01:00"
 scrollToTop = true
 +++
 
