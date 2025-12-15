@@ -1,9 +1,9 @@
----
++++
 title: "Pretty Hostnames with /etc/hosts"
 categories: ['Misc']
 date: "2025-12-07T20:22:53+01:00"
 scrollToTop = true
----
++++
 
 When attacking or enumerating a target, typing raw IPs everywhere is clunky and error-prone. A simple, built-in trick is to use `/etc/hosts` to map an IP address to a friendly hostname so your tools, browser, and shell can use a memorable name.
 
