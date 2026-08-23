@@ -13,5 +13,5 @@
 {{ end }}
 
 <div class="roofpig"
-     data-config="setupmoves={{ .Get "setup" }}|alg={{ .Get "alg" }}|colored={{ .Get "colored" | default "U L F R B D" }}|pov={{ .Get "pov" | default "URF" }}|speed={{ .Get "speed" | default "1000" }}|flags={{ .Get "flags" | default "showalg|showallmoves" }}"
+     data-config="setupmoves={{ .Get "setup" }}|alg={{ .Get "alg" }}{{ with .Get "colored" }}|colored={{ . }}{{ end }}|pov={{ .Get "pov" | default "URF" }}|speed={{ .Get "speed" | default "1000" }}|flags={{ .Get "flags" | default "showalg|showallmoves" }}"
      style="width:{{ .Get "width" | default "340px" }};height:{{ .Get "height" | default "340px" }};margin:1.5rem auto;"></div>
