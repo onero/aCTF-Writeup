@@ -2,6 +2,8 @@
 title = 'ImageMagick'
 categories = ['Misc']
 date = "2026-08-23T15:30:00+01:00"
+description = "Do command-line image surgery with ImageMagick: inspect with identify, stitch strips with append, crop regions, convert formats, and reveal hidden layers."
+tags = ["imagemagick", "forensics", "steganography", "image-processing"]
 scrollToTop = true
 +++
 

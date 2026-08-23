@@ -2,6 +2,8 @@
 title = 'pwntools & checksec'
 categories = ['Pwn']
 date = "2026-08-23T14:00:00+01:00"
+description = "Build binary exploits with pwntools and triage mitigations with checksec: tubes, packing, cyclic offsets, ELF symbols, ROP chains, and remote TLS."
+tags = ["pwntools", "checksec", "pwn", "reverse-engineering", "python"]
 scrollToTop = true
 +++
 

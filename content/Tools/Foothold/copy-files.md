@@ -2,6 +2,8 @@
 title = 'Copy files to and from victim'
 categories = ['Foothold']
 date = "2025-12-15T20:51:00+01:00"
+description = "Transfer files to and from Linux and Windows targets using a Python HTTP server, wget, curl, certutil, PowerShell, netcat, and base64 copy-paste."
+tags = ["file-transfer", "foothold", "netcat", "powershell", "python"]
 scrollToTop = true
 +++
 

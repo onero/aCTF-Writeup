@@ -2,6 +2,8 @@
 title = 'Matching the Remote with Docker (glibc pinning)'
 categories = ['Pwn']
 date = "2026-08-23T14:30:00+01:00"
+description = "Match a pwn challenge's remote environment by extracting the exact glibc and loader from its Docker image, patching the binary, and wiring it into pwntools."
+tags = ["glibc", "docker", "pwn", "pwntools", "reverse-engineering"]
 scrollToTop = true
 +++
 

@@ -2,6 +2,8 @@
 title = 'Nmap'
 categories = ['Enumeration']
 date = "2023-12-21T23:56:53+01:00"
+description = "Scan networks with Nmap to find open ports, detect service versions and operating systems, run NSE scripts, and automate recon with nmapAutomator."
+tags = ["nmap", "enumeration", "reconnaissance", "port-scanning"]
 scrollToTop = true
 +++
 

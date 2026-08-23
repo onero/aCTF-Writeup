@@ -2,6 +2,8 @@
 title = 'tshark & Wireshark'
 categories = ['Forensics']
 date = "2026-08-23T14:45:00+01:00"
+description = "Read packet captures with tshark and Wireshark: protocol hierarchy, display filters, field extraction with -T fields, stream following, and BLE decoding."
+tags = ["tshark", "wireshark", "forensics", "packet-analysis", "bluetooth"]
 scrollToTop = true
 +++
 

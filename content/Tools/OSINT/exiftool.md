@@ -2,6 +2,8 @@
 title = 'ExifTool'
 categories = ['OSINT']
 date = "2026-08-23T15:00:00+01:00"
+description = "Extract hidden file metadata with ExifTool for OSINT: dump all tag groups, pull GPS coordinates and timestamps, recover thumbnails, and read PDFs and docs."
+tags = ["exiftool", "osint", "forensics", "metadata", "geolocation"]
 scrollToTop = true
 +++
 

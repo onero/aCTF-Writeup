@@ -2,6 +2,8 @@
 title = 'binwalk'
 categories = ['Forensics']
 date = "2026-08-23T15:15:00+01:00"
+description = "Find and extract files hidden inside other files with binwalk: signature scanning, auto and dd-based extraction, entropy analysis, and recursive carving."
+tags = ["binwalk", "forensics", "file-carving", "steganography"]
 scrollToTop = true
 +++
 

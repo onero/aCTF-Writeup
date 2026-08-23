@@ -1,0 +1,14 @@
+# Hugo build output — regenerated on every build, deployed fresh by CI.
+# Keeping it out of git stops hundreds of fingerprinted files churning the diff.
+/public/
+
+# Hugo resource cache (processed/fingerprinted assets)
+/resources/
+
+# Hugo build lock + stats
+.hugo_build.lock
+/hugo_stats.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

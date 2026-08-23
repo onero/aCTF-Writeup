@@ -2,6 +2,8 @@
 title = 'Ghidra'
 categories = ['Reversing']
 date = "2026-08-23T14:15:00+01:00"
+description = "Reverse binaries with Ghidra's decompiler: import and auto-analyze, navigate strings and cross-references, rename and retype, and carve .rodata data tables."
+tags = ["ghidra", "reverse-engineering", "decompiler", "static-analysis"]
 scrollToTop = true
 +++
 

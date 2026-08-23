@@ -2,6 +2,8 @@
 title = 'Pretty Hostnames with /etc/hosts'
 categories = ['Misc']
 date = "2025-12-07T20:22:53+01:00"
+description = "Map target IPs to friendly hostnames in /etc/hosts so browsers, curl, nmap, and other tools can use memorable names instead of raw addresses."
+tags = ["etc-hosts", "enumeration", "dns", "foothold"]
 scrollToTop = true
 +++
 

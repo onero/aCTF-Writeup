@@ -2,6 +2,8 @@
 title = 'Netcat'
 categories = ['Enumeration']
 date = "2023-12-22T00:12:28+01:00"
+description = "Use Netcat as a CTF Swiss army knife for port scanning, banner grabbing, file transfer, bind and reverse shells, and network service debugging."
+tags = ["netcat", "enumeration", "file-transfer", "foothold", "pwn"]
 scrollToTop = true
 +++
 

@@ -2,6 +2,8 @@
 title = 'SSH Key Foothold'
 categories = ['Foothold']
 date = "2025-12-07T20:51:00+01:00"
+description = "Gain and keep a foothold with SSH key auth by generating a keypair, installing your public key into authorized_keys, fixing permissions, and logging in."
+tags = ["ssh", "foothold", "public-key", "file-transfer"]
 scrollToTop = true
 +++
 
