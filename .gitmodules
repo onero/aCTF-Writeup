@@ -4,3 +4,6 @@
 [submodule "content/NC3"]
 	path = content/NC3
 	url = https://github.com/onero/CTF-NC3.git
+[submodule "content/Brunner"]
+	path = content/Brunner
+	url = https://github.com/onero/CTF-Brunner.git

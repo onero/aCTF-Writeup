@@ -1,0 +1,17 @@
+{{/* Roofpig cube visualization shortcode.
+     Usage:
+       {{< cube setup="B' U' F2 ..." alg="F2 U2 B' ..." >}}
+     Optional params: colored, pov, speed, flags, width, height.
+     `setup` (setupmoves) is applied instantly to the solved cube to reach the
+     start position; `alg` is the sequence you can play / step through. */}}
+
+{{/* Load jQuery and roofpig only once per page */}}
+{{ if not (.Page.Scratch.Get "roofpig_loaded") }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cubing.net/roofpig/roofpig_and_three.min.js"></script>
+  {{ .Page.Scratch.Set "roofpig_loaded" true }}
+{{ end }}
+
+<div class="roofpig"
+     data-config="setupmoves={{ .Get "setup" }}|alg={{ .Get "alg" }}|colored={{ .Get "colored" | default "U L F R B D" }}|pov={{ .Get "pov" | default "URF" }}|speed={{ .Get "speed" | default "1000" }}|flags={{ .Get "flags" | default "showalg|showallmoves" }}"
+     style="width:{{ .Get "width" | default "340px" }};height:{{ .Get "height" | default "340px" }};margin:1.5rem auto;"></div>

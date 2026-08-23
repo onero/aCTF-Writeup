@@ -49,3 +49,8 @@ copyright = "Adamino 2023"
     name = "NC3"
     url = "nc3/"
     weight = 10
+
+  [[menu.main]]
+    name = "Brunner"
+    url = "brunner/"
+    weight = 11
