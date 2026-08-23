@@ -1,0 +1,61 @@
+{{ define "head" }}
+	{{ if .Site.Params.bgImg -}}
+	<style>.bg-img {background-image: url('{{.Site.Params.bgImg}}');}</style>
+	{{- else if .Site.Params.images -}}
+		{{- range first 1 .Site.Params.images -}}
+		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
+		{{- end -}}
+	{{- end -}}
+{{ end }}
+
+{{ define "main" }}
+	{{- if (or .Site.Params.images .Site.Params.bgImg) }}
+	<div class="bg-img"></div>
+	{{- end }}
+	<div id="spotlight" {{- if ne false .Site.Params.usesAnimation }} class="animated fadeIn" {{- end -}}>
+		<div id="home-center">
+			<h1 id="home-title">{{ .Site.Title }}</h1>
+			{{- with .Site.Params.homeSubtitle }}
+			    <div id="typewriter-container">
+        			<p id="home-subtitle">{{.}}</p>
+    			</div>
+			{{- end }}
+			{{- with .Site.Params.socialLinks }}
+			<div id="home-links">
+				{{ partialCached "social-icons.html" . }}
+			</div>
+			{{- end }}
+			<nav id="home-nav" class="site-nav">
+				{{ partialCached "menu.html" . }}
+			</nav>
+			<a id="home-scroll-cue" href="#browse">Browse write-ups ↓</a>
+		</div>
+		<div id="home-footer">{{- if templates.Exists "partials/index-footer.html" -}}{{- partialCached "index-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</div>
+	</div>
+
+	{{/* Project addition: browse write-ups by topic (category) and tag. Pure static links
+	     to the taxonomy term pages Hugo already builds — no JavaScript. Topics show all
+	     categories by frequency; tags are capped to the 25 most-used, with a link to the
+	     full /tags/ list. Chips reuse the theme's .tag / .category styling. */}}
+	<section id="browse" class="section-inner thin">
+		{{- with .Site.Taxonomies.categories }}
+		<h2>Browse by topic</h2>
+		<p class="browse-cloud">
+			{{- range .ByCount }}
+			<a href="{{ .Page.RelPermalink }}"><span class="category">{{ .Page.LinkTitle }}</span><span class="browse-count">{{ .Count }}</span></a>
+			{{- end }}
+		</p>
+		{{- end }}
+		{{- with .Site.Taxonomies.tags }}
+		<div class="browse-head">
+			<h2>Popular tags</h2>
+			{{- with $.Site.GetPage "/tags" }}<a class="browse-all" href="{{ .RelPermalink }}">all tags &rarr;</a>{{- end }}
+		</div>
+		<p class="browse-cloud">
+			{{- range first 25 .ByCount }}
+			<a href="{{ .Page.RelPermalink }}"><span class="tag">{{ .Page.LinkTitle }}</span><span class="browse-count">{{ .Count }}</span></a>
+			{{- end }}
+		</p>
+		{{- end }}
+	</section>
+{{ end }}

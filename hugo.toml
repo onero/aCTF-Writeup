@@ -33,6 +33,10 @@ copyright = "Adamino 2023"
   # Pin Mermaid to a fixed version so the build/runtime never pulls "latest" from the CDN.
   mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs"
 
+  # Show estimated read time (+ word count) on write-up pages.
+  readTime = true
+  readTimeSeparator = " · "
+
   scrollToTop = true
   footerCopyright = "The quieter you become the more you are able to hear"
 
