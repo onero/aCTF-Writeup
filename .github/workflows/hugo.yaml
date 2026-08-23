@@ -47,9 +47,10 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Update submodules
+      - name: Update content submodules (theme stays pinned to the committed commit)
         run: |
-          git submodule update --recursive --remote
+          git submodule update --init --recursive
+          git submodule update --remote content/NC3 content/Brunner
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -65,10 +66,6 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      - name: Remove XML files to prevent conflicts with HTML
-        run: |
-          find ./public -name "index.xml" -delete
-          find ./public -name "*.xml" -delete
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
