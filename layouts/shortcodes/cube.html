@@ -1,9 +1,9 @@
 {{/* Roofpig cube visualization shortcode.
      Usage:
-       {{< cube setup="B' U' F2 ..." alg="F2 U2 B' ..." >}}
-     Optional params: colored, pov, speed, flags, width, height.
-     `setup` (setupmoves) is applied instantly to the solved cube to reach the
-     start position; `alg` is the sequence you can play / step through. */}}
+       {{< cube alg="F2 U2 B' ..." >}}
+     Roofpig auto-scrambles by the inverse of `alg`, so the cube starts
+     scrambled and playing `alg` drives it back to solved (ends solved).
+     Optional params: colored, pov, speed, flags, width, height. */}}
 
 {{/* Load jQuery and roofpig only once per page */}}
 {{ if not (.Page.Scratch.Get "roofpig_loaded") }}
@@ -13,5 +13,5 @@
 {{ end }}
 
 <div class="roofpig"
-     data-config="setupmoves={{ .Get "setup" }}|alg={{ .Get "alg" }}{{ with .Get "colored" }}|colored={{ . }}{{ end }}|pov={{ .Get "pov" | default "URF" }}|speed={{ .Get "speed" | default "1000" }}|flags={{ .Get "flags" | default "showalg|showallmoves" }}"
+     data-config="alg={{ .Get "alg" }}{{ with .Get "colored" }}|colored={{ . }}{{ end }}|pov={{ .Get "pov" | default "URF" }}|speed={{ .Get "speed" | default "1000" }}|flags={{ .Get "flags" | default "showalg|showallmoves" }}"
      style="width:{{ .Get "width" | default "340px" }};height:{{ .Get "height" | default "340px" }};margin:1.5rem auto;"></div>
