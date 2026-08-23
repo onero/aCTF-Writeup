@@ -7,8 +7,8 @@
 
 {{/* Load jQuery and roofpig only once per page */}}
 {{ if not (.Page.Scratch.Get "roofpig_loaded") }}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cubing.net/roofpig/roofpig_and_three.min.js"></script>
+  <script src="{{ "js/jquery-3.1.1.min.js" | relURL }}"></script>
+  <script src="{{ "js/roofpig_and_three.min.js" | relURL }}"></script>
   {{ .Page.Scratch.Set "roofpig_loaded" true }}
 {{ end }}
 
