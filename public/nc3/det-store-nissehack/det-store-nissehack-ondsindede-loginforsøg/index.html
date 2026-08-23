@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="Det store nissehack: Ondsindede Loginforsøg">
+  <meta itemprop="description" content="Challenge Name: Det store nissehack: Ondsindede Loginforsøg
+Category: Det store nissehack">
+  <meta itemprop="datePublished" content="2024-12-17T18:39:25+01:00">
+  <meta itemprop="dateModified" content="2024-12-17T18:39:25+01:00">
+  <meta itemprop="wordCount" content="815">
+  <meta itemprop="keywords" content="Forensics"><title>Det store nissehack: Ondsindede Loginforsøg</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="http://localhost:1313/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/tools/">Tools</a><a href="http://localhost:1313/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="http://localhost:1313/tools/">Tools</a></li>
+		<li><a href="http://localhost:1313/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Det store nissehack: Ondsindede Loginforsøg</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack: Ondsindede Loginforsøg</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Julemandens hovedserver er blevet kompromitteret, og vi mistænker stærkt, at de ondsindede gnomer står bag angrebet.</p>
+<p>Julens politi har sat en undersøgelse i gang, men de har brug for din hjælp til at identificere gerningsgnomen og afdække de kriminelle handlinger, der er blevet udført. Kan du hjælpe med at genoprette julefreden og få styr på de stjålne data?</p>
+<p>Julens politi har sikret en logfil fra serveren, som indeholder detaljer om flere loginforsøg.
+De mistænker, at en gerningsgnom har opnået fjernadgang, men da julemandens egne nisser også har adgang til serveren, er det svært at skelne mellem legitime og mistænkelige loginforsøg.</p>
+<p>Gerningsgnomen virker til at have været opmærksom på at skjule sine spor, men det kan jo glippe!
+Kan du identificere et loginforsøg med en særlig interessant IP-adresse, der kan sætte efterforskningen på sporet af den skyldige?</p>
+<p>Flaget er formateret <code>NC3{tidsstempel}</code>, hvor <code>tidsstempel</code> svarer til tidspunktet i det fundne loginforsøg, formateret som i loggen.</p>
+<p>Eksempel: <code>NC3{Jan 18 13:55:02}</code></p>
+<p>Attached: <a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/files/auth.log">Auth.log</a></p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>We were provided with a substantial auth.log file from a Linux server. Analyzing logs is a critical step in cybersecurity challenges, as they often reveal patterns or anomalies that point to unauthorized access or malicious activity. Given the size of the file, manual inspection wasn’t feasible. Therefore, I focused on automating my analysis using scripts (mostly generated by ChatGPT, then modified to my liking).</p>
+<h3 id="initial-attempts-searching-for-patterns">Initial Attempts: Searching for Patterns<a href="#initial-attempts-searching-for-patterns" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>I tried the following automated approaches to identify anomalies:</p>
+<h4 id="1-grouping-log-lines-by-function">1. Grouping Log Lines by Function<a href="#1-grouping-log-lines-by-function" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/group_by_function.py">Script</a></p>
+<p>Using a script to categorize and count log entries, I found the data suspiciously uniform, which suggested it was fabricated for the challenge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Log Categories and Counts:
+</span></span><span style="display:flex;"><span>Crea sudo: 834
+</span></span><span style="display:flex;"><span>Stopped OpenBDS: 834
+</span></span><span style="display:flex;"><span>Started OpenBDS: 834
+</span></span><span style="display:flex;"><span>Check pass, user unknown: 829
+</span></span><span style="display:flex;"><span>Authentication failure without user: 829
+</span></span><span style="display:flex;"><span>Invalid user: 829
+</span></span><span style="display:flex;"><span>Failed password: 829
+</span></span><span style="display:flex;"><span>Authentication failure with user: 834
+</span></span><span style="display:flex;"><span>Failed password user known: 834
+</span></span><span style="display:flex;"><span>Disconnected (preauth): 834
+</span></span><span style="display:flex;"><span>Received disconnect: 834
+</span></span></code></pre></div><p>Although this confirmed the log&rsquo;s artificial nature, I needed to explore other methods to uncover the anomaly.</p>
+<h4 id="2-grouping-logins-by-ip">2. Grouping Logins by IP<a href="#2-grouping-logins-by-ip" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/group_logins.py">Script</a></p>
+<p>Next, I analyzed logins grouped by IP addresses. Surprisingly, every login attempt originated from a unique IP. This again indicated fabricated data, as no patterns emerged.</p>
+<h4 id="3-inspecting-sudo-commands">3. Inspecting Sudo Commands<a href="#3-inspecting-sudo-commands" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h4>
+<p><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/inspect_sudo_commands.py">Script</a>
+I then examined the executed sudo commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/bin/scp
+</span></span><span style="display:flex;"><span>/bin/cat
+</span></span><span style="display:flex;"><span>/bin/cp
+</span></span><span style="display:flex;"><span>/bin/chmod
+</span></span><span style="display:flex;"><span>/bin/ls
+</span></span><span style="display:flex;"><span>/bin/zip
+</span></span><span style="display:flex;"><span>/bin/mount
+</span></span></code></pre></div><p>Each user appeared to have run the same set of commands, which was too uniform to be significant.</p>
+<p>I also explored other areas</p>
+<ul>
+<li><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/inspect_failed_logons.py">Failed logins.</a></li>
+<li><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/umatched_pids.py">Matching process IDs for logout events.</a></li>
+<li><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/unmatched_logins.py">Checking login statements for missing logouts.</a></li>
+</ul>
+<p>Although I detected blocks of misplaced lines, they didn’t lead to a conclusive result.</p>
+<h3 id="final-breakthrough-inspecting-ip-addresses">Final Breakthrough: Inspecting IP Addresses<a href="#final-breakthrough-inspecting-ip-addresses" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h3>
+<p>Revisiting the challenge description, I focused on the phrase “an especially interesting IP address.” This clue prompted me to scrutinize the IP addresses more carefully. This led me to analyze the IP addresses in more detail:</p>
+<ol>
+<li>I filtered out internal IPs (RFC1918).</li>
+<li>I checked the remaining public IPs using <a href="https://www.abuseipdb.com/">AbuseIPDB</a> to identify suspicious activity.</li>
+</ol>
+<p><a href="/nc3/det-store-nissehack/det-store-nissehack-ondsindede-loginfors%C3%B8g/scripts/Inspect_ips_online.py">Script</a>.</p>
+<p>For the remaining, I checked them on <a href="https://www.abuseipdb.com/">https://www.abuseipdb.com/</a>,</p>
+<p>After running the first few and manually inspecting them, I noticed all of them were TOR exit nodes.
+I added a filter to remove those and ran again.</p>
+<p>Only one IP was left:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Checking IP: 93.95.228.125
+</span></span><span style="display:flex;"><span>Checking IP: 209.38.243.124
+</span></span><span style="display:flex;"><span>{&#39;ipAddress&#39;: &#39;209.38.243.124&#39;, &#39;isPublic&#39;: True, &#39;ipVersion&#39;: 4, &#39;isWhitelisted&#39;: None, &#39;abuseConfidenceScore&#39;: 0, &#39;countryCode&#39;: &#39;DE&#39;, &#39;usageType&#39;: &#39;Data Center/Web Hosting/Transit&#39;, &#39;isp&#39;: &#39;DigitalOcean, LLC&#39;, &#39;domain&#39;: &#39;digitalocean.com&#39;, &#39;hostnames&#39;: [], &#39;isTor&#39;: False, &#39;totalReports&#39;: 0, &#39;numDistinctUsers&#39;: 0, &#39;lastReportedAt&#39;: None}
+</span></span><span style="display:flex;"><span>IP: 209.38.243.124
+</span></span><span style="display:flex;"><span>Abuse Confidence Score: 0
+</span></span><span style="display:flex;"><span>countryCode: DE
+</span></span><span style="display:flex;"><span>ISP: DigitalOcean, LLC
+</span></span><span style="display:flex;"><span>Domain: digitalocean.com
+</span></span><span style="display:flex;"><span>Total Reports: 0
+</span></span><span style="display:flex;"><span>Last Reported At: None
+</span></span><span style="display:flex;"><span>----------------------------------------
+</span></span><span style="display:flex;"><span>Checking IP: 47.243.99.161
+</span></span><span style="display:flex;"><span>Checking IP: 185.67.82.114
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>This was the only non-TOR, public IP address with no suspicious history. According to the log, the login time associated with this IP was: <code>Aug 09 11:41:09</code></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>NC3{Aug 09 11:41:09}</p>
+<h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>This challenge highlighted the importance of careful reading and attention to detail. In real-world cybersecurity scenarios, such skills are crucial for identifying anomalies hidden in large datasets or logs. This experience reinforced the value of combining automation with critical thinking, which can also be applied to other challenges, such as incident response, penetration testing, or forensic analysis. My initial focus on exhaustive analysis through scripting delayed progress. Revisiting the challenge description led me directly to the critical hint about the &ldquo;interesting IP address.&rdquo;</p>
+<p>Key Learnings:</p>
+<ol>
+<li>Efficiency over Exhaustion: While scripting helps automate tedious tasks, overanalyzing can obscure simple solutions.</li>
+<li>Follow the Challenge Hints: The phrase &ldquo;especially interesting IP address&rdquo; was a vital clue. Always cross-reference hints with findings.</li>
+<li>Use of External Tools: AbuseIPDB proved invaluable in narrowing down suspicious IPs.</li>
+<li>Logical Filtering: Removing TOR nodes and internal IPs quickly reduced noise in the data.</li>
+</ol>
+<p>In future challenges, I will focus on balancing thorough automation with targeted analysis. This approach will save time and improve efficiency in identifying critical data.</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="http://localhost:1313/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="http://localhost:1313/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Foothold on Adamino CTF Writeups</title>
+    <link>https://ctf.adamino.dk/categories/foothold/</link>
+    <description>Recent content in Foothold on Adamino CTF Writeups</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Adamino 2023</copyright>
+    <lastBuildDate>Sun, 07 Dec 2025 20:51:00 +0100</lastBuildDate>
+    <atom:link href="https://ctf.adamino.dk/categories/foothold/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH Key Foothold</title>
+      <link>https://ctf.adamino.dk/tools/foothold/add-public-rsa/</link>
+      <pubDate>Sun, 07 Dec 2025 20:51:00 +0100</pubDate>
+      <guid>https://ctf.adamino.dk/tools/foothold/add-public-rsa/</guid>
+      <description>&lt;h1 id=&#34;seamless-foothold-with-ssh-keys-id_rsa--id_rsapub&#34;&gt;Seamless Foothold with SSH Keys (id_rsa + id_rsa.pub)&lt;a href=&#34;#seamless-foothold-with-ssh-keys-id_rsa--id_rsapub&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;  &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;  &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Using SSH key-based auth is a clean, reliable way to gain and retain access during CTFs when you have a valid user account or write access to &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; on the target. Below is a fast, repeatable workflow to generate keys, install your public key on the victim, and log in without a password.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

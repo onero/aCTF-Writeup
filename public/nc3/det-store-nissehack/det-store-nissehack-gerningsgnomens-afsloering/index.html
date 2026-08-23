@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="author" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+  <meta itemprop="name" content="Det store nissehack: Gerningsgnomens Afsløring">
+  <meta itemprop="description" content="Challenge Name: Det store nissehack: Gerningsgnomens Afsløring
+Category: Det store nissehack">
+  <meta itemprop="datePublished" content="2024-12-17T18:40:25+01:00">
+  <meta itemprop="dateModified" content="2024-12-17T18:40:25+01:00">
+  <meta itemprop="wordCount" content="396">
+  <meta itemprop="keywords" content="Forensics"><title>Det store nissehack: Gerningsgnomens Afsløring</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.cc693dc2db3884100ca44fa2a72237cac58c5c838c68de96c428b14163b2e2b9.css" integrity="sha256-zGk9wts4hBAMpE+ipyI3ysWMXIOMaN6WxCixQWOy4rk=" crossorigin="anonymous">
+	</head>
+
+<body id="page">
+
+
+<header id="site-header">
+	<div class="hdr-wrapper section-inner">
+		<div class="hdr-left">
+			<div class="site-branding">
+				<a href="http://localhost:1313/">Adamino CTF Writeups</a>
+			</div>
+			<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/tools/">Tools</a><a href="http://localhost:1313/nc3/">NC3</a></nav>
+		</div>
+		<div class="hdr-right hdr-icons">
+			<span class="hdr-links hide-in-mobile"><a href="https://github.com/onero" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  class="feather feather-menu">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg></button>
+		</div>
+	</div>
+</header>
+<div id="mobile-menu" class="animated fast">
+	<ul>
+		<li><a href="http://localhost:1313/tools/">Tools</a></li>
+		<li><a href="http://localhost:1313/nc3/">NC3</a></li>
+	</ul>
+</div>
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Det store nissehack: Gerningsgnomens Afsløring</h1>
+		<div class="content">
+			<h2 id="challenge-name">Challenge Name:<a href="#challenge-name" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack: Gerningsgnomens Afsløring</p>
+<h2 id="category">Category:<a href="#category" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Det store nissehack</p>
+<h2 id="challenge-description">Challenge Description:<a href="#challenge-description" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>Efter omfattende efterforskning har du samlet flere spor om gerningsgnomens aktiviteter.</p>
+<p>Nu har Julens Politi brug for din hjælp til at færdiggøre politirapporten med præcise detaljer om hændelserne og de stjålne data. Kan du sikre, at rapporten bliver komplet og klar til julens retsopgør?</p>
+<p>Link til rapportskabelonen: <a href="https://tryhackme.com/jr/nisseh4ck2o24">https://tryhackme.com/jr/nisseh4ck2o24</a></p>
+<h2 id="approach">Approach<a href="#approach" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>The final task consists of a comprehensive quiz to consolidate all the information gathered during the previous four tasks:</p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-gerningsgnomens-afsloering/images/start.png" alt="quiz"></p>
+<p>Here’s how the information was collected and processed:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Question</th>
+          <th>Task answer was found in</th>
+          <th>Where answer was found</th>
+          <th>Answer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Compromised username</td>
+          <td>1</td>
+          <td>Auth.log line of login</td>
+          <td>Kanelknaser</td>
+      </tr>
+      <tr>
+          <td>Santa&rsquo;s pin number</td>
+          <td>3</td>
+          <td>Final page with Santa intel</td>
+          <td>2412</td>
+      </tr>
+      <tr>
+          <td>Rudolph’s intolerance</td>
+          <td>3</td>
+          <td>Final page with Santa intel</td>
+          <td>gulerødder</td>
+      </tr>
+      <tr>
+          <td>Keys for Elf postal service codebook</td>
+          <td>3</td>
+          <td>Final page with Santa intel</td>
+          <td>Nissehue, Sukkerstang, Guirlande, Kræmmerhus, Julekugle</td>
+      </tr>
+      <tr>
+          <td>Santa&rsquo;s private phone number</td>
+          <td>4</td>
+          <td>Private bin document</td>
+          <td>+299 12 34 56</td>
+      </tr>
+      <tr>
+          <td>Attacker&rsquo;s IP</td>
+          <td>1</td>
+          <td>Auth.log line of login</td>
+          <td>209.38.243.124</td>
+      </tr>
+      <tr>
+          <td>Attacker&rsquo;s email</td>
+          <td>2</td>
+          <td>Found on the certificate</td>
+          <td><a href="mailto:datagnasker@proton.me">datagnasker@proton.me</a></td>
+      </tr>
+      <tr>
+          <td>Domain, the email was used to create<!-- raw HTML omitted -->a certificate for</td>
+          <td>2</td>
+          <td>Site of the task</td>
+          <td>bitbibliotek.dk</td>
+      </tr>
+      <tr>
+          <td>Attacker&rsquo;s real name</td>
+          <td>3</td>
+          <td>Found on his x.com account</td>
+          <td>Børge Madsen</td>
+      </tr>
+      <tr>
+          <td>Attacker&rsquo;s hometown</td>
+          <td>3</td>
+          <td>Found on his Stack Overflow account</td>
+          <td>Fensmark</td>
+      </tr>
+      <tr>
+          <td>Company the attacker is working for</td>
+          <td>2</td>
+          <td>Found on the certificate</td>
+          <td>Gnomerne Aps</td>
+      </tr>
+      <tr>
+          <td>Company hometown</td>
+          <td>2</td>
+          <td>Found on the certificate</td>
+          <td>Ringsted</td>
+      </tr>
+  </tbody>
+</table>
+<p>With all the answers filled in, the report was successfully completed:</p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-gerningsgnomens-afsloering/images/Formular.png" alt="formula filled out"></p>
+<p>Upon submission, we received the confirmation of success:</p>
+<p><img src="/nc3/det-store-nissehack/det-store-nissehack-gerningsgnomens-afsloering/images/success.png" alt="success"></p>
+<h2 id="flag">Flag<a href="#flag" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>NC3{hU5k_aT_sKr1v3_r4Pp0Rt}</p>
+<h2 id="reflections-and-learnings">Reflections and Learnings<a href="#reflections-and-learnings" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+  <line x1="8" y1="12" x2="16" y2="12"></line>
+</svg></a></h2>
+<p>This challenge offered valuable insights into forensic investigation and data correlation across multiple sources. Some key takeaways include:</p>
+<ol>
+<li>
+<p>Importance of Log Analysis: Leveraging log files such as auth.log proved crucial in tracing malicious activities and identifying compromised credentials and IPs.</p>
+</li>
+<li>
+<p>Using Metadata Effectively: Information embedded in certificates and social media profiles helped piece together the attacker’s identity and affiliations.</p>
+</li>
+<li>
+<p>Holistic Approach: Cross-referencing diverse data sources, such as Stack Overflow, x.com, and internal files, highlighted the necessity of a well-rounded investigation strategy.</p>
+</li>
+<li>
+<p>Patience in Challenges: Systematically solving individual tasks before tackling the final quiz was instrumental in ensuring a thorough understanding of the case.</p>
+</li>
+</ol>
+<p>This challenge was a testament to the power of methodical investigation and the importance of verifying information across multiple channels. It also emphasized the value of documentation and report writing in forensics, which ensures clarity and completeness in presenting findings.</p>
+
+		</div>
+		
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster"><p>
+  &copy; 2025 <a href="http://localhost:1313/">Adamino</a>
+  &#183; The quieter you become the more you are able to hear
+  
+  &#183;
+  
+</p></footer>
+
+<a href="#" class="scroll-up"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+<noscript>
+    <a href="#" class="scroll-up show"><svg xmlns="http://www.w3.org/2000/svg" fill="#3B3E48" width="64px" height="64px"
+  viewBox="-2.4 -2.4 28.80 28.80" id="up-circle" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color" stroke="#3B3E48"
+  stroke-width="0.00024000000000000003">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+    stroke-width="0.9600000000000002">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+  <g id="SVGRepo_iconCarrier">
+    <circle id="primary" cx="12" cy="12" r="10" style="fill: #3B3E48;"></circle>
+    <path id="secondary"
+      d="M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z"
+      style="fill: #0077b6;"></path>
+  </g>
+</svg></a>
+</noscript>
+<script async src="http://localhost:1313/js/scrollwatcher.min.d1ed6600a7470c80aa1291ec4def14df9eaf4eda42bf9e178bf9944c457b5bcc.js" integrity="sha256-0e1mAKdHDICqEpHsTe8U356vTtpCv54Xi/mUTEV7W8w=" crossorigin="anonymous"></script>
+<script async src="http://localhost:1313/js/bundle.min.217d62397cbef6f9f5d8bab30d7e7969d78c52a436ca5d5790cef4d6fef3f1f2.js" integrity="sha256-IX1iOXy+9vn12LqzDX55adeMUqQ2yl1XkM701v7z8fI=" crossorigin="anonymous"></script>
+
+</body>
+</html>
